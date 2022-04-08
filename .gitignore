@@ -161,3 +161,10 @@ cython_debug/
 .idea/
 
 .DS_Store
+
+# Heavy data
+*/TWEETS/*
+TWEETS
+*/TWEETS_SENTIMENT/*
+TWEETS_SENTIMENT
+*.csv.gzip
