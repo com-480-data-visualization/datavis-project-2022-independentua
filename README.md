@@ -8,6 +8,7 @@ Project of Data Visualization (COM-480)
 | Adam Narozniak | 344874 |
 | Alessandro Tavazzi       | 342501      |
 | Nicolas d'Argenlieu| 276507 |
+
 [Milestone 1](./milestones/milestone1.pdf)
 
 Welcome to our project of Data Visualization. 
