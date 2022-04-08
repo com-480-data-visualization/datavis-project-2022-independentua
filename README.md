@@ -6,7 +6,7 @@ Team IndependentUA
 |----------------|--------|
 | Adam Narozniak | 344874 |
 | TO ADD         | ?      |
-| TO ADD         | ?      |
+| Nicolas d'Argenlieu| 276507 |
 
 Welcome to our project of Data Visualization. The aim of this project is ...
 
