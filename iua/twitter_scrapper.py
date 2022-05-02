@@ -4,7 +4,6 @@ from datetime import date
 from datetime import datetime
 
 import pandas as pd
-import twint
 
 
 def init_empty_pandas():
@@ -30,6 +29,7 @@ def scrap_twitter(username: str, date_start: date, store: bool, output_file_path
 
     """
     os.system("pip3 install --upgrade -q -e git+https://github.com/twintproject/twint.git@origin/master#egg=twint")
+    import twint
     import nest_asyncio
     nest_asyncio.apply()
 
@@ -80,7 +80,7 @@ def get_now_string():
 if __name__ == "__main__":
     parser = create_parser()
     args = parser.parse_args()
-    twitter_account_name = args.twitter_accoutn_name
+    twitter_account_name = args.twitter_account_name
     start_date = datetime.strptime(args.start_date, "%Y-%m-%d").date()
     now = get_now_string()
     scrap_twitter(twitter_account_name, start_date, True, f"../data/{twitter_account_name}_run_{now}.csv")
