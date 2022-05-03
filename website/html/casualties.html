@@ -1,6 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Independent UA</title>
+    <meta name="author" content="Adam Narozniak, Alessandro Tavazzi, Nicolas d’Argenlieu"/>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
 <body>
 <h1> Casualties </h1>
+<script>
+    class CasualtiesLoader {
+        #casualties;
+        date_to_civilians_killed;
+        date_to_children_killed;
+        date_to_civilians_injured;
+        date_to_children_injured;
+
+        constructor(path) {
+            this.path = path;
+        }
+
+        async load_data() {
+            this.#casualties = await d3.csv(this.path);
+            // this callback is necessary in this function if I want to store the data in the line above
+            this._extract_data()
+        }
+
+        _extract_data() {
+            this.date_to_civilians_killed = this._extract_one_data("civilians_killed");
+            this.date_to_children_killed = this._extract_one_data("children_killed");
+            this.date_to_civilians_injured = this._extract_one_data("civilians_injured");
+            this.date_to_children_injured = this._extract_one_data("children_injured");
+        }
+
+        _extract_one_data(column_name) {
+            return new Map(
+                this.#casualties.map(
+                    object => {
+                        return [object["date"], Number(object[column_name])]
+                    })
+            )
+        }
+    }
+
+    let casualtiesPath = "./../../data/casualtiesUNHumanRightsUATweets.csv";
+    let casualtiesLoader = new CasualtiesLoader(casualtiesPath);
+    casualtiesLoader.load_data();
+
+
+</script>
 </body>
 </html>
