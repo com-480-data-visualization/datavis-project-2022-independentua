@@ -66,16 +66,6 @@
 "min": 1.0892,
 "max": 1.1464,
 "mean": 1.1229158730158726,
-"name": "French Southern And Antarctic Lands",
-"id": "TF",
-"rel(%)": 100.36238288845678,
-"curr": "EUR"
-}, {
-"value(vsUSD)": 1.1355,
-"ref": 1.1314,
-"min": 1.0892,
-"max": 1.1464,
-"mean": 1.1229158730158726,
 "name": "Germany",
 "id": "DE",
 "rel(%)": 100.36238288845678,
@@ -216,7 +206,7 @@
 "min": 1.0892,
 "max": 1.1464,
 "mean": 1.1229158730158726,
-"name": "R\u00e9union",
+"name": "Réunion",
 "id": "RE",
 "rel(%)": 100.36238288845678,
 "curr": "EUR"
@@ -366,16 +356,6 @@
 "min": 1.306083536912352,
 "max": 1.3720749296786163,
 "mean": 1.3432487835711497,
-"name": "South Georgia",
-"id": "GS",
-"rel(%)": 101.39421816745497,
-"curr": "GBP"
-}, {
-"value(vsUSD)": 1.3496166874665714,
-"ref": 1.3310588235294118,
-"min": 1.306083536912352,
-"max": 1.3720749296786163,
-"mean": 1.3432487835711497,
 "name": "United Kingdom",
 "id": "GB",
 "rel(%)": 101.39421816745497,
@@ -481,26 +461,6 @@
 "rel(%)": 100.35570897019048,
 "curr": "HRK"
 }, {
-"value(vsUSD)": NaN,
-"ref": NaN,
-"min": NaN,
-"max": NaN,
-"mean": NaN,
-"name": "t",
-"id": "u",
-"rel(%)": NaN,
-"curr": "TRL"
-}, {
-"value(vsUSD)": NaN,
-"ref": NaN,
-"min": NaN,
-"max": NaN,
-"mean": NaN,
-"name": "T",
-"id": "R",
-"rel(%)": NaN,
-"curr": "TRL"
-}, {
 "value(vsUSD)": 0.07530989474521976,
 "ref": 0.07459911383057284,
 "min": 0.0668758296126463,
@@ -538,16 +498,6 @@
 "mean": 0.7225200172312864,
 "name": "Cocos (Keeling) Islands",
 "id": "CC",
-"rel(%)": 101.37297854815827,
-"curr": "AUD"
-}, {
-"value(vsUSD)": 0.7236632464470079,
-"ref": 0.7138620733169285,
-"min": 0.6973890175943898,
-"max": 0.752324945295405,
-"mean": 0.7225200172312864,
-"name": "Heard Island And Mcdonald Islands",
-"id": "HM",
 "rel(%)": 101.37297854815827,
 "curr": "AUD"
 }, {
