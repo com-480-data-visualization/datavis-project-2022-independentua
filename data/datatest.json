@@ -1,22 +1,4 @@
 [{
-    "name": "Monaco",
-    "id": "MC",
-    "area": "2",
-    "density": "18900",
-    "population": "37800"
-}, {
-    "name": "Singapore",
-    "id": "SG",
-    "area": "719",
-    "density": "7697",
-    "population": "5535000"
-}, {
-    "name": "Hong Kong",
-    "id": "HK",
-    "area": "1104",
-    "density": "6571",
-    "population": "7234800"
-}, {
     "name": "Vatican City",
     "id": "VA",
     "area": "0.44",
@@ -28,12 +10,6 @@
     "area": "757",
     "density": "1631",
     "population": "1234571"
-}, {
-    "name": "Malta",
-    "id": "MT",
-    "area": "315",
-    "density": "1321",
-    "population": "416055"
 }, {
     "name": "Bermuda",
     "id": "BM",
@@ -65,12 +41,6 @@
     "density": "618",
     "population": "1259838"
 }, {
-    "name": "San Marino",
-    "id": "SM",
-    "area": "61",
-    "density": "531",
-    "population": "32382"
-}, {
     "name": "Aruba",
     "id": "AW",
     "area": "193",
@@ -95,12 +65,6 @@
     "density": "422",
     "population": "784745"
 }, {
-    "name": "Netherlands",
-    "id": "NL",
-    "area": "41526",
-    "density": "409.01",
-    "population": "16984420"
-}, {
     "name": "Haiti",
     "id": "HT",
     "area": "27065",
@@ -119,35 +83,11 @@
     "density": "390.39",
     "population": "1283321500"
 }, {
-    "name": "Israel",
-    "id": "IL",
-    "area": "22072",
-    "density": "383.69",
-    "population": "8468851"
-}, {
-    "name": "Belgium",
-    "id": "BE",
-    "area": "30528",
-    "density": "370",
-    "population": "11280134"
-}, {
     "name": "Burundi",
     "id": "BI",
     "area": "27816",
     "density": "353",
     "population": "9823828"
-}, {
-    "name": "Philippines",
-    "id": "PH",
-    "area": "300000",
-    "density": "342.29",
-    "population": "102687121"
-}, {
-    "name": "Japan",
-    "id": "JP",
-    "area": "377944",
-    "density": "335.58",
-    "population": "126832000"
 }, {
     "name": "Sri Lanka",
     "id": "LK",
@@ -179,12 +119,6 @@
     "density": "268",
     "population": "88780000"
 }, {
-    "name": "United Kingdom",
-    "id": "GB",
-    "area": "242910",
-    "density": "262",
-    "population": "64105700"
-}, {
     "name": "Trinidad and Tobago",
     "id": "TT",
     "area": "5155",
@@ -203,18 +137,6 @@
     "density": "238.93",
     "population": "192084402"
 }, {
-    "name": "Liechtenstein",
-    "id": "LI",
-    "area": "160",
-    "density": "230",
-    "population": "36842"
-}, {
-    "name": "Germany",
-    "id": "DE",
-    "area": "357168",
-    "density": "228",
-    "population": "81285000"
-}, {
     "name": "Dominican Republic",
     "id": "DO",
     "area": "47875",
@@ -227,29 +149,11 @@
     "density": "214",
     "population": "55456"
 }, {
-    "name": "Luxembourg",
-    "id": "LU",
-    "area": "2586",
-    "density": "208",
-    "population": "537000"
-}, {
-    "name": "Italy",
-    "id": "IT",
-    "area": "301308",
-    "density": "202",
-    "population": "60762320"
-}, {
     "name": "Kuwait",
     "id": "KW",
     "area": "17818",
     "density": "201",
     "population": "3582054"
-}, {
-    "name": "Switzerland",
-    "id": "CH",
-    "area": "41285",
-    "density": "201",
-    "population": "8279700"
 }, {
     "name": "Seychelles",
     "id": "SC",
@@ -329,35 +233,11 @@
     "density": "140",
     "population": "13452"
 }, {
-    "name": "Czech Republic",
-    "id": "CZ",
-    "area": "78867",
-    "density": "133",
-    "population": "10517400"
-}, {
-    "name": "Denmark",
-    "id": "DK",
-    "area": "43098",
-    "density": "131",
-    "population": "5639719"
-}, {
-    "name": "Thailand",
-    "id": "TH",
-    "area": "513120",
-    "density": "131",
-    "population": "65926261"
-}, {
     "name": "Indonesia",
     "id": "ID",
     "area": "1904569",
     "density": "135",
     "population": "257080000"
-}, {
-    "name": "Poland",
-    "id": "PL",
-    "area": "312685",
-    "density": "123",
-    "population": "38496000"
 }, {
     "name": "Cape Verde",
     "id": "CV",
@@ -371,29 +251,11 @@
     "density": "121",
     "population": "14388600"
 }, {
-    "name": "France",
-    "id": "FR",
-    "area": "543965",
-    "density": "118",
-    "population": "64149000"
-}, {
     "name": "Syria",
     "id": "SY",
     "area": "185180",
     "density": "115",
     "population": "21377000"
-}, {
-    "name": "Portugal",
-    "id": "PT",
-    "area": "92090",
-    "density": "115",
-    "population": "10562178"
-}, {
-    "name": "Slovakia",
-    "id": "SK",
-    "area": "49036",
-    "density": "110",
-    "population": "5410728"
 }, {
     "name": "Togo",
     "id": "TG",
@@ -406,12 +268,6 @@
     "area": "86600",
     "density": "109",
     "population": "9477100"
-}, {
-    "name": "Hungary",
-    "id": "HU",
-    "area": "93029",
-    "density": "106",
-    "population": "9877365"
 }, {
     "name": "Moldova",
     "id": "MD",
@@ -437,24 +293,6 @@
     "density": "102",
     "population": "3024100"
 }, {
-    "name": "Slovenia",
-    "id": "SI",
-    "area": "20273",
-    "density": "102",
-    "population": "2067741"
-}, {
-    "name": "Austria",
-    "id": "AT",
-    "area": "83879",
-    "density": "102",
-    "population": "8572895"
-}, {
-    "name": "Turkey",
-    "id": "TR",
-    "area": "783562",
-    "density": "101",
-    "population": "77695904"
-}, {
     "name": "United Arab Emirates",
     "id": "AE",
     "area": "83600",
@@ -472,12 +310,6 @@
     "area": "739",
     "density": "96",
     "population": "71293"
-}, {
-    "name": "Spain",
-    "id": "ES",
-    "area": "505990",
-    "density": "92",
-    "population": "46439864"
 }, {
     "name": "Serbia",
     "id": "RS",
@@ -497,12 +329,6 @@
     "density": "91",
     "population": "4667096"
 }, {
-    "name": "Malaysia",
-    "id": "MY",
-    "area": "330803",
-    "density": "94",
-    "population": "31009000"
-}, {
     "name": "Egypt",
     "id": "EG",
     "area": "1002450",
@@ -515,23 +341,11 @@
     "density": "85",
     "population": "6092000"
 }, {
-    "name": "Romania",
-    "id": "RO",
-    "area": "238391",
-    "density": "84",
-    "population": "20121641"
-}, {
     "name": "Cambodia",
     "id": "KH",
     "area": "181035",
     "density": "84",
     "population": "15184116"
-}, {
-    "name": "Greece",
-    "id": "GR",
-    "area": "131957",
-    "density": "84",
-    "population": "11123034"
 }, {
     "name": "Ethiopia",
     "id": "ET",
@@ -611,12 +425,6 @@
     "density": "69",
     "population": "30492800"
 }, {
-    "name": "Lesotho",
-    "id": "LS",
-    "area": "30355",
-    "density": "68",
-    "population": "2074000"
-}, {
     "name": "Brunei",
     "id": "BN",
     "area": "5765",
@@ -629,18 +437,6 @@
     "density": "66",
     "population": "10777500"
 }, {
-    "name": "Bulgaria",
-    "id": "BG",
-    "area": "111002",
-    "density": "66",
-    "population": "7282041"
-}, {
-    "name": "Ireland",
-    "id": "IE",
-    "area": "70273",
-    "density": "65",
-    "population": "4585400"
-}, {
     "name": "Georgia",
     "id": "GE",
     "area": "69700",
@@ -652,12 +448,6 @@
     "area": "270764",
     "density": "64",
     "population": "17322796"
-}, {
-    "name": "Cook Islands",
-    "id": "CK",
-    "area": "237",
-    "density": "63",
-    "population": "14974"
 }, {
     "name": "Ecuador",
     "id": "EC",
@@ -731,12 +521,6 @@
     "density": "46",
     "population": "9469200"
 }, {
-    "name": "Lithuania",
-    "id": "LT",
-    "area": "65300",
-    "density": "45",
-    "population": "2944459"
-}, {
     "name": "Montenegro",
     "id": "ME",
     "area": "13812",
@@ -754,12 +538,6 @@
     "area": "245857",
     "density": "43",
     "population": "10628972"
-}, {
-    "name": "South Africa",
-    "id": "ZA",
-    "area": "1220813",
-    "density": "43",
-    "population": "52981991"
 }, {
     "name": "Palau",
     "id": "PW",
@@ -803,12 +581,6 @@
     "density": "35",
     "population": "20696070"
 }, {
-    "name": "Faroe Islands",
-    "id": "FO",
-    "area": "1399",
-    "density": "34",
-    "population": "48244"
-}, {
     "name": "Zimbabwe",
     "id": "ZW",
     "area": "390757",
@@ -827,12 +599,6 @@
     "density": "32",
     "population": "28946101"
 }, {
-    "name": "Latvia",
-    "id": "LV",
-    "area": "64562",
-    "density": "31",
-    "population": "2005200"
-}, {
     "name": "Mozambique",
     "id": "MZ",
     "area": "799380",
@@ -844,12 +610,6 @@
     "area": "199945",
     "density": "29.5",
     "population": "5895100"
-}, {
-    "name": "Estonia",
-    "id": "EE",
-    "area": "45339",
-    "density": "29",
-    "population": "1313271"
 }, {
     "name": "Laos",
     "id": "LA",
@@ -863,12 +623,6 @@
     "density": "25.2",
     "population": "351461"
 }, {
-    "name": "Brazil",
-    "id": "BR",
-    "area": "8515767",
-    "density": "23.8",
-    "population": "202768562"
-}, {
     "name": "Peru",
     "id": "PE",
     "area": "1285216",
@@ -881,29 +635,11 @@
     "density": "22",
     "population": "16634603"
 }, {
-    "name": "Sweden",
-    "id": "SE",
-    "area": "449964",
-    "density": "21.7",
-    "population": "9747355"
-}, {
-    "name": "Bhutan",
-    "id": "BT",
-    "area": "38394",
-    "density": "20",
-    "population": "769500"
-}, {
     "name": "Uruguay",
     "id": "UY",
     "area": "176215",
     "density": "18.6",
     "population": "3286314"
-}, {
-    "name": "Finland",
-    "id": "FI",
-    "area": "338424",
-    "density": "16.2",
-    "population": "5489057"
 }, {
     "name": "South Sudan",
     "id": "SS",
@@ -923,12 +659,6 @@
     "density": "16.8",
     "population": "30894000"
 }, {
-    "name": "New Zealand",
-    "id": "NZ",
-    "area": "270467",
-    "density": "17.21",
-    "population": "4654002"
-}, {
     "name": "Angola",
     "id": "AO",
     "area": "1246700",
@@ -946,12 +676,6 @@
     "area": "2381741",
     "density": "16.2",
     "population": "38700000"
-}, {
-    "name": "Norway",
-    "id": "NO",
-    "area": "323782",
-    "density": "15.6",
-    "population": "5063709"
 }, {
     "name": "Papua New Guinea",
     "id": "PG",
@@ -1019,12 +743,6 @@
     "density": "8.78",
     "population": "11274106"
 }, {
-    "name": "Russia",
-    "id": "RU",
-    "area": "17098242",
-    "density": "8.42",
-    "population": "143975923"
-}, {
     "name": "Central African Republic",
     "id": "CF",
     "area": "622436",
@@ -1048,12 +766,6 @@
     "area": "214999",
     "density": "3.65",
     "population": "784894"
-}, {
-    "name": "Canada",
-    "id": "CA",
-    "area": "9984670",
-    "density": "3.63",
-    "population": "36256492"
 }, {
     "name": "Libya",
     "id": "LY",
@@ -1079,24 +791,6 @@
     "density": "3.26",
     "population": "534189"
 }, {
-    "name": "Iceland",
-    "id": "IS",
-    "area": "102800",
-    "density": "3.21",
-    "population": "329740"
-}, {
-    "name": "Australia",
-    "id": "AU",
-    "area": "7692024",
-    "density": "3.12",
-    "population": "23975613"
-}, {
-    "name": "Namibia",
-    "id": "NA",
-    "area": "825118",
-    "density": "2.56",
-    "population": "2113077"
-}, {
     "name": "Western Sahara",
     "id": "EH",
     "area": "252120",
@@ -1109,23 +803,11 @@
     "density": "1.92",
     "population": "3000000"
 }, {
-    "name": "Pitcairn Islands",
-    "id": "PN",
-    "area": "47",
-    "density": "1.19",
-    "population": "56"
-}, {
     "name": "Falkland Islands",
     "id": "FK",
     "area": "12173",
     "density": "0.21",
     "population": "2563"
-}, {
-    "name": "Greenland",
-    "id": "GL",
-    "area": "2166000",
-    "density": "0.03",
-    "population": "55984"
 }, {
     "name": "Macau",
     "id": "MO",
@@ -1145,18 +827,6 @@
     "density": "1101",
     "population": "37429"
 }, {
-    "name": "Jersey",
-    "id": "JE",
-    "area": "116",
-    "density": "844",
-    "population": "97857"
-}, {
-    "name": "Guernsey",
-    "id": "GG",
-    "area": "78",
-    "density": "800",
-    "population": "62431"
-}, {
     "name": "Palestine",
     "id": "PS",
     "area": "6020",
@@ -1168,54 +838,18 @@
     "area": "36191",
     "density": "647",
     "population": "23410280"
-}, {
-    "name": "Mayotte",
-    "id": "YT",
-    "area": "374",
-    "density": "568",
-    "population": "212600"
-}, {
-    "name": "South Korea",
-    "id": "KR",
-    "area": "100210",
-    "density": "503",
-    "population": "50423955"
-}, {
-    "name": "Nauru",
-    "id": "NR",
-    "area": "21",
-    "density": "480",
-    "population": "10084"
-}, {
-    "name": "Tuvalu",
-    "id": "TV",
-    "area": "26",
-    "density": "436",
-    "population": "11323"
-}, {
+},  {
     "name": "Saint Barthélemy",
     "id": "BL",
     "area": "21",
     "density": "426",
     "population": "8938"
 }, {
-    "name": "Martinique",
-    "id": "MQ",
-    "area": "1128",
-    "density": "349",
-    "population": "394173"
-}, {
     "name": "Curaçao",
     "id": "CW",
     "area": "444",
     "density": "339",
     "population": "150563"
-}, {
-    "name": "Réunion",
-    "id": "RE",
-    "area": "2512",
-    "density": "327",
-    "population": "821136"
 }, {
     "name": "Marshall Islands",
     "id": "MH",
@@ -1247,12 +881,6 @@
     "density": "259",
     "population": "100892"
 }, {
-    "name": "Guadeloupe",
-    "id": "GP",
-    "area": "1630",
-    "density": "247",
-    "population": "403355"
-}, {
     "name": "North Korea",
     "id": "KP",
     "area": "122762",
@@ -1277,35 +905,11 @@
     "density": "166",
     "population": "1815606"
 }, {
-    "name": "Isle of Man",
-    "id": "IM",
-    "area": "572",
-    "density": "148",
-    "population": "84497"
-}, {
-    "name": "Kiribati",
-    "id": "KI",
-    "area": "726",
-    "density": "147",
-    "population": "106461"
-}, {
     "name": "Federated States of Micronesia",
     "id": "FM",
     "area": "701",
     "density": "145",
     "population": "101351"
-}, {
-    "name": "China",
-    "id": "CN",
-    "area": "9640821",
-    "density": "142.56",
-    "population": "1374421995"
-}, {
-    "name": "Tokelau",
-    "id": "TK",
-    "area": "10",
-    "density": "141",
-    "population": "1411"
 }, {
     "name": "Northern Mariana Islands",
     "id": "MP",
@@ -1349,12 +953,6 @@
     "density": "66",
     "population": "21133"
 }, {
-    "name": "Norfolk Island",
-    "id": "NF",
-    "area": "35",
-    "density": "66",
-    "population": "2302"
-}, {
     "name": "Turks and Caicos Islands",
     "id": "TC",
     "area": "497",
@@ -1373,12 +971,6 @@
     "density": "48",
     "population": "13135"
 }, {
-    "name": "Cocos Islands",
-    "id": "CC",
-    "area": "14",
-    "density": "39",
-    "population": "550"
-}, {
     "name": "Saint Helena, Ascension and Tristan da Cunha",
     "id": "SH",
     "area": "122",
@@ -1390,12 +982,6 @@
     "area": "2345095",
     "density": "29.6",
     "population": "69360000"
-}, {
-    "name": "Saint Pierre and Miquelon",
-    "id": "PM",
-    "area": "242",
-    "density": "25.1",
-    "population": "6081"
 }, {
     "name": "Vanuatu",
     "id": "VU",
@@ -1409,12 +995,6 @@
     "density": "18.2",
     "population": "515870"
 }, {
-    "name": "Christmas Island",
-    "id": "CX",
-    "area": "137",
-    "density": "15.1",
-    "population": "2072"
-}, {
     "name": "New Caledonia",
     "id": "NC",
     "area": "18575",
@@ -1426,22 +1006,4 @@
     "area": "342000",
     "density": "13",
     "population": "4448000"
-}, {
-    "name": "Niue",
-    "id": "NU",
-    "area": "261",
-    "density": "6.18",
-    "population": "1613"
-}, {
-    "name": "French Guiana",
-    "id": "GF",
-    "area": "86504",
-    "density": "2.65",
-    "population": "229040"
-}, {
-    "name": "Svalbard and Jan Mayen",
-    "id": "SJ",
-    "area": "61399",
-    "density": "0.04",
-    "population": "2655"
 }]
