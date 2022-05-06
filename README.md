@@ -9,7 +9,7 @@ Project of Data Visualization (COM-480)
 | Alessandro Tavazzi       | 342501      |
 | Nicolas d'Argenlieu| 276507 |
 
-[Milestone 1](./milestones/milestone1.pdf)
+[Milestone 1](./milestones/milestone1.pdf) * [Milestone 2](./milestones/milestone2.pdf) 
 
 Welcome to our project of Data Visualization. 
 
@@ -22,3 +22,11 @@ At the same time, we aim to give the possibility to get an overview of the confl
 **10% of the final grade**
 
 [Milestone 1 report](./milestones/milestone1.pdf)
+
+### 📘 Milestone 2 
+
+**10% of the final grade**
+
+[Milestone 1 report](./milestones/milestone2.pdf)
+
+[Website (currently draft)](https://com-480-data-visualization.github.io/datavis-project-2022-independentua/)
