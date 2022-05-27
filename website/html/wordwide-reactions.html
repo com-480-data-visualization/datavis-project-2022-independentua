@@ -36,15 +36,22 @@
                 x: d => d[0],
                 y: d => d[1],
                 xDomain: d3.map(data, d => d[0]), // sort by descending frequency
-                yFormat: "%",
+                xType:d3.scaleTime,
+                yFormat: "d",
                 yLabel: "Date",
                 width:500,
                 height: 500,
                 color: "steelblue"
             });
 
+            const margin = {top: 10, right: 30, bottom: 30, left: 60},
+                width = 900 - margin.left - margin.right,
+                height = 400 - margin.top - margin.bottom;
+
             d3.select("#refugees_data")
                 .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
                 .html(chart.innerHTML)
 
 
@@ -57,10 +64,10 @@
         y = d => d, // given d in data, returns the (quantitative) y-value
         title, // given d in data, returns the title text
         marginTop = 20, // the top margin, in pixels
-        marginRight = 0, // the right margin, in pixels
-        marginBottom = 30, // the bottom margin, in pixels
-        marginLeft = 40, // the left margin, in pixels
-        width = 640, // the outer width of the chart, in pixels
+        marginRight = 20, // the right margin, in pixels
+        marginBottom = 150, // the bottom margin, in pixels
+        marginLeft = 60, // the left margin, in pixels
+        width = 100, // the outer width of the chart, in pixels
         height = 400, // the outer height of the chart, in pixels
         xDomain, // an array of (ordinal) x-values
         xRange = [marginLeft, width - marginRight], // [left, right]
@@ -71,14 +78,14 @@
         yFormat, // a format specifier string for the y-axis
         yLabel, // a label for the y-axis
         color = "currentColor" // bar fill color
-        } = {}) {
+    } = {}) {
         // Compute values.
         const X = d3.map(data, x);
         const Y = d3.map(data, y);
 
         // Compute default domains, and unique the x-domain.
         if (xDomain === undefined) xDomain = X;
-        if (yDomain === undefined) yDomain = [0, d3.max(Y)];
+        if (yDomain === undefined) yDomain = [d3.min(Y), d3.max(Y)];
         xDomain = new d3.InternSet(xDomain);
 
         // Omit any data not present in the x-domain.
