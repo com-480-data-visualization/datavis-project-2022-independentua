@@ -41,12 +41,13 @@
                 yLabel: "Date",
                 width:500,
                 height: 500,
-                color: "steelblue"
+                color: "steelblue",
+                title: d => d[1]
             });
 
             const margin = {top: 10, right: 30, bottom: 30, left: 60},
                 width = 900 - margin.left - margin.right,
-                height = 400 - margin.top - margin.bottom;
+                height = 500 - margin.top - margin.bottom;
 
             d3.select("#refugees_data")
                 .append("svg")
@@ -94,7 +95,8 @@
         // Construct scales, axes, and formats.
         const xScale = d3.scaleBand(xDomain, xRange).padding(xPadding);
         const yScale = yType(yDomain, yRange);
-        const xAxis = d3.axisBottom(xScale).tickSizeOuter(0);
+        xDomain = [d3.min(X), d3.max(X)]
+        const xAxis = d3.axisBottom(d3.scaleTime(xDomain, xRange)).tickSizeOuter(0);
         const yAxis = d3.axisLeft(yScale).ticks(height / 40, yFormat);
 
         // Compute titles.
@@ -106,6 +108,8 @@
             const T = title;
             title = i => T(O[i], i, data);
         }
+
+        console.log(title)
 
         const svg = d3.create("svg")
             .attr("width", width)
