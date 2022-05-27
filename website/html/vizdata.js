@@ -50,27 +50,42 @@ series
   .tooltip()
   .useHtml(true)
   .format(function () {
+    console.log(this.value)
     return (
-      '<span style="color: #d9d9d9">Rel(%)</span>: ' +
+      '<span style="color: #d9d9d9">Currency</span>: ' +
+        this.getData('curr').toLocaleString() +
+        '<br/>' +
+      '<span style="color: #d9d9d9">Relative value</span>: ' +
       parseFloat(this.value).toLocaleString() +
       ' % <br/>' +
+    '<span style="color: #d9d9d9">Current value</span>: '
+    +    parseFloat(this.getData('ref')).toLocaleString() +
+      '<br/>' + '<span style="color: #d9d9d9">Reference value</span>: '
+    +parseFloat(this.getData('value(vsUSD)')).toLocaleString()+ ' (USD)'+
+    '<br/>' +
       '<span style="color: #d9d9d9">Mean</span>: ' +
-      parseFloat(this.getData('mean')).toLocaleString() +
-      '<br/>' +
-      '<span style="color: #d9d9d9">max</span>: ' +
-      parseFloat(this.getData('max')).toLocaleString()
+      parseFloat(this.getData('mean')).toLocaleString() + ' (USD)'+
+      '<br/>' +   '<span style="color: #d9d9d9">Min and Max</span>: ' +
+        parseFloat(this.getData('min')).toLocaleString() +' and ' +parseFloat(this.getData('max')).toLocaleString()
+        + ' (USD) <br/>'
     );
   });
 
 var scale = anychart.scales.ordinalColor([
-  { less:99 },
-  { from: 99, to: 101 },
-  { greater: 101 }
+  { less:98 },
+  { from: 99, to: 99.5 },
+  { from: 99.5, to: 100 },
+  { from: 100, to: 100.5 },
+  { from: 100.5, to: 101 },
+  { greater: 102 }
 ]);
 scale.colors([
-  '#81d4fa',
-  '#01579b',
-  '#000000'
+    '#000000',
+    '#014377',
+    '#0277bd',
+    '#039be5',
+    '#4fc3f7',
+    '#81d4fa',
 ]);
 console.log()
 var colorRange = map.colorRange();
