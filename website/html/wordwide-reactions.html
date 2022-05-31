@@ -17,73 +17,101 @@
         <script type="text/javascript" src="./../lib/world_reactions_utils.js"></script>
     </head>
 <body>
-<h1> Wordwide reactions </h1>
+<h1 style="font-family: Rockwell;"> Wordwide reactions </h1>
 
+<div class="centered">
 <p>
     In order to understand the conflict in Ukraine, it is also very important to get an overview of the situation abroad. 
     Indeed, Ukraine is defended by its population, but influential factors come in a wide range of flavors and from a larger area than Ukraine only.
     <br><br>
     This page details 4 different information covering the following aspects of Ukraine's invasion international impact:
+</p>
 
-    <div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
-        <div data-role="tile" data-effect="hover-zoom-down">
-            <div class="slide-front">
-                <img src="https://cdn4.iconfinder.com/data/icons/refugees-evacuee-war/280/refugees-005-512.png" class="icon">
-            </div>
-            <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
-                <p class="text-center">
-                    <a href="#refugees_data" class="nostyleanchor">
-                    Refugees
-                    </a>
-                </p>
-            </div>
+<div class="row_aligned">
+    <div data-role="tile" data-effect="hover-zoom-down" style="margin:2%; background-color: cadetblue;">
+        <div class="slide-front">
+            <img src="https://cdn4.iconfinder.com/data/icons/refugees-evacuee-war/280/refugees-005-512.png" class="icon">
         </div>
-
-        <div data-role="tile" data-effect="hover-zoom-down">
-            <div class="slide-front">
-                <img src="https://cdn0.iconfinder.com/data/icons/o022-economic-sanctions-outline/64/map_country_lockdown_lock-512.png" class="icon">
-            </div>
-            <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
-                <a href="#sanctions_data" class="nostyleanchor">
-                <p class="text-center">
-                    Sanctions
-                </p>
-                </a>
-            </div>
+        <a href="#refugees_data" class="nostyleanchor">
+        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+            <p class="text-center">
+                Refugees
+            </p>
         </div>
+        </a>
+    </div>
 
-        <div data-role="tile" data-effect="hover-zoom-down">
-            <div class="slide-front">
-                <img src="https://cdn4.iconfinder.com/data/icons/aami-web-internet/64/aami13-13-512.png" class="icon">
-            </div>
-            <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
-                <p class="text-center">
-                    Tweet Emotions
-                </p>
-            </div>
+    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: darkkhaki;">
+        <div class="slide-front">
+            <img src="https://cdn0.iconfinder.com/data/icons/o022-economic-sanctions-outline/64/map_country_lockdown_lock-512.png" class="icon">
         </div>
+        <a href="#sanctions_data" class="nostyleanchor">
+        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+            <p class="text-center">
+                Sanctions
+            </p>
+        </div>
+        </a>
+    </div>
 
-        <div data-role="tile" data-effect="hover-zoom-down">
-            <div class="slide-front">
-                <img src="https://cdn0.iconfinder.com/data/icons/lagotline-survey-and-rating/64/Survey_and_Rating-05-512.png" class="icon">
-            </div>
-            <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
-                <p class="text-center">
-                    Tweet Sentiment
-                </p>
-            </div>
+    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: firebrick;">
+        <div class="slide-front">
+            <img src="https://cdn4.iconfinder.com/data/icons/aami-web-internet/64/aami13-13-512.png" class="icon">
+        </div>
+        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+            <p class="text-center">
+                Tweet Emotions
+            </p>
         </div>
     </div>
 
+    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: teal;">
+        <div class="slide-front">
+            <img src="https://cdn0.iconfinder.com/data/icons/lagotline-survey-and-rating/64/Survey_and_Rating-05-512.png" class="icon">
+        </div>
+        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+            <p class="text-center">
+                Tweet Sentiment
+            </p>
+        </div>
+    </div>
+</div>
+
+<p>
+    Each one of these themas relate to an aspect of the war as perceived or enforced by non-Ukrainian individuals and entities. 
+    We detail them below:
+    <ul>
+        <li>Refugees <br> The military attacks, bombings and blocus on the invaded part of Ukraine forced a large amount of civilians to 
+            flee their place of living. As a consequence, the neighboring countries, namely Moldavia, Romania, Slovakia, Hungary, 
+            Poland and Belarus, have welcomed millions of distressed people, having left everything behind to get to safety. 
+            The refugees data was fetched from the <a href="https://www.unhcr.org/fr/urgence-ukraine.html">United Nations High 
+            Commissioner for Refugees website</a> dedicated to the tracking and information of the refugee crisis.</li>
+        <li>Sanctions <br> A large wave of economic, social and geopolitical sanctions was taken from multiple countries against Russia 
+            for starting this war. We focus on some of the most important with the visualization of sanctions issued by Australia,
+            Canada, the EU, France, Switzerland, the UK and the US. The data is gracefully provided by the international sanctions
+            tracking firm <a href="https://www.castellum.ai/">Castellum</a>. Castellum tracks different types of issued international 
+            filings and has a scope that is larger than the invasion only.
+        </li>
+        <li>Tweets Sentiments and Emotions <br> An important consequence of the invasion of Ukraine is the individuals reactions across 
+            the world. A very good indicator of it is social networks, and especially Twitter. Using 
+            <a href="https://www.kaggle.com/datasets/bwandowando/ukraine-russian-crisis-twitter-dataset-1-2-m-rows">a dataset of 35.58M tweets</a>  
+            selected as linked to the war in Ukraine, we run Machine Learning models on the extracted texts and compute the sentiment and 
+            emotion of a random subsample of the dataset. The sentiment is computed using a <a href="https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment?text=Urgent%0A500+Russian+tanks+approaching+the+capital%2C+Kyiv%2C+from+all+sides.%0A+%23Russia+%23Ukraine+%23Russia+%23Ukraine%0A%23Kyiv">
+            natural language processing model</a>. It indicates wether the tweet demonstrates a positive, neutral or negative sentiment.
+            The emotion is one of anger, disgust, fear, joy, neutral, sadness or suprise. It is detected in each tweet using 
+            <a href="https://huggingface.co/j-hartmann/emotion-english-distilroberta-base">anoter NLP model</a>.
+        </li>
+    </ul>  
 </p>
 
 <div id="refugees_data"></div>
 
 <p>This is a graph of the incoming refugee population.</p>
 
-<!-- <iframe title="Sanctions on Russia by Date &amp;amp; Country" aria-label="Stacked Column Chart" id="datawrapper-chart-2XXNx" src="https://datawrapper.dwcdn.net/2XXNx/13/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="550"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();</script> -->
-
 <div id="sanctions_data"></div>
+
+</div>
+
 
 <script>
     let path = './../../data/NDA_UNHCR_refugees_cleaned.csv';
@@ -131,7 +159,7 @@
                 width = 900 - margin.left - margin.right,
                 height = 500 - margin.top - margin.bottom;
 
-        d3.select("#refugees_data")
+        d3.select("#sanctions_data")
             .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
