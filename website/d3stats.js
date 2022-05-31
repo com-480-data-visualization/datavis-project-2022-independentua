@@ -4,22 +4,38 @@ function prevshowOrHideDiv() {
   i=i-1
 oilprevshowOrHideDiv()
 gasprevshowOrHideDiv()
-mapprevshowOrHideDiv()
+mapprevshowOrHideDiv(i+1)
 
 }
 
-function nextshowOrHideDiv() {
+function supernextshowOrHideDiv() {
   i=i+1
 oilnextshowOrHideDiv()
 gasnextshowOrHideDiv()
-mapnextshowOrHideDiv()
+mapnextshowOrHideDiv(i-1)
+
+}
+
+function superprevshowOrHideDiv() {
+  i=i-10
+oilprevshowOrHideDiv()
+gasprevshowOrHideDiv()
+mapprevshowOrHideDiv(i+10)
+
+}
+
+function supernextshowOrHideDiv() {
+  i=i+10
+oilnextshowOrHideDiv()
+gasnextshowOrHideDiv()
+mapnextshowOrHideDiv(i-10)
 
 }
 
 //d3.select("body").append("p").text("New paragraph!");
 const margin = {top: 40, right: 30, bottom: 40, left: 60},
     width = 460 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+    height = 200 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 const svg = d3.select("#oilviz")
@@ -431,28 +447,28 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-pro
 
 
 
- function mapprevshowOrHideDiv() {
+ function mapprevshowOrHideDiv(j) {
     var v = document.getElementById(array[i]);
     if (v.style.display === "none") {
        v.style.display = "block";
     } else {
        v.style.display = "none";
     }
-    var w = document.getElementById(array[i+1]);
+    var w = document.getElementById(array[j]);
     if (w.style.display === "none") {
        w.style.display = "block";
     } else {
        w.style.display = "none";
     }
  }
- function mapnextshowOrHideDiv() {
+ function mapnextshowOrHideDiv(j) {
     var v = document.getElementById(array[i]);
     if (v.style.display === "none") {
        v.style.display = "block";
     } else {
        v.style.display = "none";
     }
-    var w = document.getElementById(array[i-1]);
+    var w = document.getElementById(array[j]);
     if (w.style.display === "none") {
        w.style.display = "block";
     } else {

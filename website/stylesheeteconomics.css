@@ -23,6 +23,12 @@
   display: inline-block;
 }
 
+#dotbuttons{
+  position: relative;
+  margin-left: 100px;
+  display: inline-block;
+}
+
 .datebutton{
   position: relative;
   text-align: center;
@@ -82,7 +88,7 @@ transform: translate(-50%, -50%);
 }
 
 /* Hide the images by default */
-.mySlides {
+.slide {
   display: none;
 }
 
@@ -118,7 +124,7 @@ transform: translate(-50%, -50%);
   color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
-  position: absolute;
+  position: relative;
   bottom: 8px;
   width: 100%;
   text-align: center;
@@ -127,10 +133,10 @@ transform: translate(-50%, -50%);
 /* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
+  font-size: 14px;
+  padding-left: 20px;
   position: absolute;
-  top: 0;
+  top: -25px;
 }
 
 /* The dots/bullets/indicators */
