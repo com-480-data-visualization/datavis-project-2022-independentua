@@ -4,7 +4,7 @@
 <head>
     <title>Independent UA</title>
 
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 
 
     <!-- Load d3.js -->
@@ -108,6 +108,11 @@
 
 
 <div class="section">
+  <div class="datebutton">
+  <button id="prev" onclick="prevshowOrHideDiv()"><</button>
+      <span id="date"></span>
+  <button id="next" onclick="nextshowOrHideDiv()">></button>
+</div>
   <div class="slide">
     <h1>Analysis and vizualisation of the economic impact of the war</h1>
        <p>Analysis of the inflation of the dollar
@@ -123,7 +128,7 @@
       MoM	0.84	0.91	1.34	0.56	</p>
 
       <div class="container">
-        <img src="https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/datafiles_currencies/yearlyinflationusa.png" alt="Yearly inflation rate of the US-dollar">
+        <img id="imageinflation" src="https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/datafiles_currencies/yearlyinflationusa.png" alt="Yearly inflation rate of the US-dollar">
       <div class="centered"> <h1>USA yearly inflation rate</h1> </div>
     </div>
   </div>
@@ -285,24 +290,41 @@
 
 
 
-             <button id="prev" onclick="prevshowOrHideDiv()"><</button>
-             <span id="date" style="margin:0px 30px;"></span>
-             <button id="next" onclick="nextshowOrHideDiv()">></button>
+      </div>
+
+      <div class="slide">
+
+
+
+        <p>This is a paragraph.</p>
+
+        <div style="display: flex" >
+          <div id="gasviz">  <p> Cette guerre a impliqué l'ensemble des puissances européennes selon qu'elles étaient pour ou contre le parti de l'empereur,
+              à l'exception de l'Angleterre et de la Russie — qui ont néanmoins indirectement œuvré contre le parti des Habsbourg. L'emploi
+              de mercenaires était la règle. Les combats se déroulèrent surtout dans les territoires d’Europe centrale dépendant du Saint-Empire
+              , puis se portèrent sur la plaine de Flandre, le nord de la péninsule italienne ou encore dans la péninsule ibérique.
+              Les batailles, les famines, les massacres et les maladies ont provoqué plusieurs millions de morts, tant civils que militaires.
+              Cette « guerre civile européenne » a lourdement pesé sur la démographie et l'économie des États allemands et du royaume d'Espagne,
+               et assis l'hégémonie de la France, qui s'épanouit davantage encore sous Louis XIV.
+             </p>
+</div>
+    
+
+          <div class="container">
+            <img id="imagegaz" src="https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/datafiles_currencies/map-of-gas-exports-1090x1147.png" alt="Russian gas exportation">
+            <div class="centered"> <h1>USA yearly inflation rate</h1> </div>
+          </div>
+        </div>
 
       </div>
 
       <div class="slide">
-        <button id="prev" onclick="prevshowOrHideDiv()"><</button>
-        <span id="date" style="margin:0px 30px;"></span>
-        <button id="next" onclick="nextshowOrHideDiv()">></button>
-
-        <p>This is a paragraph.</p>
+        <p class="myparagraph">This is a paragraph.</p>
         <div id="oilviz"></div>
-        <p>This is a paragraph.</p>
-        <div id="gasviz"></div>
-        <p>This is a paragraph.</p>
-
       </div>
+
+
+
 </div>
 <div class="section">
         <ul>
@@ -315,6 +337,7 @@
     <script type="text/javascript" src="d3stats.js"></script>
     <script type="text/javascript" src="vizdata.js"></script>
     <script type="text/javascript" src="vizcontainer.js"></script>
+
     <link href="stylesheeteconomics.css" type="text/css" rel="stylesheet">
 
 <script>

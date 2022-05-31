@@ -1,5 +1,40 @@
+#date{
+  margin:0px 30px;
+  display: inline-block;
+  width: 250px;
+  text-align: center;
+}
+
+#oilviz{
+  position: relative;
+  left: 100px;
+  width: 45%;
+  height: auto;
+  display: inline-block;
+  float:left;
+  margin-right: 10px;
+}
+
+#gasviz{
+  position: relative;
+  left: 100px;
+  width: 45%;
+  height: auto;
+  display: inline-block;
+}
+
+.datebutton{
+  position: relative;
+  text-align: center;
+}
+
+.myparagraph{
+  position: relative;
+  text-align: center;
+}
+
 .containermap{
-  width: 90%;
+  width: auto;
   height: 85%;
   margin: 0px 70px 15px 70px;
   position: relative;
@@ -26,11 +61,16 @@ left: 50%;
 transform: translate(-50%, -50%);
 }
 
-img {
+#imageinflation {
   width: 70%;
   height: auto;
 }
 
+#imagegaz {
+  width: 50%;
+  height: auto;
+  display: inline-block;
+}
 
 * {box-sizing:border-box}
 

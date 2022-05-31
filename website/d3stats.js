@@ -1,7 +1,25 @@
+var i = 0;
+
+function prevshowOrHideDiv() {
+  i=i-1
+oilprevshowOrHideDiv()
+gasprevshowOrHideDiv()
+mapprevshowOrHideDiv()
+
+}
+
+function nextshowOrHideDiv() {
+  i=i+1
+oilnextshowOrHideDiv()
+gasnextshowOrHideDiv()
+mapnextshowOrHideDiv()
+
+}
+
 //d3.select("body").append("p").text("New paragraph!");
 const margin = {top: 40, right: 30, bottom: 40, left: 60},
     width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    height = 300 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 const svg = d3.select("#oilviz")
@@ -17,7 +35,7 @@ var radii= [108.98,110,107,106, 46.26, 48,43,49] ;
 var array_x= [];
 
 svg.append("circle")
-.attr("fill", "red")
+.attr("fill", "blue")
 .attr("stroke", "none")
 .attr("cx", 46.26)
 .attr("cy", 108.98)
@@ -25,8 +43,7 @@ svg.append("circle")
 
 
 
-   function prevshowOrHideDiv() {
-       i = i -1
+   function oilprevshowOrHideDiv() {
        d3.selectAll("circle")
        .data(radii)
        .attr('cx', radii[4+i])
@@ -34,15 +51,13 @@ svg.append("circle")
        .attr('r', 3) // 10, 20, 50
        .style("fill", "blue");
     }
-    function nextshowOrHideDiv() {
-      i = i+1
+    function oilnextshowOrHideDiv() {
       d3.selectAll("circle")
       .data(radii)
       .attr('cx', radii[4+i])
       .attr('cy', radii[i])
       .attr('r', 3) // 10, 20, 50
       .style("fill", "blue");
-
     }
 
 //Read the data
@@ -76,9 +91,11 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-pro
     // Add Y axis
     const y = d3.scaleLinear()
       .domain([0, d3.max(data, function(d) { return +d.value; })])
-      .range([ height, 0 ]);
+      .range([ height, 0 ])
+    myy = d3.axisLeft(y)
+            .ticks(7);
     svg.append("g")
-      .call(d3.axisLeft(y));
+      .call(myy);
 
     svg.append("text")
     .attr("x", width / 2 )
@@ -113,11 +130,12 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-pro
         .y(function(d) { return y(d.value) })
         )
 
-        var array_y = [y(data[10].value)]
-        var array_x = [x(data[10].date)]
-        console.log(array_y)
-        console.log(array_x)
-
+        for (let i = 0; i < data.length; i++) {
+                console.log(y(data[i].value))
+                console.log(x(data[i].date))
+            ;
+  }
+  /* mettre i et 2*i pour prendre l'index
 
     /*  svg.selectAll("myCircles")
           .data(data)
@@ -288,7 +306,7 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-pro
       "container0526"
     ];
 // append the svg object to the body of the page
-const svg2 = d3.select("#oilviz")
+const svg2 = d3.select("#gasviz")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -296,15 +314,13 @@ const svg2 = d3.select("#oilviz")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
 
-    svg.append("circle")
-    .attr("fill", "red")
-    .attr("stroke", "none")
-    .attr("cx", 46.26)
-    .attr("cy", 108.98)
-    .attr("r", 3);
+    var i = 0;
+
+    var radii= [108.98,110,107,106, 46.26, 48,43,49] ;
+    var array_x= [];
 
     svg2.append("circle")
-    .attr("fill", "red")
+    .attr("fill", "blue")
     .attr("stroke", "none")
     .attr("cx", 46.26)
     .attr("cy", 108.98)
@@ -312,36 +328,23 @@ const svg2 = d3.select("#oilviz")
 
 
 
-        function prevshowOrHideDiv() {
-           i = i -1
-           svg.selectAll("circle")
+       function gasprevshowOrHideDiv() {
+           d3.selectAll("circle")
            .data(radii)
            .attr('cx', radii[4+i])
            .attr('cy', radii[i])
            .attr('r', 3) // 10, 20, 50
            .style("fill", "blue");
-
-            var v = document.getElementById(array[i+1]);
-            v.style.display = "none";
-            var w = document.getElementById(array[i]);
-            w.style.display = "block";
-           }
-
-
-        function nextshowOrHideDiv() {
-          i = i+1
-          svg.selectAll("circle")
+        }
+        function gasnextshowOrHideDiv() {
+          d3.selectAll("circle")
           .data(radii)
           .attr('cx', radii[4+i])
           .attr('cy', radii[i])
           .attr('r', 3) // 10, 20, 50
           .style("fill", "blue");
+}
 
-          var v = document.getElementById(array[i-1]);
-          v.style.display = "none";
-          var w = document.getElementById(array[i]);
-          w.style.display = "block";
-        }
 
 
 
@@ -413,7 +416,7 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-pro
         .y(function(d) { return y(d.value) })
         )
 
-        svg2.selectAll("myCircles")
+      /*  svg2.selectAll("myCircles")
           .data(data)
           .enter()
           .append("circle")
@@ -421,7 +424,38 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-pro
             .attr("stroke", "none")
             .attr("cx", function(d) { return x(d.date) })
             .attr("cy", function(d) { return y(d.value) })
-            .attr("r", 3)
+            .attr("r", 3)*/
 
 
 })
+
+
+
+ function mapprevshowOrHideDiv() {
+    var v = document.getElementById(array[i]);
+    if (v.style.display === "none") {
+       v.style.display = "block";
+    } else {
+       v.style.display = "none";
+    }
+    var w = document.getElementById(array[i+1]);
+    if (w.style.display === "none") {
+       w.style.display = "block";
+    } else {
+       w.style.display = "none";
+    }
+ }
+ function mapnextshowOrHideDiv() {
+    var v = document.getElementById(array[i]);
+    if (v.style.display === "none") {
+       v.style.display = "block";
+    } else {
+       v.style.display = "none";
+    }
+    var w = document.getElementById(array[i-1]);
+    if (w.style.display === "none") {
+       w.style.display = "block";
+    } else {
+       w.style.display = "none";
+    }
+ }

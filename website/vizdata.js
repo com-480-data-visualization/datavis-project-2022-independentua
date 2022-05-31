@@ -58,9 +58,8 @@ map.padding(0);
 
 var dataSet = anychart.data.set(data);
 var relavalue = dataSet.mapAs({ value: 'rel(%)' });
-console.log(relavalue)
 var series = map.choropleth(relavalue);
-console.log(series)
+
 
 series.labels(false);
 
@@ -79,7 +78,6 @@ series
   .tooltip()
   .useHtml(true)
   .format(function () {
-    console.log(this.value)
     return (
       '<span style="color: #d9d9d9">Currency</span>: ' +
         this.getData('curr').toLocaleString() +
@@ -116,7 +114,7 @@ scale.colors([
     '#4fc3f7',
     '#81d4fa',
 ]);
-console.log()
+
 var colorRange = map.colorRange();
 colorRange.enabled(true).padding([0, 0, 20, 0]);
 colorRange
