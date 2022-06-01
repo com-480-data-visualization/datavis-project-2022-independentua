@@ -157,8 +157,8 @@ function prevshowOrHideDiv() {
     alert("We don't show data for the selected date!  Data range: 01.01.2022-26.05.2022");
   }
   else{
-  oilprevshowOrHideDiv()
-  gasprevshowOrHideDiv()
+    oilshowOrHideDiv()
+    gasshowOrHideDiv()
   mapprevshowOrHideDiv(i+1)}
 }
 
@@ -171,9 +171,9 @@ function nextshowOrHideDiv() {
     alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");
   }
   else{
-oilnextshowOrHideDiv()
-gasnextshowOrHideDiv()
-mapnextshowOrHideDiv(i-1)}
+    oilshowOrHideDiv()
+    gasshowOrHideDiv()
+    mapnextshowOrHideDiv(i-1)}
 
 }
 
@@ -186,8 +186,8 @@ function superprevshowOrHideDiv() {
     alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");
   }
   else{
-oilprevshowOrHideDiv()
-gasprevshowOrHideDiv()
+    oilshowOrHideDiv()
+    gasshowOrHideDiv()
 mapprevshowOrHideDiv(i+7)}
 
 }
@@ -201,8 +201,8 @@ function supernextshowOrHideDiv() {
     alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");
   }
   else{
-oilnextshowOrHideDiv()
-gasnextshowOrHideDiv()
+    oilshowOrHideDiv()
+    gasshowOrHideDiv()
 mapnextshowOrHideDiv(i-7)}
 }
 
@@ -221,36 +221,30 @@ const svg = d3.select("#oilviz")
 
 
 
-var myarray =[23,4,13,34,23,45,23,12]
+       //create basic circles
+       svg.append("g").selectAll("circle")
+           .data(mypositionoil)
+           .enter()
+           .append("circle")
+           .attr("cx", mypositionoil[2*i+1] )
+           .attr("cy", mypositionoil[2*i])
+           .attr("r",3);
+
+       //button to swap over datasets
+
+               //rejoin data
+
+    function oilshowOrHideDiv() {
+               var circle = svg.select("g").selectAll("circle")
+
+               circle.transition()
+                   .duration(500)
+                   .attr("cx", mypositionoil[2*i+1] )
+                   .attr("cy", mypositionoil[2*i])
+                   .attr("r",2);
+                 }
 
 
-var focus = svg
-   .append('g')
-   .append('circle')
-     .style("fill", "blue")
-     .attr("stroke", "black")
-     .attr('r', 3)
-
-
-   function oilprevshowOrHideDiv() {
-     focus
-       .attr("cx", mypositionoil[2*i+1])
-       .attr("cy", mypositionoil[2*i])
-   }
-   /*
-     var object = d3.select('#oilviz').select("svg").selectAll('circle').data(mypositionoil);
-object.enter().append('mymarker')
-  .attr('cx', myarray[1+2*k])
-  .attr('cy', myarray[2*k])
-  .attr('r', 3) // 10, 20, 50
-  .style("fill", "blue");
-object.exit().remove();    }*/
-
-    function oilnextshowOrHideDiv() {
-      focus
-        .attr("cx", mypositionoil[2*i+1])
-        .attr("cy", mypositionoil[2*i])
-    }
 
 //Read the data
 d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/oil_2021.csv",
@@ -512,35 +506,174 @@ const svg2 = d3.select("#gasviz")
     .attr("transform", `translate(${marging.left},${marging.top})`);
 
 
-    var radii= [108.98,110,107,106, 46.26, 48,43,49] ;
-    var array_x= [];
+var mypositiongas = [0 ,127.238 ,
+      2.55246 ,127.238,
+      5.10492, 127.238 ,
+      7.65737 ,127.486 ,
+      10.2098, 126.246 ,
+      12.7623, 122.277 ,
+      15.3147, 125.006,
+      17.8672 ,125.006 ,
+      20.4197, 125.006 ,
+      22.9721 ,116.821 ,
+      25.5246 ,116.821 ,
+      28.077 ,105.411 ,
+      30.6295, 101.443 ,
+      33.1819, 111.612 ,
+      35.7344, 111.612 ,
+      38.2869, 111.612 ,
+      40.8393, 111.612 ,
+      43.3918, 107.148 ,
+      45.9442, 98.7148 ,
+      48.4967, 109.628 ,
+      51.0492, 118.061 ,
+      53.6016, 118.061,
+      56.1541, 118.061 ,
+      58.7065, 115.829 ,
+      61.259, 114.837 ,
+      63.8114, 110.124 ,
+      66.3639, 110.124 ,
+      68.9164, 78.8726 ,
+      71.4688, 78.8726 ,
+      74.0213, 78.8726 ,
+      76.5737, 82.097 ,
+      79.1262, 84.8253 ,
+      81.6786, 53.8219 ,
+      84.2311, 75.1522 ,
+      86.7836, 87.5536 ,
+      89.336 ,87.5536 ,
+      91.8885, 87.5536,
+      94.4409, 109.876 ,
+      96.9934, 113.348 ,
+      99.5458, 117.565 ,
+      102.098, 120.045 ,
+      104.651, 119.797 ,
+      107.203, 119.797 ,
+      109.756, 119.797 ,
+      112.308, 119.549 ,
+      114.861, 113.1 ,
+      117.413, 111.116 ,
+      119.966, 106.652 ,
+      122.518, 105.66 ,
+      125.07 ,105.66 ,
+      127.623, 105.66 ,
+      130.175, 105.66 ,
+      132.728, 108.884 ,
+      135.28 ,106.156 ,
+      137.833, 101.443 ,
+      140.385, 105.163 ,
+      142.938, 105.163 ,
+      145.49 ,105.163 ,
+      148.043, 109.38 ,
+      150.595, 111.86 ,
+      153.147, 104.667,
+      155.7 ,105.163 ,
+      158.252, 102.435 ,
+      160.805, 102.435 ,
+      163.357, 102.435 ,
+      165.91 ,97.7227,
+      168.462, 105.66 ,
+      171.015, 107.148 ,
+      173.567, 104.667 ,
+      176.12 ,101.195 ,
+      178.672, 101.195 ,
+      181.224, 101.195 ,
+      183.777, 106.156 ,
+      186.329, 109.38,
+      188.882, 103.923,
+      191.434, 100.947,
+      193.987, 99.2108,
+      196.539, 99.2108,
+      199.092, 99.2108,
+      201.644, 101.691,
+      204.197, 95.9865,
+      206.749, 89.5378 ,
+      209.302, 91.274 ,
+      211.854, 83.3371 ,
+      214.406, 83.3371 ,
+      216.959, 83.3371 ,
+      219.405, 83.0891,
+      221.957, 88.0496 ,
+      224.51 ,88.0496 ,
+      227.062, 84.5772 ,
+      229.615, 85.3213,
+      232.167, 85.3213 ,
+      234.72 ,85.3213,
+      237.272, 78.1285 ,
+      239.825, 72.4239,
+      242.377, 63.991 ,
+      244.93 ,69.943,
+      247.482, 61.7587 ,
+      250.035, 61.7587 ,
+      252.587, 61.7587 ,
+      255.139, 62.5028 ,
+      257.692, 56.5502 ,
+      260.244, 54.3179,
+      262.797, 47.8692,
+      265.349, 47.8692 ,
+      267.902, 47.8692,
+      270.454, 47.8692 ,
+      273.007, 34.4758 ,
+      275.559, 35.4679 ,
+      278.112, 43.4047 ,
+      280.664, 49.3574 ,
+      283.216, 56.5502 ,
+      285.769, 56.5502 ,
+      288.321, 56.5502 ,
+      290.874, 60.7666 ,
+      293.426, 49.1094 ,
+      295.979, 48.6133,
+      298.531, 47.1251,
+      301.084, 50.3495,
+      303.636, 50.3495 ,
+      306.189, 50.3495,
+      308.741, 38.9402,
+      311.293, 25.5468,
+      313.846, 14.1375,
+      316.398, 11.1612,
+      318.951, 12.8974,
+      321.503, 12.8974,
+      324.056, 12.8974,
+      326.608, 20.0902,
+      329.161, 51.8377,
+      331.713, 33.2356,
+      334.266, 40.1804,
+      336.818, 27.779,
+      339.371, 27.779,
+      341.923, 27.779,
+      344.475, 19.8422,
+      347.028, 15.1297,
+      349.58 ,8.43292,
+      352.133, 16.3698,
+      354.685, 22.3224,
+      362.343, 17.6099,
+      364.895 ,0,
+      367.448 ,0 ,
+      370 ,0];
 
-    svg2.append("circle")
-    .attr("fill", "blue")
-    .attr("stroke", "none")
-    .attr("cx", 46.26)
-    .attr("cy", 108.98)
-    .attr("r", 3);
 
 
+    svg2.append("g").selectAll("circle")
+        .data(mypositiongas)
+        .enter()
+        .append("circle")
+        .attr("cx", mypositiongas[2*i])
+        .attr("cy", mypositiongas[2*i+1])
+        .attr("r",3);
 
-       function gasprevshowOrHideDiv() {
-           d3.selectAll("circle")
-           .data(radii)
-           .attr('cx', radii[4+i])
-           .attr('cy', radii[i])
-           .attr('r', 3) // 10, 20, 50
-           .style("fill", "blue");
-        }
-        function gasnextshowOrHideDiv() {
-          d3.selectAll("circle")
-          .data(radii)
-          .attr('cx', radii[4+i])
-          .attr('cy', radii[i])
-          .attr('r', 3) // 10, 20, 50
-          .style("fill", "blue");
-}
+    //button to swap over datasets
 
+            //rejoin data
+
+ function gasshowOrHideDiv() {
+            var circle = svg2.select("g").selectAll("circle")
+
+            circle.transition()
+                .duration(500)
+                .attr("cx", mypositiongas[2*i] )
+                .attr("cy", mypositiongas[2*i+1])
+                .attr("r",2);
+              }
 
 
 
