@@ -203,7 +203,7 @@ var mymarker = svg.append("circle")
 .attr("cy", 132)
 .attr("r", 3);
 
-svg.append("circle")
+svg.selectAll("circle")
 .attr("fill", "blue")
 .attr("stroke", "none")
 .attr("cx", mypositionoil[101])
@@ -211,8 +211,7 @@ svg.append("circle")
 .attr("r", 3);
 
    function oilprevshowOrHideDiv(k) {
-     console.log(mypositionoil[23])
-     mymarker = svg.selectAll("circle")
+     svg.selectAll("circle")
     .data(mypositionoil)
     .attr('cx', mypositionoil[2*k+1])
     .attr('cy', mypositionoil[2*k])

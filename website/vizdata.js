@@ -41,15 +41,13 @@ map
   .text(
     'Data source: https://en.wikipedia.org/wiki/List_of_sovereign_states_and_dependent_territories_by_population_density'
   );
-
-map
-  .title()
+/*to get some distance between the border of the map and geographical contour*/
+map.title()
   .enabled(true)
   .useHtml(true)
   .padding([10, 0, 10, 0])
   .text(
-    'Evolution of the currencies<br/>'
-    //+ '<span  style="color:#929292; font-size: 12px;">(Data source: Wikipedia, 2015)</span>'
+   '<span  style="color:white; font-size: 2px;">(Data source: Wikipedia, 2015)</span>'
   );
 
 map.geoData('anychart.maps.world');

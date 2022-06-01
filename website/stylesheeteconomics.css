@@ -1,8 +1,9 @@
 #date{
   margin:0px 30px;
   display: inline-block;
-  width: 250px;
+  width: 300px;
   text-align: center;
+  font-size: 16px;
 }
 
 #oilviz{
@@ -29,20 +30,26 @@
   display: inline-block;
 }
 
+.myparagraph{
+  width: 80%;
+  height: auto;
+  margin: 0px 70px 15px 70px;
+  position: relative;
+  text-align: left;
+  color: black;
+}
+
 .datebutton{
   position: relative;
   text-align: center;
 }
 
-.myparagraph{
-  position: relative;
-  text-align: center;
-}
+
 
 .containermap{
   width: auto;
-  height: 85%;
-  margin: 0px 70px 15px 70px;
+  height: 80%;
+  margin: 0px 70px 5px 70px;
   position: relative;
   text-align: center;
   color: white;
@@ -92,6 +99,21 @@ transform: translate(-50%, -50%);
   display: none;
 }
 
+.slidetitle{
+  position: relative;
+  text-align: center;
+  margin-top:20px;
+  margin-bottom: 20px;
+  color: black;
+  font-size: 25px}
+
+#titleinflation{
+  margin: 0px 70px 15px 70px;
+  position: relative;
+  text-align: center;
+  color: black;
+  font-size: 20px
+}
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
@@ -129,14 +151,18 @@ transform: translate(-50%, -50%);
   width: 100%;
   text-align: center;
 }
+#imageinflation{
+  margin-bottom: 20px
+}
 
 /* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
   font-size: 14px;
-  padding-left: 20px;
-  position: absolute;
-  top: -25px;
+  text-align: center;
+  position: relative;
+  margin: 20px 70px 20px 70px;
+
 }
 
 /* The dots/bullets/indicators */
