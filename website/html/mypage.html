@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en">
+ <head>
+   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+   <title>D3 Page Template</title>
+
+
+ <!-- Load d3.js -->
+ <script src="https://d3js.org/d3.v6.js"></script>
+ <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+ <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+ <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+ <script src="https://cdn.anychart.com/releases/v8/js/anychart-map.min.js"></script>
+ <!--<script src="https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js"></script>-->
+ <script src="https://cdn.anychart.com/geodata/latest/custom/world/world.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+ <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-data-adapter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/vendors/scrolloverflow.min.js"></script>
+
+  <script type="text/javascript" src="vizdata.js"></script>
+
+  <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+
+ <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+  <link href="stylesheeteconomics.css" type="text/css" rel="stylesheet">
+ <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+
+ </head>
+
+
+
+
+
+
+
+ <!-- Create a div where the graph will take place -->
+
+
+ <body>
+
+<h1>Analysis and vizualisation of the economic impact of the war</h1>
+   <p>Analysis of the inflation of the dollar
+     The graph above shows the annual inflation rates in the US for the previous 10 calendar years, from 2012. For additional years, see the historical inflation rates. To calculate cumulative rates between two different periods, you can use the United States Inflation Calculator.
+
+  The current inflation rate in the US is 8.26%, which is calculated based on CPI (Consumer Price Index) values for the last 12 months ending in April 2022.
+  In April 2022, the monthly inflation rate was 0.56.
+
+  The following table contains recent YoY (Year-over-Year) and MoM (Month-over-Month) values.
+
+  Year	Measure	Jan	Feb	Mar	Apr	May	Jun	Jul	Aug	Sep	Oct	Nov	Dec
+  2022	YoY	7.48	7.87	8.54	8.26
+  MoM	0.84	0.91	1.34	0.56	</p>
+
+  <div class="container">
+    <img src="https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/datafiles_currencies/yearlyinflationusa.png" alt="Yearly inflation rate of the US-dollar">
+  <div class="centered"> <h1>USA yearly inflation rate</h1> </div>
+</div>
+
+
+     <div id="container1" ></div>
+     <div id="container2" ></div>
+     <div id="container3" ></div>
+     <div id="container4" ></div>
+     <div id="container5" ></div>
+     <div id="container6" ></div>
+     <div id="container7" ></div>
+     <div id="container8" ></div>
+     <div id="container9" ></div>
+     <div id="container10" ></div>
+     <div id="container11" ></div>
+     <div id="container12" ></div>
+     <div id="container13" ></div>
+     <div id="container14" ></div>
+     <div id="container15" ></div>
+     <div id="container16" ></div>
+     <div id="container17" ></div>
+     <div id="container18" ></div>
+     <div id="container19" ></div>
+     <div id="container20" ></div>
+     <div id="container21" ></div>
+     <div id="container22" ></div>
+     <div id="container23" ></div>
+     <div id="container24" ></div>
+     <div id="container25" ></div>
+     <div id="container26" ></div>
+     <div id="container27" ></div>
+     <div id="container28" ></div>
+     <div id="container29" ></div>
+     <div id="container30" ></div>
+     <div id="container31" ></div>
+     <div id="container32" ></div>
+     <div id="container33" ></div>
+     <div id="container34" ></div>
+     <div id="container35" ></div>
+     <div id="container36" ></div>
+     <div id="container37" ></div>
+     <div id="container38" ></div>
+     <div id="container39" ></div>
+     <div id="container40" ></div>
+     <div id="container41" ></div>
+     <div id="container42" ></div>
+     <div id="container43" ></div>
+     <div id="container44" ></div>
+     <div id="container45" ></div>
+     <div id="container46" ></div>
+     <div id="container47" ></div>
+     <div id="container48" ></div>
+     <div id="container49" ></div>
+     <div id="container50" ></div>
+     <div id="container51" ></div>
+     <div id="container52" ></div>
+     <div id="container53" ></div>
+     <div id="container54" ></div>
+     <div id="container55" ></div>
+     <div id="container56" ></div>
+     <div id="container57" ></div>
+     <div id="container58" ></div>
+     <div id="container59" ></div>
+     <div id="container60" ></div>
+
+
+
+
+
+           <button id="prev" onclick="prevshowOrHideDiv()"><</button>
+           <span id="date" style="margin:0px 30px;"></span>
+           <button id="next" onclick="nextshowOrHideDiv()">></button>
+
+   <p>This is a paragraph.</p>
+  <div id="oilviz"></div>
+   <p>This is a paragraph.</p>
+  <div id="gasviz"></div>
+ <p>This is a paragraph.</p>
+
+ <script type="text/javascript" src="d3stats.js">
+  </script>
+
+  <script type="text/javascript" src="mydatasets.js">
+   </script>
+
+  <script type="text/javascript">
+
+/*  $(document).ready(function (){
+      $('#prev').click(function (){
+         mapprevshowOrHideDiv();
+         prevshowOrHideDiv();
+      });
+  });
+
+  $(document).ready(function (){
+      $('#next').click(function (){
+         mapnextshowOrHideDiv();
+         nextshowOrHideDiv();
+      });
+  });*/
+    //anychart.onDocumentReady(function ()  keep it as an idea
+
+    if (!Date.now) {
+         Date.now = function() {
+        return new Date().getTime();
+         }
+      }
+      var theDate = Date.parse('01 Jan 2022 00:00:00 GMT');
+       //var theDate = Date.now();
+      document.getElementById('date').innerText = getTheDate(theDate)
+
+      document.getElementById('prev').addEventListener("click", function() {
+       theDate -= 86400000;
+      document.getElementById('date').innerText = getTheDate(theDate)
+    })
+      document.getElementById('next').addEventListener("click", function() {
+     theDate += 86400000;
+       document.getElementById('date').innerText = getTheDate(theDate)
+    })
+
+      function getTheDate(getDate) {
+        var days = ["Sunday", "Monday", "Tuesday",
+            "Wednesday", "Thursday", "Friday", "Saturday"
+       ];
+         var months = ["January", "February", "March",
+          "April", "May", "June", "July", "August",
+          "September", "October", "November", "December"
+       ];
+          var theCDate = new Date(getDate);
+           return days[theCDate.getDay()] + ', ' + theCDate.getDate() + '-' +
+          months[theCDate.getMonth()] + '-' + theCDate.getFullYear();}
+
+ //https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/2022-01-03.json
+ //https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/datafiles_currencies/2022-01-03.json
+ //https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/datafiles_currencies/mydata.json
+
+
+
+ visualizemydata(myday0101,"container1")
+ visualizemydata(myday0102,"container2")
+  visualizemydata(myday0103,"container3")
+
+/*anychart.onDocumentReady(function () {
+      anychart.data.loadJsonFile(
+        'https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/datafiles_currencies/2022-01-04.json',
+       function (data) {
+                  //data = data.trim(); // remove the unwanted whitespace
+                 data = data.trim()
+                  var newdata = data.replace(/\n/g, '');
+                  //var newdata = newdata1.replace(/\/g, '');
+                  console.log(newdata)
+                  console.log(typeof newdata)
+                  console.log(data)
+                  console.log(typeof data)
+                  hellodata = JSON.stringify(newdata);
+                  console.log(hellodata)
+                  console.log(typeof hellodata)
+                  mydata = JSON.parse(hellodata);
+                  console.log(mydata)
+                  console.log(typeof mydata)
+                  const mydata = JSON.parse(data);
+                  console.log(mydata)
+                  console.log(typeof mydata)
+                  console.log(data)
+                  visualizemydata(data,"container2")
+        }
+      );
+    });*/
+
+
+
+
+</script>
+ </body>
+</html>
