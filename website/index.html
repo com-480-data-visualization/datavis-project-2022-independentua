@@ -7,121 +7,200 @@
     <meta name="author" content="Adam Narozniak, Alessandro Tavazzi, Nicolas d’Argenlieu"/>
     <link rel="stylesheet" type="text/css" href="lib/fullpage.min.css"/>
     <script type="text/javascript" src="lib/fullpage.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
 </head>
 <body>
 <div id="fullpage">
     <div class="section">
         <h1>Russian invasion of Ukraine</h1>
     </div>
+
     <div class="section">
+        <div class="slide">
+            <div class="container">
+
+                <div id="pictograms" class="columns is-vcentered is-flex">
+                    <div class="column is-half content">
+                        <h2>Casualties</h2>
+                        <p id="description-casualties-intro">
+                            Since the beginning of the war, Russian soldiers:
+                        <ul>
+                            <li>have murdered <span class="tag is-danger"> X </span> innocent civilians</li>
+                            <li>have caused injuries to <span class="tag is-warning"> Y </span> civilians.</li>
+                        </ul>
+                        They had families <span>👪</span> friends, children and grandchildren's <span>👶</span>.
+                        </p>
+                        <br><br>
+                        <div class="columns is-align-items-center">
+                            <img class="is-v2" src="./../data/person_icon.svg" alt="civilian" height="40"
+                                 style="max-height: 80px"/>
+                            <p class="column"> = 100 civilians</p>
+                        </div>
+
+                    </div>
+
+                    <div id="casualties_total_pictogram" class="column is-half"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            hello word
+        </div>
+    </div>
+    <div class="section">
+        <div class="column">
+
+        </div>
+        <div>
+
+
+        </div>
         <ul>
             <li><a href="html/casualties.html">Casualties</a></li>
+            <li><a href="html/casualties_pictogram.html"> Pictogram </a></li>
+            <li><a href="html/many_svg_elements.html"> Many svgs</a></li>
+            <li><a href="html/learn.html"> Learn </a></li>
         </ul>
     </div>
 
-<div class="section">
+    <div class="section">
         <ul>
-        <li><a href="html/economics.html">Economics</a></li>
-    </ul>
-</div>
+            <li><a href="html/economics.html">Economics</a></li>
+        </ul>
+    </div>
 
-<div class="section">
+    <div class="section">
         <ul>
-        <li><a href="html/wordwide-reactions.html">Wordwide reactions (sanctions, sentiment ...)</a></li>
-    </ul>
-</div>
+            <li><a href="html/wordwide-reactions.html">Wordwide reactions (sanctions, sentiment ...)</a></li>
+        </ul>
+    </div>
 
 </div>
 
 <script>
-let myFullpage = new fullpage('#fullpage', {
-	// Navigation
-	menu: '#menu',
-	lockAnchors: false,
-	anchors:['firstPage', 'secondPage'],
-	navigation: false,
-	navigationPosition: 'right',
-	navigationTooltips: ['firstSlide', 'secondSlide'],
-	showActiveTooltip: false,
-	slidesNavigation: false,
-	slidesNavPosition: 'bottom',
+    let myFullpage = new fullpage('#fullpage', {
+        // Navigation
+        menu: '#menu',
+        lockAnchors: false,
+        anchors: ['firstPage', 'secondPage'],
+        navigation: false,
+        navigationPosition: 'right',
+        navigationTooltips: ['firstSlide', 'secondSlide'],
+        showActiveTooltip: false,
+        slidesNavigation: false,
+        slidesNavPosition: 'bottom',
 
-	// Scrolling
-	css3: true,
-	scrollingSpeed: 700,
-	autoScrolling: true,
-	fitToSection: true,
-	scrollBar: false,
-	easing: 'easeInOutCubic',
-	easingcss3: 'ease',
-	loopBottom: false,
-	loopTop: false,
-	loopHorizontal: true,
-	continuousVertical: false,
-	continuousHorizontal: false,
-	scrollHorizontally: false,
-	interlockedSlides: false,
-	dragAndMove: false,
-	offsetSections: false,
-	resetSliders: false,
-	fadingEffect: false,
-	normalScrollElements: '#element1, .element2',
-	scrollOverflow: true,
-	scrollOverflowMacStyle: false,
-	scrollOverflowReset: false,
-	touchSensitivity: 15,
-	bigSectionsDestination: null,
+        // Scrolling
+        css3: true,
+        scrollingSpeed: 700,
+        autoScrolling: true,
+        fitToSection: true,
+        scrollBar: false,
+        easing: 'easeInOutCubic',
+        easingcss3: 'ease',
+        loopBottom: false,
+        loopTop: false,
+        loopHorizontal: true,
+        continuousVertical: false,
+        continuousHorizontal: false,
+        scrollHorizontally: true,
+        interlockedSlides: false,
+        dragAndMove: false,
+        offsetSections: false,
+        resetSliders: false,
+        fadingEffect: false,
+        normalScrollElements: '#element1, .element2',
+        scrollOverflow: true,
+        scrollOverflowMacStyle: false,
+        scrollOverflowReset: false,
+        touchSensitivity: 15,
+        bigSectionsDestination: null,
 
-	// Accessibility
-	keyboardScrolling: true,
-	animateAnchor: true,
-	recordHistory: true,
+        // Accessibility
+        keyboardScrolling: true,
+        animateAnchor: true,
+        recordHistory: true,
 
-	// Design
-	controlArrows: true,
-	controlArrowsHTML: [
-		'<div class="fp-arrow"></div>',
-		'<div class="fp-arrow"></div>'
-	],
-	verticalCentered: true,
-	sectionsColor : ['#ccc', '#fff'],
-	paddingTop: '3em',
-	paddingBottom: '10px',
-	fixedElements: '#header, .footer',
-	responsiveWidth: 0,
-	responsiveHeight: 0,
-	responsiveSlides: false,
-	parallax: false,
-	parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
-	dropEffect: false,
-	dropEffectOptions: { speed: 2300, color: '#F82F4D', zIndex: 9999},
-	waterEffect: false,
-	waterEffectOptions: { animateContent: true, animateOnMouseMove: true},
-	cards: false,
-	cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
+        // Design
+        controlArrows: true,
+        controlArrowsHTML: [
+            '<div class="fp-arrow"></div>',
+            '<div class="fp-arrow"></div>'
+        ],
+        verticalCentered: true,
+        sectionsColor: ['#ccc', '#fff'],
+        paddingTop: '3em',
+        paddingBottom: '10px',
+        fixedElements: '#header, .footer',
+        responsiveWidth: 0,
+        responsiveHeight: 0,
+        responsiveSlides: false,
+        parallax: false,
+        parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+        dropEffect: false,
+        dropEffectOptions: {speed: 2300, color: '#F82F4D', zIndex: 9999},
+        waterEffect: false,
+        waterEffectOptions: {animateContent: true, animateOnMouseMove: true},
+        cards: false,
+        cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
 
-	// Custom selectors
-	sectionSelector: '.section',
-	slideSelector: '.slide',
+        // Custom selectors
+        sectionSelector: '.section',
+        slideSelector: '.slide',
 
-	lazyLoading: true,
-	observer: true,
-	credits: { enabled: true, label: 'Made with fullPage.js', position: 'right'},
+        lazyLoading: true,
+        observer: true,
+        credits: {enabled: true, label: 'Made with fullPage.js', position: 'right'},
 
-	// Events
-	beforeLeave: function(origin, destination, direction, trigger){},
-	onLeave: function(origin, destination, direction, trigger){},
-	afterLoad: function(origin, destination, direction, trigger){},
-	afterRender: function(){},
-	afterResize: function(width, height){},
-	afterReBuild: function(){},
-	afterResponsive: function(isResponsive){},
-	afterSlideLoad: function(section, origin, destination, direction, trigger){},
-	onSlideLeave: function(section, origin, destination, direction, trigger){},
-	onScrollOverflow: function(section, slide, position, direction){}
-});
-myFullpage()
-
+        // Events
+        beforeLeave: function (origin, destination, direction, trigger) {
+        },
+        onLeave: function (origin, destination, direction, trigger) {
+        },
+        afterLoad: function (origin, destination, direction, trigger) {
+        },
+        afterRender: function () {
+        },
+        afterResize: function (width, height) {
+        },
+        afterReBuild: function () {
+        },
+        afterResponsive: function (isResponsive) {
+        },
+        afterSlideLoad: function (section, origin, destination, direction, trigger) {
+        },
+        onSlideLeave: function (section, origin, destination, direction, trigger) {
+        },
+        onScrollOverflow: function (section, slide, position, direction) {
+        }
+    });
 </script>
 </body>
+<script src="js/casualties_pictogram.js"></script>
+<script>
+    let scale = 0.8;
+    let pictogram_width = 800 * scale;
+    let pictogram_height = 800 * scale;
+
+    let icon_type_person = "person";
+    let icon_type_child = "child";
+    let single_im_height = 100;
+    let single_pic_number = 100;
+    let n_columns = 10;
+    let total_casualties = 5100;
+    let children_casualties = 500;
+    let total_casualties_name = "casualties_total_pictogram";
+    let children_casualties_name = "casualties_children_pictogram"
+    drawCasualtiesPictogram(pictogram_width,
+        pictogram_height,
+        icon_type_person,
+        single_im_height,
+        single_pic_number,
+        n_columns,
+        total_casualties,
+        total_casualties_name)
+</script>
 </html>
