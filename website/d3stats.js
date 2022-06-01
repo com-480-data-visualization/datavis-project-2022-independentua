@@ -150,33 +150,60 @@ var mypositionoil = [131.98378134855085,2.5524576027594135,
 
 function prevshowOrHideDiv() {
   i=i-1
-oilprevshowOrHideDiv(i)
-gasprevshowOrHideDiv(i)
-mapprevshowOrHideDiv(i+1)
-
+  if (i<0){
+    alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");
+}
+  if (i>146){
+    alert("We don't show data for the selected date!  Data range: 01.01.2022-26.05.2022");
+  }
+  else{
+  oilprevshowOrHideDiv()
+  gasprevshowOrHideDiv()
+  mapprevshowOrHideDiv(i+1)}
 }
 
 function nextshowOrHideDiv() {
   i=i+1
-oilnextshowOrHideDiv(i)
-gasnextshowOrHideDiv(i)
-mapnextshowOrHideDiv(i-1)
+  if (i<0){
+    alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");
+}
+  if (i>145){
+    alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");
+  }
+  else{
+oilnextshowOrHideDiv()
+gasnextshowOrHideDiv()
+mapnextshowOrHideDiv(i-1)}
 
 }
 
 function superprevshowOrHideDiv() {
-  i=i-10
-oilprevshowOrHideDiv(i)
-gasprevshowOrHideDiv(i)
-mapprevshowOrHideDiv(i+10)
+  i=i-7
+  if (i<0){
+    alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");
+}
+  if (i>145){
+    alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");
+  }
+  else{
+oilprevshowOrHideDiv()
+gasprevshowOrHideDiv()
+mapprevshowOrHideDiv(i+7)}
 
 }
 
 function supernextshowOrHideDiv() {
-  i=i+10
-oilnextshowOrHideDiv(i)
-gasnextshowOrHideDiv(i)
-mapnextshowOrHideDiv(i-10)
+  i=i+7
+  if (i<0){
+    alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");
+}
+  if (i>145){
+    alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");
+  }
+  else{
+oilnextshowOrHideDiv()
+gasnextshowOrHideDiv()
+mapnextshowOrHideDiv(i-7)}
 }
 
 //d3.select("body").append("p").text("New paragraph!");
@@ -196,27 +223,19 @@ const svg = d3.select("#oilviz")
 
 var myarray =[23,4,13,34,23,45,23,12]
 
-var mymarker = svg.append("circle")
-.attr("fill", "blue")
-.attr("stroke", "none")
-.attr("cx", 2.55)
-.attr("cy", 132)
-.attr("r", 3);
 
-svg.selectAll("circle")
-.attr("fill", "blue")
-.attr("stroke", "none")
-.attr("cx", mypositionoil[101])
-.attr("cy", mypositionoil[100])
-.attr("r", 3);
+var focus = svg
+   .append('g')
+   .append('circle')
+     .style("fill", "blue")
+     .attr("stroke", "black")
+     .attr('r', 3)
 
-   function oilprevshowOrHideDiv(k) {
-     svg.selectAll("circle")
-    .data(mypositionoil)
-    .attr('cx', mypositionoil[2*k+1])
-    .attr('cy', mypositionoil[2*k])
-    .attr('r', 3) // 100
-     .style("fill", "red");
+
+   function oilprevshowOrHideDiv() {
+     focus
+       .attr("cx", mypositionoil[2*i+1])
+       .attr("cy", mypositionoil[2*i])
    }
    /*
      var object = d3.select('#oilviz').select("svg").selectAll('circle').data(mypositionoil);
@@ -227,13 +246,10 @@ object.enter().append('mymarker')
   .style("fill", "blue");
 object.exit().remove();    }*/
 
-    function oilnextshowOrHideDiv(k) {
-      mymarker = svg.selectAll("circle")
-     .data(mypositionoil)
-     .attr('cx', mypositionoil[2*k+1])
-     .attr('cy', mypositionoil[2*k])
-     .attr('r', 3) // 100
-     .style("fill", "red");
+    function oilnextshowOrHideDiv() {
+      focus
+        .attr("cx", mypositionoil[2*i+1])
+        .attr("cy", mypositionoil[2*i])
     }
 
 //Read the data
@@ -508,19 +524,19 @@ const svg2 = d3.select("#gasviz")
 
 
 
-       function gasprevshowOrHideDiv(k) {
+       function gasprevshowOrHideDiv() {
            d3.selectAll("circle")
            .data(radii)
-           .attr('cx', radii[4+k])
-           .attr('cy', radii[k])
+           .attr('cx', radii[4+i])
+           .attr('cy', radii[i])
            .attr('r', 3) // 10, 20, 50
            .style("fill", "blue");
         }
-        function gasnextshowOrHideDiv(k) {
+        function gasnextshowOrHideDiv() {
           d3.selectAll("circle")
           .data(radii)
           .attr('cx', radii[4+i])
-          .attr('cy', radii[k])
+          .attr('cy', radii[i])
           .attr('r', 3) // 10, 20, 50
           .style("fill", "blue");
 }
