@@ -5,7 +5,6 @@ if (!Date.now) {
      }
   }
   var theDate = Date.parse('01 Jan 2022 00:00:00 GMT');
-  console.log(typeof(theDate))
    //var theDate = Date.now();
   document.getElementById('date').innerText = getTheDate(theDate)
   document.getElementById('prev').addEventListener("click", function() {
@@ -15,6 +14,15 @@ if (!Date.now) {
   document.getElementById('next').addEventListener("click", function() {
  theDate += 86400000;
    document.getElementById('date').innerText = getTheDate(theDate)
+})
+
+document.getElementById('superprev').addEventListener("click", function() {
+ theDate -= 604800000;
+document.getElementById('date').innerText = getTheDate(theDate)
+})
+document.getElementById('supernext').addEventListener("click", function() {
+theDate += 604800000;
+ document.getElementById('date').innerText = getTheDate(theDate)
 })
 
   function getTheDate(getDate) {

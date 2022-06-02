@@ -1,7 +1,55 @@
-.containermap{
-  width: 90%;
-  height: 85%;
+#date{
+  margin:0px 30px;
+  display: inline-block;
+  width: 300px;
+  text-align: center;
+  font-size: 16px;
+}
+
+#oilviz{
+  position: relative;
+  left: 100px;
+  width: 45%;
+  height: auto;
+  display: inline-block;
+  float:left;
+  margin-right: 10px;
+}
+
+#gasviz{
+  position: relative;
+  left: 100px;
+  width: 45%;
+  height: auto;
+  display: inline-block;
+}
+
+#dotbuttons{
+  position: relative;
+  margin-left: 100px;
+  display: inline-block;
+}
+
+.myparagraph{
+  width: 80%;
+  height: auto;
   margin: 0px 70px 15px 70px;
+  position: relative;
+  text-align: left;
+  color: black;
+}
+
+.datebutton{
+  position: relative;
+  text-align: center;
+}
+
+
+
+.containermap{
+  width: auto;
+  height: 80%;
+  margin: 0px 70px 5px 70px;
   position: relative;
   text-align: center;
   color: white;
@@ -26,11 +74,16 @@ left: 50%;
 transform: translate(-50%, -50%);
 }
 
-img {
+#imageinflation {
   width: 70%;
   height: auto;
 }
 
+#imagegaz {
+  width: 50%;
+  height: auto;
+  display: inline-block;
+}
 
 * {box-sizing:border-box}
 
@@ -42,10 +95,25 @@ img {
 }
 
 /* Hide the images by default */
-.mySlides {
+.slide {
   display: none;
 }
 
+.slidetitle{
+  position: relative;
+  text-align: center;
+  margin-top:20px;
+  margin-bottom: 20px;
+  color: black;
+  font-size: 25px}
+
+#titleinflation{
+  margin: 0px 70px 15px 70px;
+  position: relative;
+  text-align: center;
+  color: black;
+  font-size: 20px
+}
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
@@ -78,19 +146,23 @@ img {
   color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
-  position: absolute;
+  position: relative;
   bottom: 8px;
   width: 100%;
   text-align: center;
+}
+#imageinflation{
+  margin-bottom: 20px
 }
 
 /* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+  margin: 20px 70px 20px 70px;
+
 }
 
 /* The dots/bullets/indicators */
