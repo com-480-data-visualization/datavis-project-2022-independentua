@@ -698,7 +698,7 @@
 
     document.addEventListener("DOMContentLoaded", function (event) {
 
-        let casualtiesPath = "./../../data/casualties/CasualtiesUNHumanRightsUATweets.csv";
+        let casualtiesPath = "https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/casualties/CasualtiesUNHumanRightsUATweets.csv";
         let casualtiesLoader = new CasualtiesLoader(casualtiesPath);
         let promise = casualtiesLoader.load_data().then(
             () => plot_casualties(casualtiesLoader)
