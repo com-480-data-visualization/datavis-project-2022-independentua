@@ -1,7 +1,7 @@
 
 
     class CasualtiesLoader {
-        #casualties;
+        casualties;
         date_to_civilians_killed;
         date_to_children_killed;
         date_to_civilians_injured;
@@ -14,7 +14,7 @@
         }
 
         async load_data() {
-            this.#casualties = await d3.csv(this.path);
+            this.casualties = await d3.csv(this.path);
             // this callback is necessary in this function if I want to store the data in the line above
             await this._extract_data()
         }
