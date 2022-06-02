@@ -37,7 +37,7 @@
         _extract_one_data(column_name) {
             const parseTime = d3.timeParse("%Y-%m-%d");
             return new Map(
-                this.#casualties.map(
+                this.casualties.map(
                     object => {
                         return [parseTime(object["date"]), Number(object[column_name])]
                     })
