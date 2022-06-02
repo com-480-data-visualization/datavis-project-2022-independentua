@@ -120946,7 +120946,7 @@ var myday0517 = [
     "curr": "ZAR"
   },
   {
-    "value(vsUSD)": 0.034,
+    "value(vsUSD)": NaN,
     "ref": NaN,
     "min": 0.033,
     "max": 0.037,
@@ -121829,7 +121829,7 @@ var myday0518 = [
     "curr": "ZAR"
   },
   {
-    "value(vsUSD)": 0.034,
+    "value(vsUSD)": NaN,
     "ref": NaN,
     "min": 0.033,
     "max": 0.037,
@@ -122712,7 +122712,7 @@ var myday0519 = [
     "curr": "ZAR"
   },
   {
-    "value(vsUSD)": 0.034,
+    "value(vsUSD)": NaN,
     "ref": NaN,
     "min": 0.033,
     "max": 0.037,
@@ -123595,7 +123595,7 @@ var myday0520 = [
     "curr": "ZAR"
   },
   {
-    "value(vsUSD)": 0.034,
+    "value(vsUSD)": NaN,
     "ref": NaN,
     "min": 0.033,
     "max": 0.037,
@@ -124478,7 +124478,7 @@ var myday0521 = [
     "curr": "ZAR"
   },
   {
-    "value(vsUSD)": 0.034,
+    "value(vsUSD)": NaN,
     "ref": NaN,
     "min": 0.033,
     "max": 0.037,
@@ -125361,7 +125361,7 @@ var myday0522 = [
     "curr": "ZAR"
   },
   {
-    "value(vsUSD)": 0.034,
+    "value(vsUSD)": NaN,
     "ref": NaN,
     "min": 0.033,
     "max": 0.037,
@@ -126244,7 +126244,7 @@ var myday0523 = [
     "curr": "ZAR"
   },
   {
-    "value(vsUSD)": 0.034,
+    "value(vsUSD)": NaN,
     "ref": NaN,
     "min": 0.033,
     "max": 0.037,
@@ -127127,7 +127127,7 @@ var myday0524 = [
     "curr": "ZAR"
   },
   {
-    "value(vsUSD)": 0.034,
+    "value(vsUSD)": NaN,
     "ref": NaN,
     "min": 0.033,
     "max": 0.037,
@@ -128010,7 +128010,7 @@ var myday0525 = [
     "curr": "ZAR"
   },
   {
-    "value(vsUSD)": 0.034,
+    "value(vsUSD)": NaN,
     "ref": NaN,
     "min": 0.033,
     "max": 0.037,
@@ -128893,7 +128893,7 @@ var myday0526 = [
     "curr": "ZAR"
   },
   {
-    "value(vsUSD)": 0.034,
+    "value(vsUSD)": NaN,
     "ref": NaN,
     "min": 0.033,
     "max": 0.037,
