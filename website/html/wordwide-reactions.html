@@ -104,6 +104,8 @@
     </ul>  
 </p>
 
+<div class="test">Test Test</div>
+
 <div id="refugees_data"></div>
 
 <p>This is a graph of the incoming refugee population.</p>
@@ -114,6 +116,29 @@
 
 
 <script>
+
+    var data = [4, 8, 15, 16, 23, 42];
+
+    var x = d3.scaleLinear([0, d3.max(data)], [0, 420]);
+
+    var tooltip = d3.select("body")
+        .append("div")
+        .style("position", "absolute")
+        .style("z-index", "10")
+        .style("visibility", "hidden")
+        .style("background", "#808080")
+        .text("a simple tooltip");
+
+    d3.select("body")
+    .selectAll(".test")
+        .data(data)
+    .enter().append("div")
+        .style("width", function(d) { return x(d) + "px"; })
+        .text(function(d) { return d; })
+        .on("mouseover", function(event){console.log(this.innerHTML);tooltip.text(this.innerHTML); return tooltip.style("visibility", "visible");})
+        .on("mousemove", function(event){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
+        .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+
     let path = './../../data/NDA_UNHCR_refugees_cleaned.csv';
     let loader = new RefugeesLoader(path);
     let promise = loader.load_data().then((data) => {
