@@ -136,6 +136,8 @@
 
 <div class="section">
 
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
 
     <div class="datebutton">
@@ -151,7 +153,15 @@
 
             <p class="slidetitle">Analysis and vizualisation of the economic impact of the war
             <p>
-            <p class="myparagraph">Analysis of the inflation of the dollar
+            <p class="myparagraph">
+In this part of the website, we aim to understand the impact of the war between Ukraine and Russia during
+the 5 first months of 2022 on an economic level. Naturally, a lot of factors influence the world’s global economy,
+and this war cannot be responsible for everything, that is happening in the world’s economy now. Nonetheless,
+we believe, this war has and will have terrible consequences for the world’s economy. Our goal is to suggest
+those consequences by visualizing three economic indicators, that we believed to be important for the world’s
+economy and that we believed to be connected to the ongoing war between Ukraine and Russia. We chose to
+visualize the spot price of the brent oil, the spot price of natural gas and 
+              Analysis of the inflation of the dollar
                 The graph above shows the annual inflation rates in the US for the previous 10 calendar years, from
                 2012. For additional years, see the historical inflation rates. To calculate cumulative rates between
                 two different periods, you can use the United States Inflation Calculator.
@@ -623,11 +633,11 @@
         recordHistory: true,
 
         // Design
-        controlArrows: true,
-        controlArrowsHTML: [
-            '<div class="fp-arrow"></div>',
-            '<div class="fp-arrow"></div>'
-        ],
+        //controlArrows: true,
+        //controlArrowsHTML: [
+        //    '<div class="fp-arrow"></div>',
+          //  '<div class="fp-arrow"></div>'
+        //],
         verticalCentered: true,
         sectionsColor: ['#ccc', '#fff'],
         paddingTop: '3em',
