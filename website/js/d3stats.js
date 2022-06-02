@@ -760,8 +760,11 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-pro
 
 
 
+visualizemydata(mydayarray[0],array[0])
+
+
  function mapprevshowOrHideDiv(j) {
-    var v = document.getElementById(array[i]);
+   visualizemydata(mydayarray[i],array[i])
     if (v.style.display === "none") {
        v.style.display = "block";
     } else {
@@ -775,6 +778,7 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-pro
     }
  }
  function mapnextshowOrHideDiv(j) {
+   visualizemydata(mydayarray[i],array[i])
     var v = document.getElementById(array[i]);
     if (v.style.display === "none") {
        v.style.display = "block";

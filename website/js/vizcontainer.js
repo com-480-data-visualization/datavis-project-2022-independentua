@@ -37,6 +37,12 @@ theDate += 604800000;
        return days[theCDate.getDay()] + ', ' + theCDate.getDate() + '-' +
       months[theCDate.getMonth()] + '-' + theCDate.getFullYear();}
 
+
+
+    /*  console.log(mydayarray[0])
+      visualizemydata(mydayarray[0],array[0])
+      visualizemydata(mydayarray[1],array[1])
+*/
       visualizemydata(myday0101,"container0101")
       visualizemydata(myday0102,"container0102")
       visualizemydata(myday0103,"container0103")
@@ -131,7 +137,7 @@ theDate += 604800000;
       visualizemydata(myday0330,"container0330")
       visualizemydata(myday0331,"container0331")
 
-      visualizemydata(myday0401,"container0401")
+      /*visualizemydata(myday0401,"container0401")
       visualizemydata(myday0402,"container0402")
       visualizemydata(myday0403,"container0403")
       visualizemydata(myday0404,"container0404")
@@ -160,7 +166,7 @@ theDate += 604800000;
       visualizemydata(myday0427,"container0427")
       visualizemydata(myday0428,"container0428")
       visualizemydata(myday0429,"container0429")
-      visualizemydata(myday0430,"container0430")
+      visualizemydata(myday0430,"container0430")*/
 
       visualizemydata(myday0501,"container0501")
       visualizemydata(myday0502,"container0502")

@@ -1,4 +1,4 @@
-var v = document.getElementById("hidingtheloading");
+/*var v = document.getElementById("hidingtheloading");
 var w = document.getElementById("fullpage");
 
 console.log(v)
@@ -6,13 +6,13 @@ console.log(v)
 let time = new Date().getSeconds();
 
 
-while (new Date().getSeconds()-time< 10) {
+while (new Date().getSeconds()-time< 5) {
   v.style.display = "block";
   w.style.display = "none";
 }
 w.style.display = "block";
 v.style.display = "none";
-
+*/
 /*setTimeout(showourwebpage(), 10000);
 function showourwebpage(){
   var v = document.getElementById("hidingtheloading");
