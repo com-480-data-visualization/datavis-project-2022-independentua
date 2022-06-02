@@ -1,3 +1,35 @@
+var v = document.getElementById("hidingtheloading");
+var w = document.getElementById("fullpage");
+
+console.log(v)
+
+let time = new Date().getSeconds();
+
+
+while (new Date().getSeconds()-time< 10) {
+  v.style.display = "block";
+  w.style.display = "none";
+}
+w.style.display = "block";
+v.style.display = "none";
+
+/*setTimeout(showourwebpage(), 10000);
+function showourwebpage(){
+  var v = document.getElementById("hidingtheloading");
+  var w = document.getElementById("fullpage");
+console.log(v)
+console.log(w)
+
+
+};*/
+
+/*setTimeout(alertFunc, 3000);
+
+
+function alertFunc() {
+  alert("Hello!");
+}*/
+
 
 
 let slideIndex = 1;
@@ -98,10 +130,10 @@ series
 
 var scale = anychart.scales.ordinalColor([
   { less:98 },
-  { from: 99, to: 99.5 },
-  { from: 99.5, to: 100 },
-  { from: 100, to: 100.5 },
-  { from: 100.5, to: 101 },
+  { from: 98, to: 99 },
+  { from: 99, to: 100 },
+  { from: 100, to: 101 },
+  { from: 101, to: 102 },
   { greater: 102 }
 ]);
 scale.colors([
