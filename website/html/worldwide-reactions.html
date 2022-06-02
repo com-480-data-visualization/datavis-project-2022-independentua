@@ -1,83 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en"> -->
+    <!-- <head> -->
+        <!-- <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Adam Narozniak, Alessandro Tavazzi, Nicolas d’Argenlieu">
-        <title>worldwide reactions</title>
+        <title>worldwide reactions</title> -->
 
-        <!-- Load d3.js -->
-        <script src="https://d3js.org/d3.v6.js"></script>
+        <!-- <script src="https://d3js.org/d3.v6.js"></script> -->
 
-        <!-- Metro 4 -->
         <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
         <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
 
-        <!-- Owned -->
-        <link href="./../css/world_reactions.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+        <link href="/website/css/world_reactions.css" type="text/css" rel="stylesheet">
         <script type="text/javascript" src="./../js/world_reactions_utils.js"></script>
-    </head>
-<body>
-<h1 style="font-family: Rockwell;"> Wordwide reactions </h1>
+    <!-- </head> -->
+<!-- <body> -->
+<h1 style="font-family: Rockwell;" class="worldwide-reactions-h1"> Wordwide reactions </h1>
 
-<div class="centered">
-<p>
-    In order to understand the conflict in Ukraine, it is also very important to get an overview of the situation abroad. 
-    Indeed, Ukraine is defended by its population, but influential factors come in a wide range of flavors and from a larger area than Ukraine only.
-    <br><br>
-    This page details 4 different information covering the following aspects of Ukraine's invasion international impact:
-</p>
+<div class="container">
+    <p>
+        In order to understand the conflict in Ukraine, it is also very important to get an overview of the situation abroad. 
+        Indeed, Ukraine is defended by its population, but influential factors come in a wide range of flavors and from a larger area than Ukraine only.
+        <br><br>
+        This page details 4 different information covering the following aspects of Ukraine's invasion international impact:
+    </p>
 
-<div class="row_aligned">
-    <div data-role="tile" data-effect="hover-zoom-down" style="margin:2%; background-color: cadetblue;">
-        <div class="slide-front">
-            <img src="https://cdn4.iconfinder.com/data/icons/refugees-evacuee-war/280/refugees-005-512.png" class="icon">
+    <div class="row_aligned">
+        <div data-role="tile" data-effect="hover-zoom-down" style="margin:2%; background-color: cadetblue;">
+            <div class="slide-front">
+                <img src="https://cdn4.iconfinder.com/data/icons/refugees-evacuee-war/280/refugees-005-512.png" class="icon">
+            </div>
+            <a href="#refugees_data" class="nostyleanchor">
+            <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+                <p class="text-center">
+                    Refugees
+                </p>
+            </div>
+            </a>
         </div>
-        <a href="#refugees_data" class="nostyleanchor">
-        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
-            <p class="text-center">
-                Refugees
-            </p>
-        </div>
-        </a>
-    </div>
 
-    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: darkkhaki;">
-        <div class="slide-front">
-            <img src="https://cdn0.iconfinder.com/data/icons/o022-economic-sanctions-outline/64/map_country_lockdown_lock-512.png" class="icon">
+        <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: darkkhaki;">
+            <div class="slide-front">
+                <img src="https://cdn0.iconfinder.com/data/icons/o022-economic-sanctions-outline/64/map_country_lockdown_lock-512.png" class="icon">
+            </div>
+            <a href="#sanctions_data" class="nostyleanchor">
+            <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+                <p class="text-center">
+                    Sanctions
+                </p>
+            </div>
+            </a>
         </div>
-        <a href="#sanctions_data" class="nostyleanchor">
-        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
-            <p class="text-center">
-                Sanctions
-            </p>
-        </div>
-        </a>
-    </div>
 
-    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: firebrick;">
-        <div class="slide-front">
-            <img src="https://cdn4.iconfinder.com/data/icons/aami-web-internet/64/aami13-13-512.png" class="icon">
+        <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: firebrick;">
+            <div class="slide-front">
+                <img src="https://cdn4.iconfinder.com/data/icons/aami-web-internet/64/aami13-13-512.png" class="icon">
+            </div>
+            <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+                <p class="text-center">
+                    Tweet Emotions
+                </p>
+            </div>
         </div>
-        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
-            <p class="text-center">
-                Tweet Emotions
-            </p>
-        </div>
-    </div>
 
-    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: teal;">
-        <div class="slide-front">
-            <img src="https://cdn0.iconfinder.com/data/icons/lagotline-survey-and-rating/64/Survey_and_Rating-05-512.png" class="icon">
-        </div>
-        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
-            <p class="text-center">
-                Tweet Sentiment
-            </p>
+        <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: teal;">
+            <div class="slide-front">
+                <img src="https://cdn0.iconfinder.com/data/icons/lagotline-survey-and-rating/64/Survey_and_Rating-05-512.png" class="icon">
+            </div>
+            <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+                <p class="text-center">
+                    Tweet Sentiment
+                </p>
+            </div>
         </div>
     </div>
 </div>
 
-<p>
+<!-- <p>
     Each one of these themas relate to an aspect of the war as perceived or enforced by non-Ukrainian individuals and entities. 
     We detail them below:
     <ul>
@@ -117,27 +117,7 @@
 
 <script>
 
-    var data = [4, 8, 15, 16, 23, 42];
-
-    var x = d3.scaleLinear([0, d3.max(data)], [0, 420]);
-
-    var tooltip = d3.select("body")
-        .append("div")
-        .style("position", "absolute")
-        .style("z-index", "10")
-        .style("visibility", "hidden")
-        .style("background", "#808080")
-        .text("a simple tooltip");
-
-    d3.select("body")
-    .selectAll(".test")
-        .data(data)
-    .enter().append("div")
-        .style("width", function(d) { return x(d) + "px"; })
-        .text(function(d) { return d; })
-        .on("mouseover", function(event){console.log(this.innerHTML);tooltip.text(this.innerHTML); return tooltip.style("visibility", "visible");})
-        .on("mousemove", function(event){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
-        .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+    // Refugee bar plot
 
     let path = './../../data/NDA_UNHCR_refugees_cleaned.csv';
     let loader = new RefugeesLoader(path);
@@ -160,15 +140,9 @@
             width = 900 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
-        d3.select("#refugees_data")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .html(chart.innerHTML)
-
     });
 
-    // STACKED BAR CHART
+    // sanctions stacked bar plot
 
     let pathSanctions = './../../data/NDA_Castellum_bycountry_bydate_cleaned.csv';
     let loaderSanctions = new SanctionsLoader(pathSanctions);
@@ -184,15 +158,10 @@
                 width = 900 - margin.left - margin.right,
                 height = 500 - margin.top - margin.bottom;
 
-        d3.select("#sanctions_data")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .html(chart.innerHTML)
     });
 
     
         
-</script>
-</body>
-</html>
+</script> -->
+<!-- </body> -->
+<!-- </html> -->

@@ -36,6 +36,136 @@ class SanctionsLoader {
     }
 }
 
+// --------------------------------------------------------------------------------
+
+
+function BarChart(data, {
+    x = (d, i) => i, // given d in data, returns the (ordinal) x-value
+    y = d => d, // given d in data, returns the (quantitative) y-value
+    title, // given d in data, returns the title text
+    marginTop = 20, // the top margin, in pixels
+    marginRight = 20, // the right margin, in pixels
+    marginBottom = 150, // the bottom margin, in pixels
+    marginLeft = 60, // the left margin, in pixels
+    width = 100, // the outer width of the chart, in pixels
+    height = 400, // the outer height of the chart, in pixels
+    xDomain, // an array of (ordinal) x-values
+    xRange = [marginLeft, width - marginRight], // [left, right]
+    yType = d3.scaleLinear, // y-scale type
+    yDomain, // [ymin, ymax]
+    yRange = [height - marginBottom, marginTop], // [bottom, top]
+    xPadding = 0.1, // amount of x-range to reserve to separate bars
+    yFormat, // a format specifier string for the y-axis
+    yLabel, // a label for the y-axis
+    color = "#0e2f44" // bar fill color
+} = {}) {
+    // Compute values.
+    const X = d3.map(data, x);
+    const Y = d3.map(data, y);
+
+    // Compute default domains, and unique the x-domain.
+    if (xDomain === undefined) xDomain = X;
+    if (yDomain === undefined) yDomain = [d3.min(Y), d3.max(Y)];
+    xDomain = new d3.InternSet(xDomain);
+
+    // Omit any data not present in the x-domain.
+    const I = d3.range(X.length).filter(i => xDomain.has(X[i]));
+
+    // Construct scales, axes, and formats.
+    const xScale = d3.scaleBand(xDomain, xRange).padding(xPadding);
+    const yScale = yType(yDomain, yRange);
+    xDomain = [d3.min(X), d3.max(X)]
+    const xAxis = d3.axisBottom(d3.scaleTime(xDomain, xRange)).tickSizeOuter(0);
+    const yAxis = d3.axisLeft(yScale).ticks(height / 40, yFormat);
+
+    // Compute titles.
+    if (title === undefined) {
+        const formatValue = yScale.tickFormat(100, yFormat);
+        title = i => `${X[i]}\n${formatValue(Y[i])}`;
+    } else {
+        const O = d3.map(data, d => d);
+        const T = title;
+        title = i => T(O[i], i, data);
+    }
+
+    console.log(title)
+
+    var tooltip = d3.select(".refugees_tooltip")
+        .style("position", "absolute")
+        .style("z-index", "10")
+        .style("visibility", "hidden")
+        .style("background", "#808080")
+        .text("Info box");
+
+    const mouseover = function(event, d) {
+        d3.select(this)
+            .attr("fill", "#000080")
+        tooltip.text(`${Y[d]} ${X[d]}`);
+        tooltip.style("visibility", "visible");
+    }
+    const mousemove = function(event, d) {
+        tooltip.style("top", (event.pageY-10)+"px")
+            .style("left",(event.pageX+10)+"px");
+    }
+    const mouseout = function() {
+        d3.select(this)
+            .attr("fill", color);
+        tooltip.style("visibility", "hidden")
+        tooltip.selectAll('tspan').remove();
+    }
+
+    const svg = d3.select("#refugees_data").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("viewBox", [0, 0, width, height])
+        .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+
+    svg.append("g")
+        .attr("transform", `translate(${marginLeft},0)`)
+        .call(yAxis)
+        .call(g => g.select(".domain").remove())
+        .call(g => g.selectAll(".tick line").clone()
+            .attr("x2", width - marginLeft - marginRight)
+            .attr("stroke-opacity", 0.1))
+        .call(g => g.append("text")
+            .attr("x", -marginLeft)
+            .attr("y", 10)
+            .attr("fill", color)
+            .attr("text-anchor", "start")
+            .text(yLabel));
+
+    const bar = svg.append("g")
+        .attr("fill", color)
+        .selectAll("rect")
+        .data(I)
+        .join("rect")
+        .attr("x", i => xScale(X[i]))
+        .attr("y", i => yScale(Y[i]))
+        .attr("height", i => yScale(0) - yScale(Y[i]))
+        .attr("width", xScale.bandwidth())
+        .attr("fill", color)
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseout", mouseout);
+
+    if (title) bar.append("title")
+        .text(title);
+    
+    svg.append("g")
+        .attr("transform", `translate(0,${height - marginBottom})`)
+        .call(xAxis);
+
+
+
+    
+
+    var data = [4, 8, 15, 16, 23, 42];
+
+    var x = d3.scaleLinear([0, d3.max(data)], [0, 420]);
+}
+
+// --------------------------------------------------------------------------------
+
 function StackedBarChart(data, {
     x = (d, i) => i, // given d in data, returns the (ordinal) x-value
     y = d => d, // given d in data, returns the (quantitative) y-value
@@ -109,7 +239,45 @@ function StackedBarChart(data, {
     title = i => T(O[i], i, data);
     }
 
-    const svg = d3.create("svg")
+    var tooltip = d3.select(".sanctions_tooltip")
+        .style("position", "absolute")
+        .style("z-index", "10")
+        .style("visibility", "hidden")
+        .style("background", "#808080")
+        .text("Info box");
+
+    const mouseover = function(event, d) {
+        d3.select(this)
+            .attr("fill", "#000080")
+        const displayText = `
+            ${d[1]}
+            ${d.data[0]}
+            ${[...d.data[1].entries()].filter(([k, v])=> v===d.i)[0][0]}
+        `
+
+        tooltip.text(displayText);
+        tooltip.style("visibility", "visible");
+    }
+    const mousemove = function(event, d) {
+        // const [x, y] = d3.pointer(this);
+        // console.log(this)
+        // console.log(event.pageY, event.pageX)
+
+        // tooltip
+        //   .attr('transform', `translate(${x}, ${y})`);
+
+        tooltip.style("top", (event.pageY-100)+"px")
+            .style("left",(event.pageX-100)+"px");
+    }
+    const mouseout = function() {
+        d3.select(this)
+            .attr("fill", color);
+        tooltip.style("visibility", "hidden")
+        tooltip.selectAll('tspan').remove();
+    }
+
+    const svg = d3.select("#sanctions_data")
+        .append('svg')
         .attr("width", width)
         .attr("height", height)
         .attr("viewBox", [0, 0, width, height])
@@ -125,7 +293,7 @@ function StackedBarChart(data, {
         .call(g => g.append("text")
             .attr("x", -marginLeft)
             .attr("y", 10)
-            .attr("fill", "currentColor")
+            .attr("fill", color)
             .attr("text-anchor", "start")
             .text(yLabel));
 
@@ -140,7 +308,10 @@ function StackedBarChart(data, {
         .attr("x", ({i}) => xScale(X[i]))
         .attr("y", ([y1, y2]) => Math.min(yScale(y1), yScale(y2)))
         .attr("height", ([y1, y2]) => Math.abs(yScale(y1) - yScale(y2)))
-        .attr("width", xScale.bandwidth());
+        .attr("width", xScale.bandwidth())
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseout", mouseout);
 
     if (title) bar.append("title")
         .text(({i}) => title(i));
@@ -150,115 +321,4 @@ function StackedBarChart(data, {
         .call(xAxis);
 
     return Object.assign(svg.node(), {scales: {color}});
-}
-
-
-function BarChart(data, {
-    x = (d, i) => i, // given d in data, returns the (ordinal) x-value
-    y = d => d, // given d in data, returns the (quantitative) y-value
-    title, // given d in data, returns the title text
-    marginTop = 20, // the top margin, in pixels
-    marginRight = 20, // the right margin, in pixels
-    marginBottom = 150, // the bottom margin, in pixels
-    marginLeft = 60, // the left margin, in pixels
-    width = 100, // the outer width of the chart, in pixels
-    height = 400, // the outer height of the chart, in pixels
-    xDomain, // an array of (ordinal) x-values
-    xRange = [marginLeft, width - marginRight], // [left, right]
-    yType = d3.scaleLinear, // y-scale type
-    yDomain, // [ymin, ymax]
-    yRange = [height - marginBottom, marginTop], // [bottom, top]
-    xPadding = 0.1, // amount of x-range to reserve to separate bars
-    yFormat, // a format specifier string for the y-axis
-    yLabel, // a label for the y-axis
-    color = "currentColor" // bar fill color
-} = {}) {
-    // Compute values.
-    const X = d3.map(data, x);
-    const Y = d3.map(data, y);
-
-    // Compute default domains, and unique the x-domain.
-    if (xDomain === undefined) xDomain = X;
-    if (yDomain === undefined) yDomain = [d3.min(Y), d3.max(Y)];
-    xDomain = new d3.InternSet(xDomain);
-
-    // Omit any data not present in the x-domain.
-    const I = d3.range(X.length).filter(i => xDomain.has(X[i]));
-
-    // Construct scales, axes, and formats.
-    const xScale = d3.scaleBand(xDomain, xRange).padding(xPadding);
-    const yScale = yType(yDomain, yRange);
-    xDomain = [d3.min(X), d3.max(X)]
-    const xAxis = d3.axisBottom(d3.scaleTime(xDomain, xRange)).tickSizeOuter(0);
-    const yAxis = d3.axisLeft(yScale).ticks(height / 40, yFormat);
-
-    // Compute titles.
-    if (title === undefined) {
-        const formatValue = yScale.tickFormat(100, yFormat);
-        title = i => `${X[i]}\n${formatValue(Y[i])}`;
-    } else {
-        const O = d3.map(data, d => d);
-        const T = title;
-        title = i => T(O[i], i, data);
-    }
-
-    console.log(title)
-
-    const svg = d3.create("svg")
-        .attr("width", width)
-        .attr("height", height)
-        .attr("viewBox", [0, 0, width, height])
-        .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
-
-    svg.append("g")
-        .attr("transform", `translate(${marginLeft},0)`)
-        .call(yAxis)
-        .call(g => g.select(".domain").remove())
-        .call(g => g.selectAll(".tick line").clone()
-            .attr("x2", width - marginLeft - marginRight)
-            .attr("stroke-opacity", 0.1))
-        .call(g => g.append("text")
-            .attr("x", -marginLeft)
-            .attr("y", 10)
-            .attr("fill", "currentColor")
-            .attr("text-anchor", "start")
-            .text(yLabel));
-
-    var tooltip = d3.select(".test")
-        .style("position", "absolute")
-        .style("z-index", "10")
-        .style("visibility", "visible")
-        .style("background", "#808080")
-        .text("Info box");
-
-    const mouseover = (event, d) => {
-        tooltip.text("Hello"); 
-        tooltip.style("visibility", "visible");
-    }
-    const mousemove = (event, d) => {
-        tooltip.style("top", (event.pageY-10)+"px")
-            .style("left",(event.pageX+10)+"px");
-    }
-
-    const bar = svg.append("g")
-        .attr("fill", color)
-        .selectAll("rect")
-        .data(I)
-        .join("rect")
-        .attr("x", i => xScale(X[i]))
-        .attr("y", i => yScale(Y[i]))
-        .attr("height", i => yScale(0) - yScale(Y[i]))
-        .attr("width", xScale.bandwidth())
-        .on("mouseover", mouseover);
-        // .on("mousemove", function(event){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
-        // .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
-
-    if (title) bar.append("title")
-        .text(title);
-    
-    svg.append("g")
-        .attr("transform", `translate(0,${height - marginBottom})`)
-        .call(xAxis);
-
-    return svg.node();
 }

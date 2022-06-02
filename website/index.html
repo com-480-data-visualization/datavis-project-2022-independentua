@@ -27,6 +27,25 @@
     <script type="text/javascript" src="lib/fullpage.min.js"></script>
     <script type="text/javascript" src="mydatasets.js"></script>
 
+    <!-- Custom Components -->
+    <script src="./js/components/world_reactions_component.js"></script>
+    <script src="./js/components/world_reactions_component2.js"></script>
+    <script src="./js/components/world_reactions_component3.js"></script>
+
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v6.js"></script>
+
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <!-- Worlwide Reactions Utils -->
+    <link href="/website/css/world_reactions.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="/website/js/world_reactions_utils.js"></script>
+
+    <!-- Metro 4 -->
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+
 </head>
 
 <body>
@@ -362,6 +381,170 @@
             <li><a href="html/wordwide-reactions.html">Wordwide reactions (sanctions, sentiment ...)</a></li>
         </ul>
     </div>
+
+    <div class="section">
+        <div class="slide">
+
+            <h1 style="font-family: Rockwell;" class="worldwide-reactions-h1"> Wordwide reactions </h1>
+
+            <div class="container">
+                <p>
+                    In order to understand the conflict in Ukraine, it is also very important to get an overview of the situation abroad. 
+                    Indeed, Ukraine is defended by its population, but influential factors come in a wide range of flavors and from a larger area than Ukraine only.
+                    <br><br>
+                    This page details 4 different information covering the following aspects of Ukraine's invasion international impact:
+                </p>
+            
+                <div class="row_aligned">
+                    <div data-role="tile" data-effect="hover-zoom-down" style="margin:2%; background-color: cadetblue;">
+                        <div class="slide-front">
+                            <img src="https://cdn4.iconfinder.com/data/icons/refugees-evacuee-war/280/refugees-005-512.png" class="icon">
+                        </div>
+                        <a href="#refugees_data" class="nostyleanchor">
+                        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+                            <p class="text-center">
+                                Refugees
+                            </p>
+                        </div>
+                        </a>
+                    </div>
+            
+                    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: darkkhaki;">
+                        <div class="slide-front">
+                            <img src="https://cdn0.iconfinder.com/data/icons/o022-economic-sanctions-outline/64/map_country_lockdown_lock-512.png" class="icon">
+                        </div>
+                        <a href="#sanctions_data" class="nostyleanchor">
+                        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+                            <p class="text-center">
+                                Sanctions
+                            </p>
+                        </div>
+                        </a>
+                    </div>
+            
+                    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: firebrick;">
+                        <div class="slide-front">
+                            <img src="https://cdn4.iconfinder.com/data/icons/aami-web-internet/64/aami13-13-512.png" class="icon">
+                        </div>
+                        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+                            <p class="text-center">
+                                Tweet Emotions
+                            </p>
+                        </div>
+                    </div>
+            
+                    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: teal;">
+                        <div class="slide-front">
+                            <img src="https://cdn0.iconfinder.com/data/icons/lagotline-survey-and-rating/64/Survey_and_Rating-05-512.png" class="icon">
+                        </div>
+                        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+                            <p class="text-center">
+                                Tweet Sentiment
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="slide">
+            
+            <div class="container">
+                Each one of these themas relate to an aspect of the war as perceived or enforced by non-Ukrainian individuals and entities. 
+                We detail them below:
+                <ul>
+                    <li>Refugees <br> The military attacks, bombings and blocus on the invaded part of Ukraine forced a large amount of civilians to 
+                        flee their place of living. As a consequence, the neighboring countries, namely Moldavia, Romania, Slovakia, Hungary, 
+                        Poland and Belarus, have welcomed millions of distressed people, having left everything behind to get to safety. 
+                        The refugees data was fetched from the <a href="https://www.unhcr.org/fr/urgence-ukraine.html">United Nations High 
+                        Commissioner for Refugees website</a> dedicated to the tracking and information of the refugee crisis.</li>
+                    <li>Sanctions <br> A large wave of economic, social and geopolitical sanctions was taken from multiple countries against Russia 
+                        for starting this war. We focus on some of the most important with the visualization of sanctions issued by Australia,
+                        Canada, the EU, France, Switzerland, the UK and the US. The data is gracefully provided by the international sanctions
+                        tracking firm <a href="https://www.castellum.ai/">Castellum</a>. Castellum tracks different types of issued international 
+                        filings and has a scope that is larger than the invasion only.
+                    </li>
+                    <li>Tweets Sentiments and Emotions <br> An important consequence of the invasion of Ukraine is the individuals reactions across 
+                        the world. A very good indicator of it is social networks, and especially Twitter. Using 
+                        <a href="https://www.kaggle.com/datasets/bwandowando/ukraine-russian-crisis-twitter-dataset-1-2-m-rows">a dataset of 35.58M tweets</a>  
+                        selected as linked to the war in Ukraine, we run Machine Learning models on the extracted texts and compute the sentiment and 
+                        emotion of a random subsample of the dataset. The sentiment is computed using a <a href="https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment?text=Urgent%0A500+Russian+tanks+approaching+the+capital%2C+Kyiv%2C+from+all+sides.%0A+%23Russia+%23Ukraine+%23Russia+%23Ukraine%0A%23Kyiv">
+                        natural language processing model</a>. It indicates wether the tweet demonstrates a positive, neutral or negative sentiment.
+                        The emotion is one of anger, disgust, fear, joy, neutral, sadness or suprise. It is detected in each tweet using 
+                        <a href="https://huggingface.co/j-hartmann/emotion-english-distilroberta-base">anoter NLP model</a>.
+                    </li>
+                </ul>  
+            </div>
+            
+
+        </div>
+
+        <div class="slide">
+            
+            <div class="container">
+
+                <div class="refugees_tooltip"></div>
+                <div id="refugees_data"></div>
+                <p>This is a graph of the incoming refugee population.</p>
+                <script>
+                    // Refugee bar plot
+                    let path = './../../data/NDA_UNHCR_refugees_cleaned.csv';
+                    let loader = new RefugeesLoader(path);
+                    let promise = loader.load_data().then((data) => {
+
+                        chart = BarChart(data, {
+                            x: d => d[0],
+                            y: d => d[1],
+                            xDomain: d3.map(data, d => d[0]), // sort by descending frequency
+                            xType:d3.scaleTime,
+                            yFormat: "d",
+                            yLabel: "Date",
+                            width:500,
+                            height: 500,
+                            color: "steelblue",
+                            title: d => d[1]
+                        });
+                    });
+                </script>
+
+            </div>
+
+        </div>
+
+        <div class="slide">
+
+            <div class="container">
+
+                <div class="sanctions_tooltip"></div>
+                <div id="sanctions_data"></div>
+                <p>This is a graph of the number of sanctions per country.</p>
+                <script>
+                    // sanctions stacked bar plot
+
+                    let pathSanctions = './../../data/NDA_Castellum_bycountry_bydate_cleaned.csv';
+                        let loaderSanctions = new SanctionsLoader(pathSanctions);
+                        let promiseSanctions = loaderSanctions.load_data().then((data) => {
+
+                            chart = StackedBarChart(data, {
+                                x: d => d.date,
+                                y: d => d.nsanctions,
+                                z: d => d.country,
+                            });
+
+                            const margin = {top: 10, right: 30, bottom: 30, left: 60},
+                                    width = 900 - margin.left - margin.right,
+                                    height = 500 - margin.top - margin.bottom;
+
+                        });  
+                </script>
+
+            </div>
+
+        </div>
+    </div>
+
+
 </div>
 
 <script type="text/javascript" src="d3stats.js"></script>
