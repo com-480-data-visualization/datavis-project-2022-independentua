@@ -8,6 +8,7 @@
     <meta name="author" content="Adam Narozniak, Alessandro Tavazzi, Nicolas d’Argenlieu"/>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="./main.js" type="module"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
@@ -24,6 +25,7 @@
     <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="lib/fullpage.min.css"/>
+    <link href="lib/countDownStyle.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="lib/fullpage.min.js"></script>
     <script type="text/javascript" src="mydatasets.js"></script>
 
@@ -35,7 +37,30 @@
     <div class="section">
         <h1>Russian invasion of Ukraine</h1>
     </div>
+    <div class="section">
+        <div class="container">
+            <div class="columns">
 
+            </div>
+            <div class="box">
+                <p class="is-size-3">
+                    The Russian 🇷🇺 invasion of Ukraine 🇺🇦 started on <span class="tag is-warning is-size-3">24.02.2022 </span>.
+                    It's already<br> <br>
+                </p>
+                <div class="timePassed "></div>
+
+                <p class="is-size-3">
+                    <br> <br>
+                    and the aggression has not ended yet 😢.
+                    <br>
+                    Let us show you a few important facts.
+                </p>
+
+            </div>
+
+
+        </div>
+    </div>
     <div class="section">
         <div class="slide">
             <div class="container">
@@ -44,6 +69,7 @@
                     <div class="column is-half content">
                         <h2>Casualties</h2>
                         <p id="description-casualties-intro">
+                            The Russian invasion started on 24.02.2022. It's
                             Since the beginning of the war, Russian soldiers:
                         <ul>
                             <li>have murdered <span class="tag is-danger"> X </span> innocent civilians</li>
@@ -53,7 +79,7 @@
                         </p>
                         <br><br>
                         <div class="columns is-align-items-center">
-                            <img class="is-v2" src="./../data/person_icon.svg" alt="civilian" height="40"
+                            <img class="is-v2" src="./../pictures/casualties/person_icon.svg" alt="civilian" height="40"
                                  style="max-height: 80px"/>
                             <p class="column"> = 100 civilians</p>
                         </div>
@@ -494,5 +520,10 @@
         n_columns,
         total_casualties,
         total_casualties_name)
+</script>
+<script src="lib/countDown.min.js"></script>
+<script src="js/timePassed.js"></script>
+<script>
+    cd.start()
 </script>
 </html>
