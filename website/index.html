@@ -7,7 +7,6 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="author" content="Adam Narozniak, Alessandro Tavazzi, Nicolas d’Argenlieu"/>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="./main.js" type="module"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
@@ -114,39 +113,21 @@
         </div>
 
         <div class="slide">
-            hello word
+            <div id="casualties_plot">
+            </div>
         </div>
     </div>
+
     <div class="section">
-        <div class="column">
 
+
+        <div class="datebutton">
+            <button id="superprev" onclick="superprevshowOrHideDiv()"><<</button>
+            <button id="prev" onclick="prevshowOrHideDiv()"><</button>
+            <span id="date"></span>
+            <button id="next" onclick="nextshowOrHideDiv()">></button>
+            <button id="supernext" onclick="supernextshowOrHideDiv()">>></button>
         </div>
-        <div>
-
-
-        </div>
-        <ul>
-            <li><a href="html/casualties.html">Casualties</a></li>
-            <li><a href="html/casualties_pictogram.html"> Pictogram </a></li>
-            <li><a href="html/many_svg_elements.html"> Many svgs</a></li>
-            <li><a href="html/learn.html"> Learn </a></li>
-        </ul>
-    </div>
-
-
-<div class="section">
-
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-
-    <div class="datebutton">
-        <button id="superprev" onclick="superprevshowOrHideDiv()"><<</button>
-        <button id="prev" onclick="prevshowOrHideDiv()"><</button>
-        <span id="date"></span>
-        <button id="next" onclick="nextshowOrHideDiv()">></button>
-        <button id="supernext" onclick="supernextshowOrHideDiv()">>></button>
-    </div>
 
 
         <div class="slide">
@@ -160,7 +141,7 @@ and this war cannot be responsible for everything, that is happening in the worl
 we believe, this war has and will have terrible consequences for the world’s economy. Our goal is to suggest
 those consequences by visualizing three economic indicators, that we believed to be important for the world’s
 economy and that we believed to be connected to the ongoing war between Ukraine and Russia. We chose to
-visualize the spot price of the brent oil, the spot price of natural gas and 
+visualize the spot price of the brent oil, the spot price of natural gas and
               Analysis of the inflation of the dollar
                 The graph above shows the annual inflation rates in the US for the previous 10 calendar years, from
                 2012. For additional years, see the historical inflation rates. To calculate cumulative rates between
@@ -400,15 +381,14 @@ visualize the spot price of the brent oil, the spot price of natural gas and
         </div>
 
 
-
-  </div>
-  <div class="section">
-      <div class="section">
-          <ul>
-              <li><a href="html/economics.html">Economics</a></li>
-          </ul>
-      </div>
-  </div>
+    </div>
+    <div class="section">
+        <div class="section">
+            <ul>
+                <li><a href="html/economics.html">Economics</a></li>
+            </ul>
+        </div>
+    </div>
 
     <div class="section">
         <ul>
@@ -426,39 +406,44 @@ visualize the spot price of the brent oil, the spot price of natural gas and
                     In order to understand the conflict in Ukraine, it is also very important to get an overview of the situation abroad.
                     Indeed, Ukraine is defended by its population, but influential factors come in a wide range of flavors and from a larger area than Ukraine only.
                     <br><br>
-                    This page details 4 different information covering the following aspects of Ukraine's invasion international impact:
+                    This page details 4 different information covering the following aspects of Ukraine's invasion
+                    international impact:
                 </p>
 
                 <div class="row_aligned">
                     <div data-role="tile" data-effect="hover-zoom-down" style="margin:2%; background-color: cadetblue;">
                         <div class="slide-front">
-                            <img src="https://cdn4.iconfinder.com/data/icons/refugees-evacuee-war/280/refugees-005-512.png" class="icon">
+                            <img src="https://cdn4.iconfinder.com/data/icons/refugees-evacuee-war/280/refugees-005-512.png"
+                                 class="icon">
                         </div>
                         <a href="#refugees_data" class="nostyleanchor">
-                        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
-                            <p class="text-center">
-                                Refugees
-                            </p>
-                        </div>
+                            <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+                                <p class="text-center">
+                                    Refugees
+                                </p>
+                            </div>
                         </a>
                     </div>
 
                     <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: darkkhaki;">
                         <div class="slide-front">
-                            <img src="https://cdn0.iconfinder.com/data/icons/o022-economic-sanctions-outline/64/map_country_lockdown_lock-512.png" class="icon">
+                            <img src="https://cdn0.iconfinder.com/data/icons/o022-economic-sanctions-outline/64/map_country_lockdown_lock-512.png"
+                                 class="icon">
                         </div>
                         <a href="#sanctions_data" class="nostyleanchor">
-                        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
-                            <p class="text-center">
-                                Sanctions
-                            </p>
-                        </div>
+                            <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+                                <p class="text-center">
+                                    Sanctions
+                                </p>
+                            </div>
                         </a>
                     </div>
 
+
                     <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: firebrick;">
                         <div class="slide-front">
-                            <img src="https://cdn4.iconfinder.com/data/icons/aami-web-internet/64/aami13-13-512.png" class="icon">
+                            <img src="https://cdn4.iconfinder.com/data/icons/aami-web-internet/64/aami13-13-512.png"
+                                 class="icon">
                         </div>
                         <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
                             <p class="text-center">
@@ -467,9 +452,11 @@ visualize the spot price of the brent oil, the spot price of natural gas and
                         </div>
                     </div>
 
+
                     <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: teal;">
                         <div class="slide-front">
-                            <img src="https://cdn0.iconfinder.com/data/icons/lagotline-survey-and-rating/64/Survey_and_Rating-05-512.png" class="icon">
+                            <img src="https://cdn0.iconfinder.com/data/icons/lagotline-survey-and-rating/64/Survey_and_Rating-05-512.png"
+                                 class="icon">
                         </div>
                         <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
                             <p class="text-center">
@@ -531,10 +518,10 @@ visualize the spot price of the brent oil, the spot price of natural gas and
                             x: d => d[0],
                             y: d => d[1],
                             xDomain: d3.map(data, d => d[0]), // sort by descending frequency
-                            xType:d3.scaleTime,
+                            xType: d3.scaleTime,
                             yFormat: "d",
                             yLabel: "Date",
-                            width:500,
+                            width: 500,
                             height: 500,
                             color: "steelblue",
                             title: d => d[1]
@@ -557,18 +544,18 @@ visualize the spot price of the brent oil, the spot price of natural gas and
                     // sanctions stacked bar plot
 
                     let pathSanctions = './../../data/NDA_Castellum_bycountry_bydate_cleaned.csv';
-                        let loaderSanctions = new SanctionsLoader(pathSanctions);
-                        let promiseSanctions = loaderSanctions.load_data().then((data) => {
+                    let loaderSanctions = new SanctionsLoader(pathSanctions);
+                    let promiseSanctions = loaderSanctions.load_data().then((data) => {
 
-                            chart = StackedBarChart(data, {
-                                x: d => d.date,
-                                y: d => d.nsanctions,
-                                z: d => d.country,
-                            });
+                        chart = StackedBarChart(data, {
+                            x: d => d.date,
+                            y: d => d.nsanctions,
+                            z: d => d.country,
+                        });
 
-                            const margin = {top: 10, right: 30, bottom: 30, left: 60},
-                                    width = 900 - margin.left - margin.right,
-                                    height = 500 - margin.top - margin.bottom;
+                        const margin = {top: 10, right: 30, bottom: 30, left: 60},
+                            width = 900 - margin.left - margin.right,
+                            height = 500 - margin.top - margin.bottom;
 
                         });
                 </script>
@@ -687,7 +674,7 @@ visualize the spot price of the brent oil, the spot price of natural gas and
     });
 </script>
 </body>
-<script src="js/casualties_pictogram.js"></script>
+<script src="js/casualtiesPictogram.js"></script>
 <script>
     let scale = 0.8;
     let pictogram_width = 800 * scale;
@@ -713,7 +700,17 @@ visualize the spot price of the brent oil, the spot price of natural gas and
 </script>
 <script src="lib/countDown.min.js"></script>
 <script src="js/timePassed.js"></script>
+<script src="js/casualtiesPlot.js"></script>
 <script>
     cd.start()
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+
+        let casualtiesPath = "https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/casualties/CasualtiesUNHumanRightsUATweets.csv";
+        let casualtiesLoader = new CasualtiesLoader(casualtiesPath);
+        let promise = casualtiesLoader.load_data().then(
+            () => plot_casualties(casualtiesLoader)
+        );
+    });
 </script>
 </html>
