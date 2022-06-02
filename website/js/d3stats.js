@@ -247,7 +247,7 @@ const svg = d3.select("#oilviz")
 
 
 //Read the data
-d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/oil_2021.csv",
+d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/economic/oil_2021.csv",
 
   // When reading the csv, I must format variables:
   function(d){
@@ -678,7 +678,7 @@ var mypositiongas = [0 ,127.238 ,
 
 
 //Read the data
-d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/gas_2021.csv",
+d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/economic/gas_2021.csv",
 
   // When reading the csv, I must format variables:
   function(d){
@@ -686,8 +686,8 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-pro
   }).then(
 
   // Now I can use this dataset:
-  function(data) {
 
+  function(data) {
     // Add X axis --> it is a date format
   /*  const x = d3.scaleTime()
       .domain(d3.extent(data, function(d) { return d.date; }))
@@ -760,8 +760,11 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-pro
 
 
 
+visualizemydata(mydayarray[0],array[0])
+
+
  function mapprevshowOrHideDiv(j) {
-    var v = document.getElementById(array[i]);
+   visualizemydata(mydayarray[i],array[i])
     if (v.style.display === "none") {
        v.style.display = "block";
     } else {
@@ -775,6 +778,7 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/datavis-pro
     }
  }
  function mapnextshowOrHideDiv(j) {
+   visualizemydata(mydayarray[i],array[i])
     var v = document.getElementById(array[i]);
     if (v.style.display === "none") {
        v.style.display = "block";
