@@ -1,0 +1,41 @@
+h1 {
+    display:flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center
+}
+
+.centered {
+    display:flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    padding: 5%;
+}
+
+.row_aligned {
+    display:flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center
+}
+
+a.nostyleanchor:link {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a.nostyleanchor:visited {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a.nostyleanchor:hover {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a.nostyleanchor:visited {
+    text-decoration: inherit;
+    color: inherit;
+}
