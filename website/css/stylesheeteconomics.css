@@ -114,7 +114,10 @@ transform: translate(-50%, -50%);
   color: black;
   font-size: 20px
 }
-/* Next & previous buttons */
+/* Next & previous buttons In the end I don't use those buttons*/
+/*    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -131,15 +134,16 @@ transform: translate(-50%, -50%);
 }
 
 /* Position the "next button" to the right */
-.next {
+/*.next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
+/*.prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
+*/
 
 /* Caption text */
 .text {

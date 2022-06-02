@@ -130,10 +130,10 @@ series
 
 var scale = anychart.scales.ordinalColor([
   { less:98 },
-  { from: 99, to: 99.5 },
-  { from: 99.5, to: 100 },
-  { from: 100, to: 100.5 },
-  { from: 100.5, to: 101 },
+  { from: 98, to: 99 },
+  { from: 99, to: 100 },
+  { from: 100, to: 101 },
+  { from: 101, to: 102 },
   { greater: 102 }
 ]);
 scale.colors([
