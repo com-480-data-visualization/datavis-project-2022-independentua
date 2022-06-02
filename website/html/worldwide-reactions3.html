@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Adam Narozniak, Alessandro Tavazzi, Nicolas d’Argenlieu">
+        <title>worldwide reactions</title>
+
+        <script src="https://d3js.org/d3.v6.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+        <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+        <link href="/website/css/world_reactions.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="./../js/world_reactions_utils.js"></script>
+    </head>
+<body>
+
+<div class="test">Test Test</div>
+
+<div id="refugees_data"></div>
+
+<p>This is a graph of the incoming refugee population.</p>
+
+<div id="sanctions_data"></div>
+
+</div>
+
+
+<script>
+
+    // Refugee bar plot
+
+    let path = './../../data/NDA_UNHCR_refugees_cleaned.csv';
+    let loader = new RefugeesLoader(path);
+    let promise = loader.load_data().then((data) => {
+
+        chart = BarChart(data, {
+            x: d => d[0],
+            y: d => d[1],
+            xDomain: d3.map(data, d => d[0]), // sort by descending frequency
+            xType:d3.scaleTime,
+            yFormat: "d",
+            yLabel: "Date",
+            width:500,
+            height: 500,
+            color: "steelblue",
+            title: d => d[1]
+        });
+
+        const margin = {top: 10, right: 30, bottom: 30, left: 60},
+            width = 900 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+    });
+
+    // sanctions stacked bar plot
+
+    let pathSanctions = './../../data/NDA_Castellum_bycountry_bydate_cleaned.csv';
+    let loaderSanctions = new SanctionsLoader(pathSanctions);
+    let promiseSanctions = loaderSanctions.load_data().then((data) => {
+
+        chart = StackedBarChart(data, {
+            x: d => d.date,
+            y: d => d.nsanctions,
+            z: d => d.country,
+        });
+
+        const margin = {top: 10, right: 30, bottom: 30, left: 60},
+                width = 900 - margin.left - margin.right,
+                height = 500 - margin.top - margin.bottom;
+
+    });
+
+    
+        
+</script>
+</body>
+</html>
