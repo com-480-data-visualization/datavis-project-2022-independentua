@@ -167,3 +167,5 @@ TWEETS
 */TWEETS_SENTIMENT/*
 TWEETS_SENTIMENT
 *.csv.gzip
+*/currency_data/*
+currency_data
