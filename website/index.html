@@ -53,8 +53,8 @@
 <body>
 
 <div id="hidingtheloading" style="display:none">hello
-      </div>
-<div id="fullpage"  style="display:block">
+</div>
+<div id="fullpage" style="display:block">
     <div class="section">
         <h1>Russian invasion of Ukraine</h1>
     </div>
@@ -114,7 +114,9 @@
 
         <div class="slide">
             <div id="casualties_plot">
-                <div id="tooltip-casualties"></div>
+                <div id="tooltip-casualties">
+                    <br><br>
+                </div>
             </div>
         </div>
     </div>
@@ -396,8 +398,10 @@ in US-dollars of the main currencies of the world.
 
             <div class="container">
                 <p>
-                    In order to understand the conflict in Ukraine, it is also very important to get an overview of the situation abroad.
-                    Indeed, Ukraine is defended by its population, but influential factors come in a wide range of flavors and from a larger area than Ukraine only.
+                    In order to understand the conflict in Ukraine, it is also very important to get an overview of the
+                    situation abroad.
+                    Indeed, Ukraine is defended by its population, but influential factors come in a wide range of
+                    flavors and from a larger area than Ukraine only.
                     <br><br>
                     This page details 4 different information covering the following aspects of Ukraine's invasion
                     international impact:
@@ -418,7 +422,8 @@ in US-dollars of the main currencies of the world.
                         </a>
                     </div>
 
-                    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: darkkhaki;">
+                    <div data-role="tile" data-effect="hover-zoom-down"
+                         style="margin-right:2%; background-color: darkkhaki;">
                         <div class="slide-front">
                             <img src="https://cdn0.iconfinder.com/data/icons/o022-economic-sanctions-outline/64/map_country_lockdown_lock-512.png"
                                  class="icon">
@@ -433,7 +438,8 @@ in US-dollars of the main currencies of the world.
                     </div>
 
 
-                    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: firebrick;">
+                    <div data-role="tile" data-effect="hover-zoom-down"
+                         style="margin-right:2%; background-color: firebrick;">
                         <div class="slide-front">
                             <img src="https://cdn4.iconfinder.com/data/icons/aami-web-internet/64/aami13-13-512.png"
                                  class="icon">
@@ -446,7 +452,8 @@ in US-dollars of the main currencies of the world.
                     </div>
 
 
-                    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: teal;">
+                    <div data-role="tile" data-effect="hover-zoom-down"
+                         style="margin-right:2%; background-color: teal;">
                         <div class="slide-front">
                             <img src="https://cdn0.iconfinder.com/data/icons/lagotline-survey-and-rating/64/Survey_and_Rating-05-512.png"
                                  class="icon">
@@ -465,28 +472,46 @@ in US-dollars of the main currencies of the world.
         <div class="slide">
 
             <div class="container">
-                Each one of these themas relate to an aspect of the war as perceived or enforced by non-Ukrainian individuals and entities.
+                Each one of these themas relate to an aspect of the war as perceived or enforced by non-Ukrainian
+                individuals and entities.
                 We detail them below:
                 <ul>
-                    <li>Refugees <br> The military attacks, bombings and blocus on the invaded part of Ukraine forced a large amount of civilians to
-                        flee their place of living. As a consequence, the neighboring countries, namely Moldavia, Romania, Slovakia, Hungary,
-                        Poland and Belarus, have welcomed millions of distressed people, having left everything behind to get to safety.
-                        The refugees data was fetched from the <a href="https://www.unhcr.org/fr/urgence-ukraine.html">United Nations High
-                        Commissioner for Refugees website</a> dedicated to the tracking and information of the refugee crisis.</li>
-                    <li>Sanctions <br> A large wave of economic, social and geopolitical sanctions was taken from multiple countries against Russia
-                        for starting this war. We focus on some of the most important with the visualization of sanctions issued by Australia,
-                        Canada, the EU, France, Switzerland, the UK and the US. The data is gracefully provided by the international sanctions
-                        tracking firm <a href="https://www.castellum.ai/">Castellum</a>. Castellum tracks different types of issued international
+                    <li>Refugees <br> The military attacks, bombings and blocus on the invaded part of Ukraine forced a
+                        large amount of civilians to
+                        flee their place of living. As a consequence, the neighboring countries, namely Moldavia,
+                        Romania, Slovakia, Hungary,
+                        Poland and Belarus, have welcomed millions of distressed people, having left everything behind
+                        to get to safety.
+                        The refugees data was fetched from the <a href="https://www.unhcr.org/fr/urgence-ukraine.html">United
+                            Nations High
+                            Commissioner for Refugees website</a> dedicated to the tracking and information of the
+                        refugee crisis.
+                    </li>
+                    <li>Sanctions <br> A large wave of economic, social and geopolitical sanctions was taken from
+                        multiple countries against Russia
+                        for starting this war. We focus on some of the most important with the visualization of
+                        sanctions issued by Australia,
+                        Canada, the EU, France, Switzerland, the UK and the US. The data is gracefully provided by the
+                        international sanctions
+                        tracking firm <a href="https://www.castellum.ai/">Castellum</a>. Castellum tracks different
+                        types of issued international
                         filings and has a scope that is larger than the invasion only.
                     </li>
-                    <li>Tweets Sentiments and Emotions <br> An important consequence of the invasion of Ukraine is the individuals reactions across
+                    <li>Tweets Sentiments and Emotions <br> An important consequence of the invasion of Ukraine is the
+                        individuals reactions across
                         the world. A very good indicator of it is social networks, and especially Twitter. Using
-                        <a href="https://www.kaggle.com/datasets/bwandowando/ukraine-russian-crisis-twitter-dataset-1-2-m-rows">a dataset of 35.58M tweets</a>
-                        selected as linked to the war in Ukraine, we run Machine Learning models on the extracted texts and compute the sentiment and
-                        emotion of a random subsample of the dataset. The sentiment is computed using a <a href="https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment?text=Urgent%0A500+Russian+tanks+approaching+the+capital%2C+Kyiv%2C+from+all+sides.%0A+%23Russia+%23Ukraine+%23Russia+%23Ukraine%0A%23Kyiv">
-                        natural language processing model</a>. It indicates wether the tweet demonstrates a positive, neutral or negative sentiment.
-                        The emotion is one of anger, disgust, fear, joy, neutral, sadness or suprise. It is detected in each tweet using
-                        <a href="https://huggingface.co/j-hartmann/emotion-english-distilroberta-base">anoter NLP model</a>.
+                        <a href="https://www.kaggle.com/datasets/bwandowando/ukraine-russian-crisis-twitter-dataset-1-2-m-rows">a
+                            dataset of 35.58M tweets</a>
+                        selected as linked to the war in Ukraine, we run Machine Learning models on the extracted texts
+                        and compute the sentiment and
+                        emotion of a random subsample of the dataset. The sentiment is computed using a <a
+                                href="https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment?text=Urgent%0A500+Russian+tanks+approaching+the+capital%2C+Kyiv%2C+from+all+sides.%0A+%23Russia+%23Ukraine+%23Russia+%23Ukraine%0A%23Kyiv">
+                            natural language processing model</a>. It indicates wether the tweet demonstrates a
+                        positive, neutral or negative sentiment.
+                        The emotion is one of anger, disgust, fear, joy, neutral, sadness or suprise. It is detected in
+                        each tweet using
+                        <a href="https://huggingface.co/j-hartmann/emotion-english-distilroberta-base">anoter NLP
+                            model</a>.
                     </li>
                 </ul>
             </div>
@@ -550,7 +575,7 @@ in US-dollars of the main currencies of the world.
                             width = 900 - margin.left - margin.right,
                             height = 500 - margin.top - margin.bottom;
 
-                        });
+                    });
                 </script>
 
             </div>
@@ -616,7 +641,7 @@ in US-dollars of the main currencies of the world.
         //controlArrows: true,
         //controlArrowsHTML: [
         //    '<div class="fp-arrow"></div>',
-          //  '<div class="fp-arrow"></div>'
+        //  '<div class="fp-arrow"></div>'
         //],
         verticalCentered: true,
         sectionsColor: ['#ccc', '#fff'],
