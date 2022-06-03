@@ -153,21 +153,20 @@ var mypositionoil = [131.98378134855085,2.5524576027594135,
 
 function prevshowOrHideDiv() {
   i=i-1;
-  if (146>i>-1){console.log("why");
+  if (i>-1){
     oilshowOrHideDiv();
     gasshowOrHideDiv();
 mapprevshowOrHideDiv(i+1);
     /*alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");*/
 }
   else{
-    console.log("hello");
     i = i+1;
   }
 }
 
 function nextshowOrHideDiv() {
   i=i+1;
-  if (146>i>-1){
+  if (146>i){
     oilshowOrHideDiv();
     gasshowOrHideDiv();
 mapnextshowOrHideDiv(i-1)
@@ -180,22 +179,24 @@ mapnextshowOrHideDiv(i-1)
 
 function superprevshowOrHideDiv() {
   i=i-7
-  /*console.log(i>-1)*/
-  if (146>i>-1){
+
+  if (i>-1){
     oilshowOrHideDiv();
     gasshowOrHideDiv();
 mapprevshowOrHideDiv(i+7);
+
     /*alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");*/
 }
   else{
     i = i+7
+
   }
 
 }
 
 function supernextshowOrHideDiv() {
   i=i+7
-  if (146>i>-1){
+  if (146>i){
     oilshowOrHideDiv();
     gasshowOrHideDiv();
 mapnextshowOrHideDiv(i-7)
@@ -921,7 +922,7 @@ function loadeverything(){
 }}*/
 
  function mapprevshowOrHideDiv(j) {
-
+console.log(i,j)
 if (mydays[i]!==0){
   visualizemydata(mydayarray[i],array[i])
   mydays[i]=0;
@@ -943,7 +944,7 @@ if (mydays[i]!==0){
      mydays[i]=0;
    }
 
-   loadeverything = loadeverything +1;
+
 
 
     var v = document.getElementById(array[i]);
