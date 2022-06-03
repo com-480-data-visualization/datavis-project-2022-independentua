@@ -166,20 +166,20 @@ mapprevshowOrHideDiv(i+1);
 }
 
 function nextshowOrHideDiv() {
-  i=i+1;
+  i=i+1
   if (146>i>-1){
     oilshowOrHideDiv();
     gasshowOrHideDiv();
-mapprevshowOrHideDiv(i-1);
+mapprevshowOrHideDiv(i-1)
 
     /*alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");*/
 }
   else{
-    i = i-1;
+    i = i-1
   }}
 
 function superprevshowOrHideDiv() {
-  i=i-7;
+  i=i-7
   /*console.log(i>-1)*/
   if (146>i>-1){
     oilshowOrHideDiv();
@@ -188,21 +188,21 @@ mapprevshowOrHideDiv(i+7);
     /*alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");*/
 }
   else{
-    i = i+7;
+    i = i+7
   }
 
 }
 
 function supernextshowOrHideDiv() {
-  i=i+7;
+  i=i+7
   if (146>i>-1){
     oilshowOrHideDiv();
     gasshowOrHideDiv();
-mapprevshowOrHideDiv(i-7);
+mapprevshowOrHideDiv(i-7)
     /*alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");*/
 }
   else{
-    i = i-7;
+    i = i-7
   }
 }
 console.log(i)
