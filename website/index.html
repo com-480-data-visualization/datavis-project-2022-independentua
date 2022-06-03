@@ -45,6 +45,10 @@
     <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
     <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
 
+    <!--    svd drawing = vivus-->
+    <script src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/intro.css"/>
+
 
 </head>
 
@@ -52,10 +56,23 @@
 
 <div id="hidingtheloading" style="display:none">hello
 </div>
-<div id="fullpage" style="display:block">
+<div id="fullpage">
     <div class="section">
-        <h1>Russian invasion of Ukraine</h1>
+        <div class="columns">
+            <div class="container">
+                <div class="column">
+                    <div id="ukraine-border-animation"></div>
+                    <div class="is-overlay overlay-custom">
+                        <div class="title-container">
+                            <h1 id="title_of_project" class="title is-1 is-centered overlay-custom">Russian <br>invasion<br>of
+                                Ukraine</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <div class="section">
         <div class="container">
             <div class="columns">
@@ -63,7 +80,8 @@
             </div>
             <div class="box">
                 <p class="is-size-3">
-                    The Russian 🇷🇺 invasion of Ukraine 🇺🇦 started on <span class="tag is-warning is-size-3">24.02.2022 </span>.
+                    The Russian 🇷🇺 invasion of Ukraine 🇺🇦 started on <span
+                        class="tag is-warning is-size-3">24.02.2022 </span>.
                     It's already<br> <br>
                 </p>
                 <div class="timePassed "></div>
@@ -117,7 +135,7 @@
                         </ul>
                         The loos affects their families <span>👪</span> friends, children and grandchildren's
                         <span>👶</span>.<br>
-                         </p>
+                        </p>
                         <br>
                         <div class="columns is-align-items-center">
                             <img class="is-v2" src="./../pictures/casualties/person_icon.svg" alt="civilian" height="40"
@@ -386,11 +404,14 @@
 
             <div style="display: flex">
                 <div id="gasviz"><p class="myparagraph3"> The image on the right represents well the enormous importance
-                  of russian natural gas for Europe. That is why the war necesseraly had an impact on the price of natural gas
-                  in Europe, but also simply in the world. Indeed, Russia is one of the biggest exporter of natural gas in the world.
-                  <br> In the line chart below, you can see the spot price of the natural
-                  gas from Henri Hub given in US-Dollar/Btu. The increase of the demand from Europe probably caused the increase
-                  of the price of the American natural gas.
+                    of russian natural gas for Europe. That is why the war necesseraly had an impact on the price of
+                    natural gas
+                    in Europe, but also simply in the world. Indeed, Russia is one of the biggest exporter of natural
+                    gas in the world.
+                    <br> In the line chart below, you can see the spot price of the natural
+                    gas from Henri Hub given in US-Dollar/Btu. The increase of the demand from Europe probably caused
+                    the increase
+                    of the price of the American natural gas.
 
                 </p>
                 </div>
@@ -429,7 +450,8 @@
                     <h1> Wordwide reactions </h1>
 
                     <p>
-                        In order to understand the conflict in Ukraine, it is also very important to get an overview of the
+                        In order to understand the conflict in Ukraine, it is also very important to get an overview of
+                        the
                         situation abroad.
                         Indeed, Ukraine is defended by its population, but influential factors come in a wide range of
                         flavors and from a larger area than Ukraine only.
@@ -439,12 +461,12 @@
                     </p>
 
                     <div class="row_aligned">
-                        <div data-role="tile" data-effect="hover-zoom-down" 
-                            style="margin:2%; background-color: cadetblue; border-radius: 20px;">
+                        <div data-role="tile" data-effect="hover-zoom-down"
+                             style="margin:2%; background-color: cadetblue; border-radius: 20px;">
                             <div class="slide-front">
                                 <img src="https://cdn4.iconfinder.com/data/icons/refugees-evacuee-war/280/refugees-005-512.png"
-                                    class="icon"
-                                    style="height:50px; width: 50px;">
+                                     class="icon"
+                                     style="height:50px; width: 50px;">
                             </div>
                             <a href="#refugees_data" class="nostyleanchor">
                                 <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
@@ -456,11 +478,11 @@
                         </div>
 
                         <div data-role="tile" data-effect="hover-zoom-down"
-                            style="margin-right:2%; background-color: darkkhaki;border-radius: 20px;">
+                             style="margin-right:2%; background-color: darkkhaki;border-radius: 20px;">
                             <div class="slide-front">
                                 <img src="https://cdn0.iconfinder.com/data/icons/o022-economic-sanctions-outline/64/map_country_lockdown_lock-512.png"
-                                    class="icon"
-                                    style="height:50px; width: 50px;">
+                                     class="icon"
+                                     style="height:50px; width: 50px;">
                             </div>
                             <a href="#sanctions_data" class="nostyleanchor">
                                 <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
@@ -473,11 +495,11 @@
 
 
                         <div data-role="tile" data-effect="hover-zoom-down"
-                            style="margin-right:2%; background-color: firebrick;border-radius: 20px;">
+                             style="margin-right:2%; background-color: firebrick;border-radius: 20px;">
                             <div class="slide-front">
                                 <img src="https://cdn4.iconfinder.com/data/icons/aami-web-internet/64/aami13-13-512.png"
-                                    class="icon"
-                                    style="height:50px; width: 50px;">
+                                     class="icon"
+                                     style="height:50px; width: 50px;">
                             </div>
                             <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
                                 <p class="text-center">
@@ -488,11 +510,11 @@
 
 
                         <div data-role="tile" data-effect="hover-zoom-down"
-                            style="margin-right:2%; background-color: teal;border-radius: 20px;">
+                             style="margin-right:2%; background-color: teal;border-radius: 20px;">
                             <div class="slide-front">
                                 <img src="https://cdn0.iconfinder.com/data/icons/lagotline-survey-and-rating/64/Survey_and_Rating-05-512.png"
-                                    class="icon"
-                                    style="height:50px; width: 50px;">
+                                     class="icon"
+                                     style="height:50px; width: 50px;">
                             </div>
                             <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
                                 <p class="text-center">
@@ -569,27 +591,30 @@
 
                         <div class="centered" style="padding-bottom: 2%;">
                             <img src="https://www.unhcr.org/tr/wp-content/uploads/sites/14/2018/08/UNHCR_logo_vertical_ENG.png"
-                            style="height:60px">
+                                 style="height:60px">
                         </div>
-                        
-                        <p>On the left, we can observe a bar plot of the evolution of total count of refugees fleeing Ukraine.
-                            The count starts on the 24th of February, and is monitored by the United Nations High Commissioner for Refugees. 
-                            As described on their website, they collect the data directly from the neighboring countries ministry websites, 
+
+                        <p>On the left, we can observe a bar plot of the evolution of total count of refugees fleeing
+                            Ukraine.
+                            The count starts on the 24th of February, and is monitored by the United Nations High
+                            Commissioner for Refugees.
+                            As described on their website, they collect the data directly from the neighboring countries
+                            ministry websites,
                             on a daily basis.
                             As a reminder, the neighboring countries are the following:
                         </p>
                         <div class="row-aligned">
-                            <img src="https://flagpoles.co.uk/wp-content/uploads/2019/07/Moldova.png" 
-                                style="height:50px;border-radius: 15px;padding:2%">
-                            <img src="https://wallpapercave.com/wp/wp6783269.jpg" 
-                                style="height:50px; border-radius: 15px;padding:2%;">
-                            <img src="https://www.mrflag.com/wp-content/uploads/2018/11/Slovakia.png" 
-                                style="height:50px; border-radius: 15px;padding:2%;">
-                            <img src="https://www.flags.co.uk/client/uploads/5/hungary.png" 
-                                style="height:50px; border-radius: 15px;padding:2%;">
-                            <img src="https://flagpoles.co.uk/wp-content/uploads/2019/06/Poland.png" 
-                                style="height:50px; border-radius: 15px;padding:2%;">
-                                
+                            <img src="https://flagpoles.co.uk/wp-content/uploads/2019/07/Moldova.png"
+                                 style="height:50px;border-radius: 15px;padding:2%">
+                            <img src="https://wallpapercave.com/wp/wp6783269.jpg"
+                                 style="height:50px; border-radius: 15px;padding:2%;">
+                            <img src="https://www.mrflag.com/wp-content/uploads/2018/11/Slovakia.png"
+                                 style="height:50px; border-radius: 15px;padding:2%;">
+                            <img src="https://www.flags.co.uk/client/uploads/5/hungary.png"
+                                 style="height:50px; border-radius: 15px;padding:2%;">
+                            <img src="https://flagpoles.co.uk/wp-content/uploads/2019/06/Poland.png"
+                                 style="height:50px; border-radius: 15px;padding:2%;">
+
                         </div>
                         <script>
                             // Refugee bar plot
@@ -622,20 +647,23 @@
             <div class="box">
 
                 <div class="columns is-vcentered is-flex">
-                    
+
                     <div class="column is-half-content" style="padding: 2%">
 
                         <div class="centered" style="padding-bottom: 2%;">
                             <img src="https://images.squarespace-cdn.com/content/v1/5ea598ee75871632a4bd427f/34c5c5c0-1015-4308-97bf-ac7a93333e2b/logo+test+3.png?format=1500w"
-                            style="height:60px">
+                                 style="height:60px">
                         </div>
 
-                        <p>On the right, you can find a stacked bar chart of the different sanctions taken by the international
+                        <p>On the right, you can find a stacked bar chart of the different sanctions taken by the
+                            international
                             community against Russia, the invading force.
                             You can discover the details day by day by hovering above the different columns.
 
-                            This sanctions dataset was put together by an independent international watchlist company, Castellum.
-                            Sanctions include restrictions on the movement, usage, intervention of individuals, entities and goods.
+                            This sanctions dataset was put together by an independent international watchlist company,
+                            Castellum.
+                            Sanctions include restrictions on the movement, usage, intervention of individuals, entities
+                            and goods.
                         </p>
                     </div>
                     <div class="column is-half content">
@@ -643,7 +671,7 @@
                         <div class="sanctions_tooltip"></div>
                         <div id="sanctions_data"></div>
                     </div>
-                    
+
 
                     <script>
                         // sanctions stacked bar plot
@@ -658,7 +686,7 @@
                                 z: d => d.country,
                             });
 
-                        });  
+                        });
 
                     </script>
                 </div>
@@ -671,25 +699,26 @@
             <!-- <div class="box"> -->
 
 
-                    <button id="date_button">Next Data</button>
-                    <div id="sentiment_data" class="box"></div>
+            <button id="date_button">Next Data</button>
+            <div id="sentiment_data" class="box"></div>
 
-                    <script>
-                        var counter = -1;
+            <script>
+                var counter = -1;
 
-                        let pathSentiment = './../../data/NDA_twitter_sentiment_emotion_agg.csv';
-                        let loaderSentiment = new SentimentLoader(pathSentiment);
-                        let promiseSentiment = loaderSentiment.load_data().then((data) => {
+                let pathSentiment = './../../data/NDA_twitter_sentiment_emotion_agg.csv';
+                let loaderSentiment = new SentimentLoader(pathSentiment);
+                let promiseSentiment = loaderSentiment.load_data().then((data) => {
 
-                            function get_data() {
-                                counter = (counter+1)%data.length
-                                return data[counter]
-                            }
-                            SentimentComponent({
-                                get_data: get_data,
-                            });
-                        });
-                    </script>
+                    function get_data() {
+                        counter = (counter + 1) % data.length
+                        return data[counter]
+                    }
+
+                    SentimentComponent({
+                        get_data: get_data,
+                    });
+                });
+            </script>
 
             <!-- </div> -->
 
@@ -829,27 +858,37 @@
     cd.start()
 
     document.addEventListener("DOMContentLoaded", function (event) {
+        new Vivus('ukraine-border-animation',
+            {
+                type: "sync",
+                duration: 1000,
+                file: "./../pictures/intro/UkraineBorder.svg",
+                start: "autostart",
+                animTimingFunction: Vivus.EASE
+            });
+
         let casualtiesPath = "https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/casualties/CasualtiesUNHumanRightsUATweets.csv";
         let casualtiesLoader = new CasualtiesLoader(casualtiesPath);
         let statistics = new CasualtiesStatistics();
-        let promise = casualtiesLoader.load_data().then(
-            () => plot_casualties(casualtiesLoader)
-        ).then(
-            () => calculateStatistics(casualtiesLoader.all_data, statistics)
-        ).then(
-            () => appendStatistics(statistics)
-        ).then(
-            () =>
-                drawCasualtiesPictogram(
-                    pictogram_width,
-                    pictogram_height,
-                    icon_type_person,
-                    single_im_height,
-                    single_pic_number,
-                    n_columns,
-                    statistics.total[0].toFixed(0),
-                    total_casualties_name)
-        )
+        let promise = casualtiesLoader.load_data()
+            .then(
+                () => plot_casualties(casualtiesLoader)
+            ).then(
+                () => calculateStatistics(casualtiesLoader.all_data, statistics)
+            ).then(
+                () => appendStatistics(statistics)
+            ).then(
+                () =>
+                    drawCasualtiesPictogram(
+                        pictogram_width,
+                        pictogram_height,
+                        icon_type_person,
+                        single_im_height,
+                        single_pic_number,
+                        n_columns,
+                        statistics.total[0].toFixed(0),
+                        total_casualties_name)
+            )
     });
 
 </script>
