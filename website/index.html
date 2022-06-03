@@ -54,8 +54,6 @@
 
 <body>
 
-<div id="hidingtheloading" style="display:none">hello
-</div>
 <div id="fullpage">
     <div class="section">
         <div class="columns">
@@ -64,8 +62,9 @@
                     <div id="ukraine-border-animation"></div>
                     <div class="is-overlay overlay-custom">
                         <div class="title-container">
-                            <h1 id="title_of_project" class="title is-1 is-centered overlay-custom">Russian <br>invasion<br>of
-                                Ukraine</h1>
+                            <h1 id="title_of_project" class="title is-1 is-centered overlay-custom"
+                                style="opacity: 80%">Russian invasion<br>of
+                                Ukraine <br><br><br></h1>
                         </div>
                     </div>
                 </div>
@@ -75,9 +74,6 @@
 
     <div class="section">
         <div class="container">
-            <div class="columns">
-
-            </div>
             <div class="box">
                 <p class="is-size-3">
                     The Russian 🇷🇺 invasion of Ukraine 🇺🇦 started on <span
@@ -372,12 +368,10 @@
 
         <div class="slide">
 
-
-
-
             <div id="titleslideoil">
                 <p class="slidetitle">Currency analysis and variation of the brent oil spot price
-                <p></div>
+                <p>
+            </div>
             <div id="oilinfo" style="display: flex">
 
                 <p class="myparagraph2">
@@ -415,7 +409,6 @@
                     gas from Henri Hub given in US-Dollar/Btu. The increase of the demand from Europe probably caused
                     the increase
                     of the price of the American natural gas.
-
                 </p>
                 </div>
 
@@ -708,13 +701,13 @@
                         <div class="column is-half content">
 
                             <div class="row_aligned">
-                                <button id="sentiment_previous_day_button" class="button">Previous Day</button>                        
+                                <button id="sentiment_previous_day_button" class="button">Previous Day</button>
                                 <button id="sentiment_next_day_button" class="button">Next Day</button>
                             </div>
 
                         </div>
                         <div class="column is-half content">
-                        
+
                             <div id="sentiment_data">
                                 <!-- style="background-color: lightslategrey;" class="box column_aligned">
                                 <div class="simple_centered">
@@ -737,140 +730,139 @@
                             </div>
                         </div>
 
-                    <script>
-                        var counter = -1;
+                        <script>
+                            var counter = -1;
 
-                        let pathSentiment = './../../data/NDA_twitter_sentiment_emotion_agg.csv';
-                        let loaderSentiment = new SentimentLoader(pathSentiment);
-                        let promiseSentiment = loaderSentiment.load_data().then((data) => {
+                            let pathSentiment = './../../data/NDA_twitter_sentiment_emotion_agg.csv';
+                            let loaderSentiment = new SentimentLoader(pathSentiment);
+                            let promiseSentiment = loaderSentiment.load_data().then((data) => {
 
-                            function get_data() {
-                                counter = (counter + 1) % data.length
-                                return data[counter]
-                            }
+                                function get_data() {
+                                    counter = (counter + 1) % data.length
+                                    return data[counter]
+                                }
 
-                            SentimentComponent({
-                                get_data: get_data,
-                                previous_button_id: "sentiment_previous_day_button",
-                                next_button_id: "sentiment_next_day_button"
+                                SentimentComponent({
+                                    get_data: get_data,
+                                    previous_button_id: "sentiment_previous_day_button",
+                                    next_button_id: "sentiment_next_day_button"
+                                });
                             });
-                        });
-                    </script>
+                        </script>
 
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
+
     </div>
 
 
-</div>
+    <script type="text/javascript" src="js/vizdata.js"></script>
+    <script type="text/javascript" src="js/d3stats.js"></script>
+    <script type="text/javascript" src="js/vizcontainer.js"></script>
 
+    <!--<link href="stylesheeteconomics.css" type="text/css" rel="stylesheet">-->
 
-<script type="text/javascript" src="js/vizdata.js"></script>
-<script type="text/javascript" src="js/d3stats.js"></script>
-<script type="text/javascript" src="js/vizcontainer.js"></script>
+    <script>
+        let myFullpage = new fullpage('#fullpage', {
+            // Navigation
+            menu: '#menu',
+            lockAnchors: false,
+            anchors: ['firstPage', 'secondPage'],
+            navigation: false,
+            navigationPosition: 'right',
+            navigationTooltips: ['firstSlide', 'secondSlide'],
+            showActiveTooltip: false,
+            slidesNavigation: false,
+            slidesNavPosition: 'bottom',
 
-<!--<link href="stylesheeteconomics.css" type="text/css" rel="stylesheet">-->
+            // Scrolling
+            css3: true,
+            scrollingSpeed: 700,
+            autoScrolling: true,
+            fitToSection: true,
+            scrollBar: false,
+            easing: 'easeInOutCubic',
+            easingcss3: 'ease',
+            loopBottom: false,
+            loopTop: false,
+            loopHorizontal: true,
+            continuousVertical: false,
+            continuousHorizontal: false,
+            scrollHorizontally: true,
+            interlockedSlides: false,
+            dragAndMove: false,
+            offsetSections: false,
+            resetSliders: false,
+            fadingEffect: false,
+            normalScrollElements: '#element1, .element2',
+            scrollOverflow: true,
+            scrollOverflowMacStyle: false,
+            scrollOverflowReset: false,
+            touchSensitivity: 15,
+            bigSectionsDestination: null,
 
-<script>
-    let myFullpage = new fullpage('#fullpage', {
-        // Navigation
-        menu: '#menu',
-        lockAnchors: false,
-        anchors: ['firstPage', 'secondPage'],
-        navigation: false,
-        navigationPosition: 'right',
-        navigationTooltips: ['firstSlide', 'secondSlide'],
-        showActiveTooltip: false,
-        slidesNavigation: false,
-        slidesNavPosition: 'bottom',
+            // Accessibility
+            keyboardScrolling: true,
+            animateAnchor: true,
+            recordHistory: true,
 
-        // Scrolling
-        css3: true,
-        scrollingSpeed: 700,
-        autoScrolling: true,
-        fitToSection: true,
-        scrollBar: false,
-        easing: 'easeInOutCubic',
-        easingcss3: 'ease',
-        loopBottom: false,
-        loopTop: false,
-        loopHorizontal: true,
-        continuousVertical: false,
-        continuousHorizontal: false,
-        scrollHorizontally: true,
-        interlockedSlides: false,
-        dragAndMove: false,
-        offsetSections: false,
-        resetSliders: false,
-        fadingEffect: false,
-        normalScrollElements: '#element1, .element2',
-        scrollOverflow: true,
-        scrollOverflowMacStyle: false,
-        scrollOverflowReset: false,
-        touchSensitivity: 15,
-        bigSectionsDestination: null,
+            // Design
+            //controlArrows: true,
+            //controlArrowsHTML: [
+            //    '<div class="fp-arrow"></div>',
+            //  '<div class="fp-arrow"></div>'
+            //],
+            verticalCentered: true,
+            sectionsColor: ['#fff', '#fff'],
+            paddingTop: '3em',
+            paddingBottom: '10px',
+            fixedElements: '#header, .footer',
+            responsiveWidth: 0,
+            responsiveHeight: 0,
+            responsiveSlides: false,
+            parallax: false,
+            parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+            dropEffect: false,
+            dropEffectOptions: {speed: 2300, color: '#F82F4D', zIndex: 9999},
+            waterEffect: false,
+            waterEffectOptions: {animateContent: true, animateOnMouseMove: true},
+            cards: false,
+            cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
 
-        // Accessibility
-        keyboardScrolling: true,
-        animateAnchor: true,
-        recordHistory: true,
+            // Custom selectors
+            sectionSelector: '.section',
+            slideSelector: '.slide',
 
-        // Design
-        //controlArrows: true,
-        //controlArrowsHTML: [
-        //    '<div class="fp-arrow"></div>',
-        //  '<div class="fp-arrow"></div>'
-        //],
-        verticalCentered: true,
-        sectionsColor: ['#ccc', '#fff'],
-        paddingTop: '3em',
-        paddingBottom: '10px',
-        fixedElements: '#header, .footer',
-        responsiveWidth: 0,
-        responsiveHeight: 0,
-        responsiveSlides: false,
-        parallax: false,
-        parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
-        dropEffect: false,
-        dropEffectOptions: {speed: 2300, color: '#F82F4D', zIndex: 9999},
-        waterEffect: false,
-        waterEffectOptions: {animateContent: true, animateOnMouseMove: true},
-        cards: false,
-        cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
+            lazyLoading: true,
+            observer: true,
+            credits: {enabled: true, label: 'Made with fullPage.js', position: 'right'},
 
-        // Custom selectors
-        sectionSelector: '.section',
-        slideSelector: '.slide',
-
-        lazyLoading: true,
-        observer: true,
-        credits: {enabled: true, label: 'Made with fullPage.js', position: 'right'},
-
-        // Events
-        beforeLeave: function (origin, destination, direction, trigger) {
-        },
-        onLeave: function (origin, destination, direction, trigger) {
-        },
-        afterLoad: function (origin, destination, direction, trigger) {
-        },
-        afterRender: function () {
-        },
-        afterResize: function (width, height) {
-        },
-        afterReBuild: function () {
-        },
-        afterResponsive: function (isResponsive) {
-        },
-        afterSlideLoad: function (section, origin, destination, direction, trigger) {
-        },
-        onSlideLeave: function (section, origin, destination, direction, trigger) {
-        },
-        onScrollOverflow: function (section, slide, position, direction) {
-        }
-    });
-</script>
+            // Events
+            beforeLeave: function (origin, destination, direction, trigger) {
+            },
+            onLeave: function (origin, destination, direction, trigger) {
+            },
+            afterLoad: function (origin, destination, direction, trigger) {
+            },
+            afterRender: function () {
+            },
+            afterResize: function (width, height) {
+            },
+            afterReBuild: function () {
+            },
+            afterResponsive: function (isResponsive) {
+            },
+            afterSlideLoad: function (section, origin, destination, direction, trigger) {
+            },
+            onSlideLeave: function (section, origin, destination, direction, trigger) {
+            },
+            onScrollOverflow: function (section, slide, position, direction) {
+            }
+        });
+    </script>
 </body>
 <script src="js/casualties/CasualtiesPictogram.js"></script>
 <script src="lib/countDown.min.js"></script>
@@ -904,6 +896,7 @@
                 start: "autostart",
                 animTimingFunction: Vivus.EASE
             });
+
 
         let casualtiesPath = "https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/casualties/CasualtiesUNHumanRightsUATweets.csv";
         let casualtiesLoader = new CasualtiesLoader(casualtiesPath);
