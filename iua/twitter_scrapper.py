@@ -7,8 +7,8 @@ import pandas as pd
 
 
 def init_empty_pandas():
-    col_names_path = "../data/twitter_scrapping-configs/twint_col_names.pkl"
-    dtypes_path = "../data/twitter_scrapping-configs/twint_dtypes.pkl"
+    col_names_path = "./data/twitter_scrapping-configs/twint_col_names.pkl"
+    dtypes_path = "./data/twitter_scrapping-configs/twint_dtypes.pkl"
     col_names = pd.read_pickle(col_names_path).to_list()
     dtypes = pd.read_pickle(dtypes_path).values
     df = pd.DataFrame(columns=col_names, dtype=dtypes)
@@ -83,4 +83,4 @@ if __name__ == "__main__":
     twitter_account_name = args.twitter_account_name
     start_date = datetime.strptime(args.start_date, "%Y-%m-%d").date()
     now = get_now_string()
-    scrap_twitter(twitter_account_name, start_date, True, f"../data/{twitter_account_name}_run_{now}.csv")
+    scrap_twitter(twitter_account_name, start_date, True, f"./data/{twitter_account_name}_run_{now}.csv")
