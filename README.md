@@ -27,6 +27,15 @@ At the same time, we aim to give the possibility to get an overview of the confl
 
 **10% of the final grade**
 
-[Milestone 1 report](./milestones/milestone2.pdf)
+[Milestone 2 report](./milestones/milestone2.pdf)
 
-[Website (currently draft)](https://com-480-data-visualization.github.io/datavis-project-2022-independentua/)
+### 📘 Milestone 3
+
+**80% of the final grade**
+
+[Process Book](https://github.com/com-480-data-visualization/datavis-project-2022-independentua/blob/main/milestones/Light%20on%20Ukraine.pdf)
+
+[Website](https://com-480-data-visualization.github.io/datavis-project-2022-independentua/)
+
+[Video](https://youtu.be/Gt-tUSHXBgk)
+
