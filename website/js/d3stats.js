@@ -166,7 +166,7 @@ mapprevshowOrHideDiv(i+1);
 }
 
 function nextshowOrHideDiv() {
-  i=i+1
+  i=i+1;
   if (146>i>-1){
     oilshowOrHideDiv();
     gasshowOrHideDiv();
