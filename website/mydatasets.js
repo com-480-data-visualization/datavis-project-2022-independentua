@@ -120810,14 +120810,14 @@ var mydayarray = [[
     "curr": "ZAR"
   },
   {
-    "value(vsUSD)": NaN,
+    "value(vsUSD)":  0.034,
     "ref": 0.037,
     "min": 0.033,
     "max": 0.037,
     "mean": 0.034,
     "name": "Ukraine",
     "id": "UA",
-    "rel(%)": NaN,
+    "rel(%)": 0.918,
     "curr": "UAH"
   },
   {
@@ -121692,14 +121692,14 @@ var mydayarray = [[
     "curr": "ZAR"
   },
   {
-    "value(vsUSD)": NaN,
+    "value(vsUSD)":  0.034,
     "ref": 0.037,
     "min": 0.033,
     "max": 0.037,
     "mean": 0.034,
     "name": "Ukraine",
     "id": "UA",
-    "rel(%)": NaN,
+    "rel(%)": 0.918,
     "curr": "UAH"
   },
   {
@@ -128748,7 +128748,7 @@ var mydayarray = [[
     "curr": "ZAR"
   },
   {
-    "value(vsUSD)": NaN,
+    "value(vsUSD)": 0.037,
     "ref": 0.037,
     "min": 0.033,
     "max": 0.037,

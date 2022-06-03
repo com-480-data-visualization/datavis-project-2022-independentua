@@ -152,24 +152,24 @@ var mypositionoil = [131.98378134855085,2.5524576027594135,
 
 
 function prevshowOrHideDiv() {
-  i=i-1
-  if (146>i>-1){
-    oilshowOrHideDiv()
-    gasshowOrHideDiv()
-mapprevshowOrHideDiv(i+1)
+  i=i-1;
+  if (i>-1){
+    oilshowOrHideDiv();
+    gasshowOrHideDiv();
+mapprevshowOrHideDiv(i+1);
     /*alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");*/
 }
   else{
-    i = i+1
+    i = i+1;
   }
 }
 
 function nextshowOrHideDiv() {
-  i=i+1
-  if (146>i>-1){
-    oilshowOrHideDiv()
-    gasshowOrHideDiv()
-mapprevshowOrHideDiv(i-1)
+  i=i+1;
+  if (146>i){
+    oilshowOrHideDiv();
+    gasshowOrHideDiv();
+mapnextshowOrHideDiv(i-1)
 
     /*alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");*/
 }
@@ -179,25 +179,27 @@ mapprevshowOrHideDiv(i-1)
 
 function superprevshowOrHideDiv() {
   i=i-7
-  /*console.log(i>-1)*/
-  if (146>i>-1){
-    oilshowOrHideDiv()
-    gasshowOrHideDiv()
-mapprevshowOrHideDiv(i+7)
+
+  if (i>-1){
+    oilshowOrHideDiv();
+    gasshowOrHideDiv();
+mapprevshowOrHideDiv(i+7);
+
     /*alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");*/
 }
   else{
     i = i+7
+
   }
 
 }
 
 function supernextshowOrHideDiv() {
   i=i+7
-  if (146>i>-1){
-    oilshowOrHideDiv()
-    gasshowOrHideDiv()
-mapprevshowOrHideDiv(i-7)
+  if (146>i){
+    oilshowOrHideDiv();
+    gasshowOrHideDiv();
+mapnextshowOrHideDiv(i-7)
     /*alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");*/
 }
   else{
@@ -907,16 +909,25 @@ var mydays = [0,
 
 visualizemydata(mydayarray[0],array[0])
 
-if (mydays[1]==0){
-for (let i = 0; i < 146; i++) {
-     visualizemydata(mydayarray[i],array[i])
-
-}}
 
 
+/*var loadeverything = 0;
+
+setTimeout(loadeverything,30000)
+
+function loadeverything(){
+  for (let i = 7; i < 146; i++) {
+     visualizemydata(mydayarray[i],array[i]);
+
+}}*/
 
  function mapprevshowOrHideDiv(j) {
-if (i==1){mydays[1]=0}
+console.log(i,j)
+if (mydays[i]!==0){
+  visualizemydata(mydayarray[i],array[i])
+  mydays[i]=0;
+}
+
 
    var v = document.getElementById(array[i]);
 
@@ -928,6 +939,12 @@ if (i==1){mydays[1]=0}
 
  }
  function mapnextshowOrHideDiv(j) {
+   if (mydays[i]!==0){
+     visualizemydata(mydayarray[i],array[i])
+     mydays[i]=0;
+   }
+
+
 
 
     var v = document.getElementById(array[i]);
