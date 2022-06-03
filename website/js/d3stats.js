@@ -152,14 +152,14 @@ var mypositionoil = [131.98378134855085,2.5524576027594135,
 
 
 function prevshowOrHideDiv() {
-  i=i-1
+  i=i-1;
   if (146>i>-1){console.log("why");
     oilshowOrHideDiv();
     gasshowOrHideDiv();
 mapprevshowOrHideDiv(i+1);
     /*alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");*/
 }
-  if(i<0){
+  else{
     console.log("hello");
     i = i+1;
   }
@@ -170,7 +170,7 @@ function nextshowOrHideDiv() {
   if (146>i>-1){
     oilshowOrHideDiv();
     gasshowOrHideDiv();
-mapprevshowOrHideDiv(i-1)
+mapnextshowOrHideDiv(i-1)
 
     /*alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");*/
 }
@@ -198,7 +198,7 @@ function supernextshowOrHideDiv() {
   if (146>i>-1){
     oilshowOrHideDiv();
     gasshowOrHideDiv();
-mapprevshowOrHideDiv(i-7)
+mapnextshowOrHideDiv(i-7)
     /*alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");*/
 }
   else{
@@ -907,12 +907,7 @@ var mydays = [0,
 
 
 visualizemydata(mydayarray[0],array[0])
-visualizemydata(mydayarray[1],array[1])
-visualizemydata(mydayarray[2],array[2])
-visualizemydata(mydayarray[3],array[3])
-visualizemydata(mydayarray[4],array[4])
-visualizemydata(mydayarray[5],array[5])
-visualizemydata(mydayarray[6],array[6])
+
 
 
 /*var loadeverything = 0;
@@ -926,16 +921,13 @@ function loadeverything(){
 }}*/
 
  function mapprevshowOrHideDiv(j) {
-if (loadeverything==0){
-  console.log("hello")
-for (let i = 1; i < 146; i++) {
-     visualizemydata(mydayarray[i],array[i]);
 
-}}
+if (mydays[i]!==0){
+  visualizemydata(mydayarray[i],array[i])
+  mydays[i]=0;
+}
 
-loadeverything = loadeverything +1;
 
-console.log(i)
    var v = document.getElementById(array[i]);
 
        v.style.display = "block";
@@ -946,11 +938,10 @@ console.log(i)
 
  }
  function mapnextshowOrHideDiv(j) {
-   if (loadeverything==0){
-   for (let i = 1; i < 146; i++) {
-        visualizemydata(mydayarray[i],array[i]);
-
-   }}
+   if (mydays[i]!==0){
+     visualizemydata(mydayarray[i],array[i])
+     mydays[i]=0;
+   }
 
    loadeverything = loadeverything +1;
 
