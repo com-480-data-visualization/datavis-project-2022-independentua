@@ -261,7 +261,7 @@ function StackedBarChart(data, {
     }
     const mousemove = function(event, d) {
         tooltip.html(
-            d.data[0].toDateString() + "<br>" +
+            "<strong>" + d.data[0].toDateString() + "</strong> <br>" +
             "Number of Sanctions: " + d[1] + "<br>" +
             "Issuing Country: " + [...d.data[1].entries()].filter(([k, v])=> v===d.i)[0][0])
         .style("left", (d3.pointer(event)[0] +10) + "px")
