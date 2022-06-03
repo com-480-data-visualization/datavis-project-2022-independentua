@@ -61,7 +61,7 @@
 
 .containermap{
   width: auto;
-  height: 80%;
+  height: 75%;
   margin: 0px 70px 0px 70px;
   position: relative;
   text-align: center;
@@ -149,7 +149,7 @@ transform: translate(-50%, -50%);
     position: relative;
     text-align: center;
     margin-top:20px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     color: black;
     font-size: 22px}
 
