@@ -159,14 +159,14 @@ function prevshowOrHideDiv() {
 mapprevshowOrHideDiv(i+1);
     /*alert("We don't show data for the selected date! Data range: 01.01.2022-26.05.2022");*/
 }
-  else{
+  if(i<0){
     console.log("hello");
     i = i+1;
   }
 }
 
 function nextshowOrHideDiv() {
-  i=i+;
+  i=i+1;
   if (146>i>-1){
     oilshowOrHideDiv();
     gasshowOrHideDiv();
@@ -908,18 +908,22 @@ var mydays = [0,
 
 visualizemydata(mydayarray[0],array[0])
 visualizemydata(mydayarray[1],array[1])
+visualizemydata(mydayarray[2],array[2])
+visualizemydata(mydayarray[3],array[3])
+visualizemydata(mydayarray[4],array[4])
+visualizemydata(mydayarray[5],array[5])
 visualizemydata(mydayarray[6],array[6])
 
 
-var loadeverything = 0;
+/*var loadeverything = 0;
 
-setTimeout(loadeverything,7000)
+setTimeout(loadeverything,30000)
 
 function loadeverything(){
-  for (let i = 1; i < 146; i++) {
+  for (let i = 7; i < 146; i++) {
      visualizemydata(mydayarray[i],array[i]);
 
-}}
+}}*/
 
  function mapprevshowOrHideDiv(j) {
 if (loadeverything==0){
@@ -930,6 +934,8 @@ for (let i = 1; i < 146; i++) {
 }}
 
 loadeverything = loadeverything +1;
+
+console.log(i)
    var v = document.getElementById(array[i]);
 
        v.style.display = "block";
