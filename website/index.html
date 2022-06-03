@@ -520,23 +520,48 @@
                     // sanctions stacked bar plot
 
                     let pathSanctions = './../../data/NDA_Castellum_bycountry_bydate_cleaned.csv';
-                        let loaderSanctions = new SanctionsLoader(pathSanctions);
-                        let promiseSanctions = loaderSanctions.load_data().then((data) => {
+                    let loaderSanctions = new SanctionsLoader(pathSanctions);
+                    let promiseSanctions = loaderSanctions.load_data().then((data) => {
 
-                            chart = StackedBarChart(data, {
-                                x: d => d.date,
-                                y: d => d.nsanctions,
-                                z: d => d.country,
-                            });
+                        chart = StackedBarChart(data, {
+                            x: d => d.date,
+                            y: d => d.nsanctions,
+                            z: d => d.country,
+                        });
 
-                            const margin = {top: 10, right: 30, bottom: 30, left: 60},
-                                    width = 900 - margin.left - margin.right,
-                                    height = 500 - margin.top - margin.bottom;
-
-                        });  
+                    });  
                 </script>
 
             </div>
+
+        </div>
+
+        <div class="slide">
+
+            <!-- <div class="box"> -->
+
+
+                    <button id="date_button">Next Data</button>
+                    <div id="sentiment_data" class="box"></div>
+
+                    <script>
+                        var counter = -1;
+
+                        let pathSentiment = './../../data/NDA_twitter_sentiment_emotion_agg.csv';
+                        let loaderSentiment = new SentimentLoader(pathSentiment);
+                        let promiseSentiment = loaderSentiment.load_data().then((data) => {
+
+                            function get_data() {
+                                counter = (counter+1)%data.length
+                                return data[counter]
+                            }
+                            SentimentComponent({
+                                get_data: get_data,
+                            });
+                        });
+                    </script>
+
+            <!-- </div> -->
 
         </div>
     </div>

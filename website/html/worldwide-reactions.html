@@ -1,11 +1,11 @@
-<!-- <!DOCTYPE html> -->
-<!-- <html lang="en"> -->
-    <!-- <head> -->
-        <!-- <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Adam Narozniak, Alessandro Tavazzi, Nicolas d’Argenlieu">
-        <title>worldwide reactions</title> -->
+        <title>worldwide reactions</title>
 
-        <!-- <script src="https://d3js.org/d3.v6.js"></script> -->
+        <script src="https://d3js.org/d3.v6.js"></script>
 
         <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
         <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
@@ -14,11 +14,11 @@
 
         <link href="/website/css/world_reactions.css" type="text/css" rel="stylesheet">
         <script type="text/javascript" src="./../js/world_reactions_utils.js"></script>
-    <!-- </head> -->
-<!-- <body> -->
+    </head>
+<body>
 <h1 style="font-family: Rockwell;" class="worldwide-reactions-h1"> Wordwide reactions </h1>
 
-<div class="container">
+<div class="container"> 
     <p>
         In order to understand the conflict in Ukraine, it is also very important to get an overview of the situation abroad. 
         Indeed, Ukraine is defended by its population, but influential factors come in a wide range of flavors and from a larger area than Ukraine only.
@@ -75,42 +75,46 @@
             </div>
         </div>
     </div>
-</div>
 
-<!-- <p>
-    Each one of these themas relate to an aspect of the war as perceived or enforced by non-Ukrainian individuals and entities. 
-    We detail them below:
-    <ul>
-        <li>Refugees <br> The military attacks, bombings and blocus on the invaded part of Ukraine forced a large amount of civilians to 
-            flee their place of living. As a consequence, the neighboring countries, namely Moldavia, Romania, Slovakia, Hungary, 
-            Poland and Belarus, have welcomed millions of distressed people, having left everything behind to get to safety. 
-            The refugees data was fetched from the <a href="https://www.unhcr.org/fr/urgence-ukraine.html">United Nations High 
-            Commissioner for Refugees website</a> dedicated to the tracking and information of the refugee crisis.</li>
-        <li>Sanctions <br> A large wave of economic, social and geopolitical sanctions was taken from multiple countries against Russia 
-            for starting this war. We focus on some of the most important with the visualization of sanctions issued by Australia,
-            Canada, the EU, France, Switzerland, the UK and the US. The data is gracefully provided by the international sanctions
-            tracking firm <a href="https://www.castellum.ai/">Castellum</a>. Castellum tracks different types of issued international 
-            filings and has a scope that is larger than the invasion only.
-        </li>
-        <li>Tweets Sentiments and Emotions <br> An important consequence of the invasion of Ukraine is the individuals reactions across 
-            the world. A very good indicator of it is social networks, and especially Twitter. Using 
-            <a href="https://www.kaggle.com/datasets/bwandowando/ukraine-russian-crisis-twitter-dataset-1-2-m-rows">a dataset of 35.58M tweets</a>  
-            selected as linked to the war in Ukraine, we run Machine Learning models on the extracted texts and compute the sentiment and 
-            emotion of a random subsample of the dataset. The sentiment is computed using a <a href="https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment?text=Urgent%0A500+Russian+tanks+approaching+the+capital%2C+Kyiv%2C+from+all+sides.%0A+%23Russia+%23Ukraine+%23Russia+%23Ukraine%0A%23Kyiv">
-            natural language processing model</a>. It indicates wether the tweet demonstrates a positive, neutral or negative sentiment.
-            The emotion is one of anger, disgust, fear, joy, neutral, sadness or suprise. It is detected in each tweet using 
-            <a href="https://huggingface.co/j-hartmann/emotion-english-distilroberta-base">anoter NLP model</a>.
-        </li>
-    </ul>  
-</p>
 
-<div class="test">Test Test</div>
+    <p>
+        Each one of these themas relate to an aspect of the war as perceived or enforced by non-Ukrainian individuals and entities. 
+        We detail them below:
+        <ul>
+            <li>Refugees <br> The military attacks, bombings and blocus on the invaded part of Ukraine forced a large amount of civilians to 
+                flee their place of living. As a consequence, the neighboring countries, namely Moldavia, Romania, Slovakia, Hungary, 
+                Poland and Belarus, have welcomed millions of distressed people, having left everything behind to get to safety. 
+                The refugees data was fetched from the <a href="https://www.unhcr.org/fr/urgence-ukraine.html">United Nations High 
+                Commissioner for Refugees website</a> dedicated to the tracking and information of the refugee crisis.</li>
+            <li>Sanctions <br> A large wave of economic, social and geopolitical sanctions was taken from multiple countries against Russia 
+                for starting this war. We focus on some of the most important with the visualization of sanctions issued by Australia,
+                Canada, the EU, France, Switzerland, the UK and the US. The data is gracefully provided by the international sanctions
+                tracking firm <a href="https://www.castellum.ai/">Castellum</a>. Castellum tracks different types of issued international 
+                filings and has a scope that is larger than the invasion only.
+            </li>
+            <li>Tweets Sentiments and Emotions <br> An important consequence of the invasion of Ukraine is the individuals reactions across 
+                the world. A very good indicator of it is social networks, and especially Twitter. Using 
+                <a href="https://www.kaggle.com/datasets/bwandowando/ukraine-russian-crisis-twitter-dataset-1-2-m-rows">a dataset of 35.58M tweets</a>  
+                selected as linked to the war in Ukraine, we run Machine Learning models on the extracted texts and compute the sentiment and 
+                emotion of a random subsample of the dataset. The sentiment is computed using a <a href="https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment?text=Urgent%0A500+Russian+tanks+approaching+the+capital%2C+Kyiv%2C+from+all+sides.%0A+%23Russia+%23Ukraine+%23Russia+%23Ukraine%0A%23Kyiv">
+                natural language processing model</a>. It indicates wether the tweet demonstrates a positive, neutral or negative sentiment.
+                The emotion is one of anger, disgust, fear, joy, neutral, sadness or suprise. It is detected in each tweet using 
+                <a href="https://huggingface.co/j-hartmann/emotion-english-distilroberta-base">anoter NLP model</a>.
+            </li>
+        </ul>  
+    </p>
 
-<div id="refugees_data"></div>
+    <div class="test">Test Test</div>
 
-<p>This is a graph of the incoming refugee population.</p>
+    <div id="refugees_data"></div>
 
-<div id="sanctions_data"></div>
+    <p>This is a graph of the incoming refugee population.</p>
+
+    <div id="sanctions_data"></div>
+
+    <button id="date_button">Next Data</button>
+
+    <div id="sentiment_data"></div>
 
 </div>
 
@@ -136,10 +140,6 @@
             title: d => d[1]
         });
 
-        const margin = {top: 10, right: 30, bottom: 30, left: 60},
-            width = 900 - margin.left - margin.right,
-            height = 500 - margin.top - margin.bottom;
-
     });
 
     // sanctions stacked bar plot
@@ -154,14 +154,27 @@
             z: d => d.country,
         });
 
-        const margin = {top: 10, right: 30, bottom: 30, left: 60},
-                width = 900 - margin.left - margin.right,
-                height = 500 - margin.top - margin.bottom;
-
     });
 
+    var counter = -1;
+
+    let pathSentiment = './../../data/NDA_twitter_sentiment_emotion_agg.csv';
+    let loaderSentiment = new SentimentLoader(pathSentiment);
+    let promiseSentiment = loaderSentiment.load_data().then((data) => {
+
+        console.log(data)
+
+        function get_data() {
+            counter = (counter+1)%data.length
+            console.log(data[counter])
+            return data[counter]
+        }
+        SentimentComponent({
+            get_data: get_data,
+        });
+    });
     
         
-</script> -->
-<!-- </body> -->
-<!-- </html> -->
+</script>
+</body>
+</html>
