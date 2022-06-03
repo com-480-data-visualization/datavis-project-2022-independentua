@@ -7,9 +7,6 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="author" content="Adam Narozniak, Alessandro Tavazzi, Nicolas d’Argenlieu"/>
 
-    <script src="./main.js" type="module"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
@@ -47,6 +44,7 @@
     <!-- Metro 4 -->
     <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
     <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+
 
 </head>
 
@@ -88,17 +86,39 @@
 
                 <div id="pictograms" class="columns is-vcentered is-flex">
                     <div class="column is-half content">
-                        <h2>Casualties</h2>
+                        <h1>Casualties</h1>
                         <p id="description-casualties-intro">
-                            The Russian invasion started on 24.02.2022. It's
-                            Since the beginning of the war, Russian soldiers:
+                            📅 Every day:
                         <ul>
-                            <li>have murdered <span class="tag is-danger"> X </span> innocent civilians</li>
-                            <li>have caused injuries to <span class="tag is-warning"> Y </span> civilians.</li>
+                            <li><span id="average-civilian-deaths" class="tag is-danger is-size-6"> X </span> innocent
+                                civilians die, including <span id="average-children-deaths"
+                                                               class="tag is-danger  is-size-6"></span> children
+                            </li>
+                            <li><span id="average-civilian-injuries" class="tag is-warning  is-size-6"> Y </span>
+                                civilians get
+                                hurt, including <span id="average-children-injuries"
+                                                      class="tag is-warning  is-size-6"></span> children.
+                            </li>
                         </ul>
-                        They had families <span>👪</span> friends, children and grandchildren's <span>👶</span>.
-                        </p>
-                        <br><br>
+                        <br>
+
+
+                        🫵 In total:
+                        <ul>
+                            <li><span id="total-civilian-deaths" class="tag is-danger is-size-6"> X </span> innocent
+                                civilians died, including <span id="total-children-deaths"
+                                                                class="tag is-danger  is-size-6"></span> children
+                            </li>
+                            <li><span id="total-civilian-injuries" class="tag is-warning  is-size-6"> Y </span>
+                                civilians got
+                                hurt, including <span id="total-children-injuries"
+                                                      class="tag is-warning  is-size-6"></span> children.
+                            </li>
+                        </ul>
+                        The loos affects their families <span>👪</span> friends, children and grandchildren's
+                        <span>👶</span>.<br>
+                         </p>
+                        <br>
                         <div class="columns is-align-items-center">
                             <img class="is-v2" src="./../pictures/casualties/person_icon.svg" alt="civilian" height="40"
                                  style="max-height: 80px"/>
@@ -113,11 +133,18 @@
         </div>
 
         <div class="slide">
-            <div id="casualties_plot">
-                <div id="tooltip-casualties">
-                    <br><br>
+            <div class="container">
+                <h1>Casualties change in time</h1>
+                <div id="casualties_plot">
+                    <div id="tooltip-casualties">
+                        <br><br>
+                    </div>
+
+
                 </div>
+
             </div>
+
         </div>
     </div>
 
@@ -138,21 +165,25 @@
             <p class="slidetitle">Analysis and vizualisation of the economic impact of the war
             <p>
             <p class="myparagraph1">
-We believe, this war has and will have terrible consequences for the world’s economy. Our goal is to suggest
-those consequences by visualizing three economic indicators, that we believed to be important for the world’s
-economy and that we believed to be connected to the ongoing war between Ukraine and Russia. We chose to
-visualize the Europe Brent Spot Price FOB (in US-Dollars per Barrel),
-the Henry Hub Natural Gas Spot Price (in US-dollars per Million British thermal unit, a unit that measures
-the energy and therefore the volume of natural gas), and the exchange rate
-in US-dollars of the main currencies of the world.
-<br><br>
+                We believe, this war has and will have terrible consequences for the world’s economy. Our goal is to
+                suggest
+                those consequences by visualizing three economic indicators, that we believed to be important for the
+                world’s
+                economy and that we believed to be connected to the ongoing war between Ukraine and Russia. We chose to
+                visualize the Europe Brent Spot Price FOB (in US-Dollars per Barrel),
+                the Henry Hub Natural Gas Spot Price (in US-dollars per Million British thermal unit, a unit that
+                measures
+                the energy and therefore the volume of natural gas), and the exchange rate
+                in US-dollars of the main currencies of the world.
+                <br><br>
                 The graph below shows the annual inflation rates in the US for the previous 10 calendar years, from
-                2012. This shows that the US-dollar is loosing value and this is important to keep in mind, considering the
+                2012. This shows that the US-dollar is loosing value and this is important to keep in mind, considering
+                the
                 data visualization of next slide. The average inflation rate per month in the last 5 months was of
                 0.92%. </p>
 
             <div id="divimageinflation">
-                <div  id="titleinflation"><p class=""slidesubtitle"">USA yearly inflation rate</p></div>
+                <div id="titleinflation"><p class="slidesubtitle">USA yearly inflation rate</p></div>
                 <img id="imageinflation"
                      src="https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/pictures/economic/yearlyinflationusa.png"
                      alt="Yearly inflation rate of the US-dollar">
@@ -323,23 +354,27 @@ in US-dollars of the main currencies of the world.
 
         <div class="slide">
 
-          <div id="titleslideoil">
-            <p class="slidetitle">Currency analysis and variation of the brent oil spot price
-            <p></div>
+            <div id="titleslideoil">
+                <p class="slidetitle">Currency analysis and variation of the brent oil spot price
+                <p></div>
             <div id="oilinfo" style="display: flex">
 
                 <p class="myparagraph2">
-                  Considering the visualization of the choropleth map on the previous slide,
-                  one easily sees, that the value of the european currencies decreases significantly with time.
-                  Since Europe is directly touched by the war, it is no wonder, that the war has such a big
-                  economic impact on Europe. In addition to that, it seems that currencies loose value in the world since
-                  because of the inflation of the dollar
-                   only the currencies whose exchange rate grows a bit are stable in value, which is not the case of many currencies.
-                    <br ><br >
-                  On the right, we see clearly how huge is the increase of the the brent oil spot price in Europe
-                  just at the beginning of the war. It then became more stable, but the spot price of the brent oil remains very high
-                  compared to the beginning of the year. This will have devastating consequences for the economy of Europe and of the world.</p>
-                              <div id="oilviz"></div>
+                    Considering the visualization of the choropleth map on the previous slide,
+                    one easily sees, that the value of the european currencies decreases significantly with time.
+                    Since Europe is directly touched by the war, it is no wonder, that the war has such a big
+                    economic impact on Europe. In addition to that, it seems that currencies loose value in the world
+                    since
+                    because of the inflation of the dollar
+                    only the currencies whose exchange rate grows a bit are stable in value, which is not the case of
+                    many currencies.
+                    <br><br>
+                    On the right, we see clearly how huge is the increase of the the brent oil spot price in Europe
+                    just at the beginning of the war. It then became more stable, but the spot price of the brent oil
+                    remains very high
+                    compared to the beginning of the year. This will have devastating consequences for the economy of
+                    Europe and of the world.</p>
+                <div id="oilviz"></div>
             </div>
             <div class="numbertext">3/4</div>
         </div>
@@ -770,7 +805,12 @@ in US-dollars of the main currencies of the world.
     });
 </script>
 </body>
-<script src="js/casualtiesPictogram.js"></script>
+<script src="js/casualties/CasualtiesPictogram.js"></script>
+<script src="lib/countDown.min.js"></script>
+<script src="js/timePassed.js"></script>
+<script src="js/casualties/CasualtiesLoader.js"></script>
+<script src="js/casualties/CasualtiesStatistics.js"></script>
+<script src="js/casualties/CasualtiesPlot.js"></script>
 <script>
     let scale = 0.8;
     let pictogram_width = 800 * scale;
@@ -785,28 +825,32 @@ in US-dollars of the main currencies of the world.
     let children_casualties = 500;
     let total_casualties_name = "casualties_total_pictogram";
     let children_casualties_name = "casualties_children_pictogram"
-    drawCasualtiesPictogram(pictogram_width,
-        pictogram_height,
-        icon_type_person,
-        single_im_height,
-        single_pic_number,
-        n_columns,
-        total_casualties,
-        total_casualties_name)
-</script>
-<script src="lib/countDown.min.js"></script>
-<script src="js/timePassed.js"></script>
-<script src="js/casualtiesPlot.js"></script>
-<script>
+
     cd.start()
 
     document.addEventListener("DOMContentLoaded", function (event) {
-
         let casualtiesPath = "https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/casualties/CasualtiesUNHumanRightsUATweets.csv";
         let casualtiesLoader = new CasualtiesLoader(casualtiesPath);
+        let statistics = new CasualtiesStatistics();
         let promise = casualtiesLoader.load_data().then(
             () => plot_casualties(casualtiesLoader)
-        );
+        ).then(
+            () => calculateStatistics(casualtiesLoader.all_data, statistics)
+        ).then(
+            () => appendStatistics(statistics)
+        ).then(
+            () =>
+                drawCasualtiesPictogram(
+                    pictogram_width,
+                    pictogram_height,
+                    icon_type_person,
+                    single_im_height,
+                    single_pic_number,
+                    n_columns,
+                    statistics.total[0].toFixed(0),
+                    total_casualties_name)
+        )
     });
+
 </script>
 </html>
