@@ -26,11 +26,6 @@
     <script type="text/javascript" src="lib/fullpage.min.js"></script>
     <script type="text/javascript" src="mydatasets.js"></script>
 
-    <!-- Custom Components -->
-    <script src="./js/components/world_reactions_component.js"></script>
-    <script src="./js/components/world_reactions_component2.js"></script>
-    <script src="./js/components/world_reactions_component3.js"></script>
-
     <!-- D3.js -->
     <script src="https://d3js.org/d3.v6.js"></script>
 
@@ -38,8 +33,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
     <!-- Worlwide Reactions Utils -->
-    <link href="/website/css/world_reactions.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="/website/js/world_reactions_utils.js"></script>
+    <link href="css/world_reactions.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/worldwide/world_reactions_utils.js"></script>
+
 
     <!-- Metro 4 -->
     <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
@@ -54,8 +50,6 @@
 
 <body>
 
-<div id="hidingtheloading" style="display:none">hello
-</div>
 <div id="fullpage">
     <div class="section">
         <div class="columns">
@@ -64,8 +58,9 @@
                     <div id="ukraine-border-animation"></div>
                     <div class="is-overlay overlay-custom">
                         <div class="title-container">
-                            <h1 id="title_of_project" class="title is-1 is-centered overlay-custom">Russian <br>invasion<br>of
-                                Ukraine</h1>
+                            <h1 id="title_of_project" class="title is-1 is-centered overlay-custom"
+                                style="opacity: 80%">Russian invasion<br>of
+                                Ukraine <br><br><br></h1>
                         </div>
                     </div>
                 </div>
@@ -75,24 +70,20 @@
 
     <div class="section">
         <div class="container">
-            <div class="columns">
-
-            </div>
             <div class="box">
                 <p class="is-size-3">
                     The Russian 🇷🇺 invasion of Ukraine 🇺🇦 started on <span
                         class="tag is-warning is-size-3">24.02.2022 </span>.
-                    It's already<br> <br>
+                    Time hasn't stopped<br> <br>
                 </p>
                 <div class="timePassed "></div>
 
                 <p class="is-size-3">
                     <br> <br>
-                    and the aggression has not ended yet 😢.
+                    and neither has aggression🤬.
                     <br>
-                    Let us show you a few important facts.
+                    We want to show you a few important facts.
                 </p>
-
             </div>
 
 
@@ -104,48 +95,56 @@
 
                 <div id="pictograms" class="columns is-vcentered is-flex">
                     <div class="column is-half content">
-                        <h1>Casualties</h1>
-                        <p id="description-casualties-intro">
-                            📅 Every day:
-                        <ul>
-                            <li><span id="average-civilian-deaths" class="tag is-danger is-size-6"> X </span> innocent
-                                civilians die, including <span id="average-children-deaths"
-                                                               class="tag is-danger  is-size-6"></span> children
-                            </li>
-                            <li><span id="average-civilian-injuries" class="tag is-warning  is-size-6"> Y </span>
-                                civilians get
-                                hurt, including <span id="average-children-injuries"
-                                                      class="tag is-warning  is-size-6"></span> children.
-                            </li>
-                        </ul>
-                        <br>
+                        <div class="box">
+                            <h1>Casualties</h1>
+                            <p id="description-casualties-intro">
+                                📅 Every day:
+                            <ul>
+                                <li><span id="average-civilian-deaths" class="tag is-danger is-size-6"> X </span>
+                                    innocent
+                                    civilians die, including <span id="average-children-deaths"
+                                                                   class="tag is-danger  is-size-6"></span> children
+                                </li>
+                                <li><span id="average-civilian-injuries" class="tag is-warning  is-size-6"> Y </span>
+                                    civilians get
+                                    hurt, including <span id="average-children-injuries"
+                                                          class="tag is-warning  is-size-6"></span> children.
+                                </li>
+                            </ul>
+                            <br>
 
 
-                        🫵 In total:
-                        <ul>
-                            <li><span id="total-civilian-deaths" class="tag is-danger is-size-6"> X </span> innocent
-                                civilians died, including <span id="total-children-deaths"
-                                                                class="tag is-danger  is-size-6"></span> children
-                            </li>
-                            <li><span id="total-civilian-injuries" class="tag is-warning  is-size-6"> Y </span>
-                                civilians got
-                                hurt, including <span id="total-children-injuries"
-                                                      class="tag is-warning  is-size-6"></span> children.
-                            </li>
-                        </ul>
-                        The loos affects their families <span>👪</span> friends, children and grandchildren's
-                        <span>👶</span>.<br>
-                        </p>
-                        <br>
-                        <div class="columns is-align-items-center">
-                            <img class="is-v2" src="./../pictures/casualties/person_icon.svg" alt="civilian" height="40"
-                                 style="max-height: 80px"/>
-                            <p class="column"> = 100 civilians</p>
+                            🫵 In total:
+                            <ul>
+                                <li><span id="total-civilian-deaths" class="tag is-danger is-size-6"> X </span> innocent
+                                    civilians died, including <span id="total-children-deaths"
+                                                                    class="tag is-danger  is-size-6"></span> children
+                                </li>
+                                <li><span id="total-civilian-injuries" class="tag is-warning  is-size-6"> Y </span>
+                                    civilians got
+                                    hurt, including <span id="total-children-injuries"
+                                                          class="tag is-warning  is-size-6"></span> children.
+                                </li>
+                            </ul>
+                            The loos affects their families <span>👪</span> friends, children and grandchildren's
+                            <span>👶</span>.<br>
+                            </p>
+                            <br>
+                            <div class="columns is-align-items-center">
+                                <p class="column">On the right : <br><span class="tag is-danger is-medium">total number of killed civilians</span></p>
+
+                                <img class="is-v2" src="./../pictures/casualties/person_icon.svg" alt="civilian"
+                                     height="50"
+                                     style="max-height: 80px"/>
+                                <p class="column"> = 100 civilians</p>
+                            </div>
                         </div>
+
 
                     </div>
 
-                    <div id="casualties_total_pictogram" class="column is-half"></div>
+                    <div id="casualties_total_pictogram" class="column is-half">
+                    </div>
                 </div>
             </div>
         </div>
@@ -447,7 +446,7 @@
             <div class="container">
                 <div class="box">
 
-                    <h1> Wordwide reactions </h1>
+                    <h1>Wordwide reactions</h1>
 
                     <p>
                         In order to understand the conflict in Ukraine, it is also very important to get an overview of
@@ -456,46 +455,42 @@
                         Indeed, Ukraine is defended by its population, but influential factors come in a wide range of
                         flavors and from a larger area than Ukraine only.
                         <br><br>
-                        This page details 4 different information covering the following aspects of Ukraine's invasion
+                        The following page details 4 different information covering the following aspects of Ukraine's invasion
                         international impact:
                     </p>
 
                     <div class="row_aligned">
                         <div data-role="tile" data-effect="hover-zoom-down"
-                             style="margin:2%; background-color: cadetblue; border-radius: 20px;">
+                             style="margin:2%; background-color: #3E8ED0; border-radius: 20px;">
                             <div class="slide-front">
                                 <img src="https://cdn4.iconfinder.com/data/icons/refugees-evacuee-war/280/refugees-005-512.png"
                                      class="icon"
                                      style="height:50px; width: 50px;">
                             </div>
-                            <a href="#refugees_data" class="nostyleanchor">
-                                <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
-                                    <p class="text-center">
-                                        Refugees
-                                    </p>
+                            <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+                                <p class="text-center">
+                                    Refugees
+                                </p>
                                 </div>
-                            </a>
                         </div>
 
                         <div data-role="tile" data-effect="hover-zoom-down"
-                             style="margin-right:2%; background-color: darkkhaki;border-radius: 20px;">
+                             style="margin-right:2%; background-color: #FFE08A;border-radius: 20px;">
                             <div class="slide-front">
                                 <img src="https://cdn0.iconfinder.com/data/icons/o022-economic-sanctions-outline/64/map_country_lockdown_lock-512.png"
                                      class="icon"
                                      style="height:50px; width: 50px;">
                             </div>
-                            <a href="#sanctions_data" class="nostyleanchor">
-                                <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
-                                    <p class="text-center">
-                                        Sanctions
-                                    </p>
+                            <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+                                <p class="text-center">
+                                    Sanctions
+                                </p>
                                 </div>
-                            </a>
                         </div>
 
 
                         <div data-role="tile" data-effect="hover-zoom-down"
-                             style="margin-right:2%; background-color: firebrick;border-radius: 20px;">
+                             style="margin-right:2%; background-color: #F14668;border-radius: 20px;">
                             <div class="slide-front">
                                 <img src="https://cdn4.iconfinder.com/data/icons/aami-web-internet/64/aami13-13-512.png"
                                      class="icon"
@@ -510,7 +505,7 @@
 
 
                         <div data-role="tile" data-effect="hover-zoom-down"
-                             style="margin-right:2%; background-color: teal;border-radius: 20px;">
+                             style="margin-right:2%; background-color: #485FC7;border-radius: 20px;">
                             <div class="slide-front">
                                 <img src="https://cdn0.iconfinder.com/data/icons/lagotline-survey-and-rating/64/Survey_and_Rating-05-512.png"
                                      class="icon"
@@ -534,41 +529,42 @@
                 individuals and entities.
                 We detail them below:
                 <ul>
-                    <li>Refugees <br> The military attacks, bombings and blocus on the invaded part of Ukraine forced a
+                    <li><span class="tag is-info is-medium">Refugees</span> <br> The military attacks, bombings and blocus on the invaded part of Ukraine forced a
                         large amount of civilians to
-                        flee their place of living. As a consequence, the neighboring countries, namely Moldavia,
+                        flee their place of living 🏃‍♂️🏃‍♀️. As a consequence, the neighboring countries, namely Moldova,
                         Romania, Slovakia, Hungary,
-                        Poland and Belarus, have welcomed millions of distressed people, having left everything behind
+                        Poland, Russia and Belarus, have welcomed millions of distressed people, having left everything behind
                         to get to safety.
                         The refugees data was fetched from the <a href="https://www.unhcr.org/fr/urgence-ukraine.html">United
                             Nations High
                             Commissioner for Refugees website</a> dedicated to the tracking and information of the
                         refugee crisis.
                     </li>
-                    <li>Sanctions <br> A large wave of economic, social and geopolitical sanctions was taken from
+                    <li><span class="tag is-warning is-medium">Sanctions</span> <br> A large wave of economic, social and geopolitical sanctions 🔒 was taken from
                         multiple countries against Russia
                         for starting this war. We focus on some of the most important with the visualization of
                         sanctions issued by Australia,
                         Canada, the EU, France, Switzerland, the UK and the US. The data is gracefully provided by the
                         international sanctions
-                        tracking firm <a href="https://www.castellum.ai/">Castellum</a>. Castellum tracks different
+                        tracking firm <a href="https://www.castellum.ai/">Castellum</a> 🔎. Castellum tracks different
                         types of issued international
                         filings and has a scope that is larger than the invasion only.
                     </li>
-                    <li>Tweets Sentiments and Emotions <br> An important consequence of the invasion of Ukraine is the
+                    <li><span class="tag is-danger is-medium">Tweets Emotions</span> 
+                        and <span class="tag is-link is-medium">Tweets Sentiment</span> <br> An important consequence of the invasion of Ukraine is the
                         individuals reactions across
-                        the world. A very good indicator of it is social networks, and especially Twitter. Using
+                        the world. A very good indicator of it is social networks, and especially Twitter 🕊. Using
                         <a href="https://www.kaggle.com/datasets/bwandowando/ukraine-russian-crisis-twitter-dataset-1-2-m-rows">a
                             dataset of 35.58M tweets</a>
-                        selected as linked to the war in Ukraine, we run Machine Learning models on the extracted texts
+                        selected as linked to the war in Ukraine, we run Machine Learning models 🧠 on the extracted texts
                         and compute the sentiment and
                         emotion of a random subsample of the dataset. The sentiment is computed using a <a
                                 href="https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment?text=Urgent%0A500+Russian+tanks+approaching+the+capital%2C+Kyiv%2C+from+all+sides.%0A+%23Russia+%23Ukraine+%23Russia+%23Ukraine%0A%23Kyiv">
                             natural language processing model</a>. It indicates wether the tweet demonstrates a
                         positive, neutral or negative sentiment.
-                        The emotion is one of anger, disgust, fear, joy, neutral, sadness or suprise. It is detected in
+                        The emotion is one of anger 😡, disgust 🤮, fear 😨, joy 😊, neutral 😐, sadness 😭 or suprise 😮. It is detected in
                         each tweet using
-                        <a href="https://huggingface.co/j-hartmann/emotion-english-distilroberta-base">anoter NLP
+                        <a href="https://huggingface.co/j-hartmann/emotion-english-distilroberta-base">another NLP
                             model</a>.
                     </li>
                 </ul>
@@ -603,22 +599,27 @@
                             on a daily basis.
                             As a reminder, the neighboring countries are the following:
                         </p>
-                        <div class="row-aligned">
-                            <img src="https://flagpoles.co.uk/wp-content/uploads/2019/07/Moldova.png"
-                                 style="height:50px;border-radius: 15px;padding:2%">
-                            <img src="https://wallpapercave.com/wp/wp6783269.jpg"
-                                 style="height:50px; border-radius: 15px;padding:2%;">
-                            <img src="https://www.mrflag.com/wp-content/uploads/2018/11/Slovakia.png"
-                                 style="height:50px; border-radius: 15px;padding:2%;">
-                            <img src="https://www.flags.co.uk/client/uploads/5/hungary.png"
-                                 style="height:50px; border-radius: 15px;padding:2%;">
-                            <img src="https://flagpoles.co.uk/wp-content/uploads/2019/06/Poland.png"
-                                 style="height:50px; border-radius: 15px;padding:2%;">
-
+                        <div class="simple_centered">
+                            <div class="row-aligned">
+                                <img src="https://flagpoles.co.uk/wp-content/uploads/2019/07/Moldova.png"
+                                    style="height:50px;width:80px;border-radius: 15px;padding:2%">
+                                <img src="https://wallpapercave.com/wp/wp6783269.jpg"
+                                    style="height:50px; width:80px;border-radius: 15px;padding:2%;">
+                                <img src="https://www.mrflag.com/wp-content/uploads/2018/11/Slovakia.png"
+                                    style="height:50px; width:80px;border-radius: 15px;padding:2%;">
+                                <img src="https://www.flags.co.uk/client/uploads/5/hungary.png"
+                                    style="height:50px; width:80px;border-radius: 15px;padding:2%;">
+                                <img src="https://flagpoles.co.uk/wp-content/uploads/2019/06/Poland.png"
+                                    style="height:50px; width:80px;border-radius: 15px;padding:2%;">
+                                <img src="https://png4u.com/wp-content/uploads/2020/02/RUSSIA-Flag-PNG-Hi-RES.png"
+                                    style="height:50px; width:80px;border-radius: 15px;padding:2%;">
+                                <img src="https://pixelz.cc/wp-content/uploads/2018/11/belarus-flag-uhd-4k-wallpaper.jpg"
+                                    style="height:50px; width:80px;border-radius: 15px;padding:2%;">
+                            </div>
                         </div>
                         <script>
                             // Refugee bar plot
-                            let path = './../../data/NDA_UNHCR_refugees_cleaned.csv';
+                            let path = 'https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/NDA_UNHCR_refugees_cleaned.csv';
                             let loader = new RefugeesLoader(path);
                             let promise = loader.load_data().then((data) => {
 
@@ -676,7 +677,7 @@
                     <script>
                         // sanctions stacked bar plot
 
-                        let pathSanctions = './../../data/NDA_Castellum_bycountry_bydate_cleaned.csv';
+                        let pathSanctions = 'https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/NDA_Castellum_bycountry_bydate_cleaned.csv';
                         let loaderSanctions = new SanctionsLoader(pathSanctions);
                         let promiseSanctions = loaderSanctions.load_data().then((data) => {
 
@@ -701,171 +702,161 @@
 
                     <div class="columns is-vcentered is-flex">
                         <div class="column is-half content">
-
-                            <div class="row_aligned">
-                                <button id="sentiment_previous_day_button" class="button">Previous Day</button>
-                                <button id="sentiment_next_day_button" class="button">Next Day</button>
-                            </div>
-
+                            <p>
+                            <span class="tag is-warning">Twitter</span> is a very powerful source of data in order to capture the thoughts of a wide range of people across
+                            the globe. The analyzed data is composed of over <span class="tag is-success">35 million</span> tweets.
+                            <br>
+                            You can progressively explore the majority sentiment and emotion of the world's population regarding the 
+                            conflict in Ukraine by navigating throught the days. Understandably enough, we can observe a lack of positive sentiment...
+                            </p>
                         </div>
                         <div class="column is-half content">
 
+                            <div class="row_aligned" style="padding-bottom:2%">
+                                <button id="sentiment_previous_day_button" class="button" style="padding:1%">Previous Day</button>
+                                <button id="sentiment_next_day_button" class="button" style="padding:1%">Next Day</button>
+                            </div>
+
                             <div id="sentiment_data">
-                                <!-- style="background-color: lightslategrey;" class="box column_aligned">
-                                <div class="simple_centered">
-                                    <p>Date 1</p>
-                                </div>
-                                <div class="row_aligned">
-                                    <div class="column_aligned simple_centered">
-                                        <h3>Sentiment</h3>
-                                        <img src="/../pictures/world_reactions/sentiment_neutral.png"
-                                            style="height: 60px; width: 60px;">
-                                        <p>Neutral</p>
-                                    </div>
-                                    <div class="column_aligned simple_centered">
-                                        <h3>Emotion</h3>
-                                        <img src="/../pictures/world_reactions/emotion_sadness.png"
-                                            style="height: 60px; width: 60px;">
-                                        <p>Sadness</p>
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
 
-                    <script>
-                        var counter = -1;
+                        <script>
+                            var counter = 0;
 
-                        let pathSentiment = './../../data/NDA_twitter_sentiment_emotion_agg.csv';
-                        let loaderSentiment = new SentimentLoader(pathSentiment);
-                        let promiseSentiment = loaderSentiment.load_data().then((data) => {
+                            let pathSentiment = 'https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/NDA_twitter_sentiment_emotion_agg.csv';
+                            let loaderSentiment = new SentimentLoader(pathSentiment);
+                            let promiseSentiment = loaderSentiment.load_data().then((data) => {
 
-                            function get_data() {
-                                counter = (counter + 1) % data.length
-                                return data[counter]
-                            }
+                                function get_data(i) {
+                                    // ((n % m) + m) % m
+                                    const n = counter + i
+                                    const m = data.length
+                                    counter = ((n % m) + m) % m
+                                    return data[counter];
+                                }
 
-                            SentimentComponent({
-                                get_data: get_data,
-                                previous_button_id: "sentiment_previous_day_button",
-                                next_button_id: "sentiment_next_day_button"
+                                SentimentComponent({
+                                    get_data: get_data,
+                                    previous_button_id: "sentiment_previous_day_button",
+                                    next_button_id: "sentiment_next_day_button"
+                                });
                             });
-                        });
-                    </script>
+                        </script>
 
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
+
     </div>
 
 
-</div>
+    <script type="text/javascript" src="js/vizdata.js"></script>
+    <script type="text/javascript" src="js/d3stats.js"></script>
+    <script type="text/javascript" src="js/vizcontainer.js"></script>
 
+    <!--<link href="stylesheeteconomics.css" type="text/css" rel="stylesheet">-->
 
-<script type="text/javascript" src="js/economic/vizdata.js"></script>
-<script type="text/javascript" src="js/economic/d3stats.js"></script>
-<script type="text/javascript" src="js/economic/vizcontainer.js"></script>
+    <script>
+        let myFullpage = new fullpage('#fullpage', {
+            // Navigation
+            menu: '#menu',
+            lockAnchors: false,
+            anchors: ['firstPage', 'secondPage'],
+            navigation: false,
+            navigationPosition: 'right',
+            navigationTooltips: ['firstSlide', 'secondSlide'],
+            showActiveTooltip: false,
+            slidesNavigation: false,
+            slidesNavPosition: 'bottom',
 
-<!--<link href="stylesheeteconomics.css" type="text/css" rel="stylesheet">-->
+            // Scrolling
+            css3: true,
+            scrollingSpeed: 700,
+            autoScrolling: true,
+            fitToSection: true,
+            scrollBar: false,
+            easing: 'easeInOutCubic',
+            easingcss3: 'ease',
+            loopBottom: false,
+            loopTop: false,
+            loopHorizontal: true,
+            continuousVertical: false,
+            continuousHorizontal: false,
+            scrollHorizontally: true,
+            interlockedSlides: false,
+            dragAndMove: false,
+            offsetSections: false,
+            resetSliders: false,
+            fadingEffect: false,
+            normalScrollElements: '#element1, .element2',
+            scrollOverflow: true,
+            scrollOverflowMacStyle: false,
+            scrollOverflowReset: false,
+            touchSensitivity: 15,
+            bigSectionsDestination: null,
 
-<script>
-    let myFullpage = new fullpage('#fullpage', {
-        // Navigation
-        menu: '#menu',
-        lockAnchors: false,
-        anchors: ['firstPage', 'secondPage'],
-        navigation: false,
-        navigationPosition: 'right',
-        navigationTooltips: ['firstSlide', 'secondSlide'],
-        showActiveTooltip: false,
-        slidesNavigation: false,
-        slidesNavPosition: 'bottom',
+            // Accessibility
+            keyboardScrolling: true,
+            animateAnchor: true,
+            recordHistory: true,
 
-        // Scrolling
-        css3: true,
-        scrollingSpeed: 700,
-        autoScrolling: true,
-        fitToSection: true,
-        scrollBar: false,
-        easing: 'easeInOutCubic',
-        easingcss3: 'ease',
-        loopBottom: false,
-        loopTop: false,
-        loopHorizontal: true,
-        continuousVertical: false,
-        continuousHorizontal: false,
-        scrollHorizontally: true,
-        interlockedSlides: false,
-        dragAndMove: false,
-        offsetSections: false,
-        resetSliders: false,
-        fadingEffect: false,
-        normalScrollElements: '#element1, .element2',
-        scrollOverflow: true,
-        scrollOverflowMacStyle: false,
-        scrollOverflowReset: false,
-        touchSensitivity: 15,
-        bigSectionsDestination: null,
+            // Design
+            //controlArrows: true,
+            //controlArrowsHTML: [
+            //    '<div class="fp-arrow"></div>',
+            //  '<div class="fp-arrow"></div>'
+            //],
+            verticalCentered: true,
+            sectionsColor: ['#fff', '#fff'],
+            paddingTop: '3em',
+            paddingBottom: '10px',
+            fixedElements: '#header, .footer',
+            responsiveWidth: 0,
+            responsiveHeight: 0,
+            responsiveSlides: false,
+            parallax: false,
+            parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+            dropEffect: false,
+            dropEffectOptions: {speed: 2300, color: '#F82F4D', zIndex: 9999},
+            waterEffect: false,
+            waterEffectOptions: {animateContent: true, animateOnMouseMove: true},
+            cards: false,
+            cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
 
-        // Accessibility
-        keyboardScrolling: true,
-        animateAnchor: true,
-        recordHistory: true,
+            // Custom selectors
+            sectionSelector: '.section',
+            slideSelector: '.slide',
 
-        // Design
-        //controlArrows: true,
-        //controlArrowsHTML: [
-        //    '<div class="fp-arrow"></div>',
-        //  '<div class="fp-arrow"></div>'
-        //],
-        verticalCentered: true,
-        sectionsColor: ['#ccc', '#fff'],
-        paddingTop: '3em',
-        paddingBottom: '10px',
-        fixedElements: '#header, .footer',
-        responsiveWidth: 0,
-        responsiveHeight: 0,
-        responsiveSlides: false,
-        parallax: false,
-        parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
-        dropEffect: false,
-        dropEffectOptions: {speed: 2300, color: '#F82F4D', zIndex: 9999},
-        waterEffect: false,
-        waterEffectOptions: {animateContent: true, animateOnMouseMove: true},
-        cards: false,
-        cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
+            lazyLoading: true,
+            observer: true,
+            credits: {enabled: true, label: 'Made with fullPage.js', position: 'right'},
 
-        // Custom selectors
-        sectionSelector: '.section',
-        slideSelector: '.slide',
-
-        lazyLoading: true,
-        observer: true,
-        credits: {enabled: true, label: 'Made with fullPage.js', position: 'right'},
-
-        // Events
-        beforeLeave: function (origin, destination, direction, trigger) {
-        },
-        onLeave: function (origin, destination, direction, trigger) {
-        },
-        afterLoad: function (origin, destination, direction, trigger) {
-        },
-        afterRender: function () {
-        },
-        afterResize: function (width, height) {
-        },
-        afterReBuild: function () {
-        },
-        afterResponsive: function (isResponsive) {
-        },
-        afterSlideLoad: function (section, origin, destination, direction, trigger) {
-        },
-        onSlideLeave: function (section, origin, destination, direction, trigger) {
-        },
-        onScrollOverflow: function (section, slide, position, direction) {
-        }
-    });
-</script>
+            // Events
+            beforeLeave: function (origin, destination, direction, trigger) {
+            },
+            onLeave: function (origin, destination, direction, trigger) {
+            },
+            afterLoad: function (origin, destination, direction, trigger) {
+            },
+            afterRender: function () {
+            },
+            afterResize: function (width, height) {
+            },
+            afterReBuild: function () {
+            },
+            afterResponsive: function (isResponsive) {
+            },
+            afterSlideLoad: function (section, origin, destination, direction, trigger) {
+            },
+            onSlideLeave: function (section, origin, destination, direction, trigger) {
+            },
+            onScrollOverflow: function (section, slide, position, direction) {
+            }
+        });
+    </script>
 </body>
 <script src="js/casualties/CasualtiesPictogram.js"></script>
 <script src="lib/countDown.min.js"></script>
@@ -899,6 +890,7 @@
                 start: "autostart",
                 animTimingFunction: Vivus.EASE
             });
+
 
         let casualtiesPath = "https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/casualties/CasualtiesUNHumanRightsUATweets.csv";
         let casualtiesLoader = new CasualtiesLoader(casualtiesPath);
