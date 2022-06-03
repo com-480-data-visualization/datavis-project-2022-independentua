@@ -22,11 +22,12 @@ class CasualtiesLoader {
         this.date_to_children_killed = this._extract_one_data("children_killed");
         this.date_to_civilians_injured = this._extract_one_data("civilians_injured");
         this.date_to_children_injured = this._extract_one_data("children_injured");
-        let all_data = [this.date_to_civilians_killed, this.date_to_civilians_injured, this.date_to_children_killed, this.date_to_children_injured];
+        let all_data_tmp = [this.date_to_civilians_killed, this.date_to_civilians_injured, this.date_to_children_killed, this.date_to_children_injured];
+        this.all_data = all_data_tmp
         this.all = this.all_groups.map(function (group_name, index) {
                 return {
                     name: group_name,
-                    values: all_data[index]
+                    values: all_data_tmp[index]
                 }
             }
         );
