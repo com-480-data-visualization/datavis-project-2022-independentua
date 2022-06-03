@@ -58,23 +58,23 @@ class SentimentLoader {
 
 
 function BarChart(data, {
-    x = (d, i) => i, // given d in data, returns the (ordinal) x-value
-    y = d => d, // given d in data, returns the (quantitative) y-value
-    marginTop = 20, // the top margin, in pixels
-    marginRight = 20, // the right margin, in pixels
-    marginBottom = 150, // the bottom margin, in pixels
-    marginLeft = 60, // the left margin, in pixels
-    width = 100, // the outer width of the chart, in pixels
-    height = 400, // the outer height of the chart, in pixels
-    xDomain, // an array of (ordinal) x-values
-    xRange = [marginLeft, width - marginRight], // [left, right]
-    yType = d3.scaleLinear, // y-scale type
-    yDomain, // [ymin, ymax]
-    yRange = [height - marginBottom, marginTop], // [bottom, top]
-    xPadding = 0.1, // amount of x-range to reserve to separate bars
-    yFormat, // a format specifier string for the y-axis
-    yLabel, // a label for the y-axis
-    color = "#0e2f44" // bar fill color
+    x = (d, i) => i, 
+    y = d => d, 
+    marginTop = 20, 
+    marginRight = 20,
+    marginBottom = 150, 
+    marginLeft = 60, 
+    width = 100,
+    height = 400, 
+    xDomain, 
+    xRange = [marginLeft, width - marginRight], 
+    yType = d3.scaleLinear,
+    yDomain,
+    yRange = [height - marginBottom, marginTop],
+    xPadding = 0.1, 
+    yFormat, 
+    yLabel,
+    color = "#0e2f44" 
 } = {}) {
     // Compute values.
     const X = d3.map(data, x);
@@ -95,6 +95,7 @@ function BarChart(data, {
     const xAxis = d3.axisBottom(d3.scaleTime(xDomain, xRange)).tickSizeOuter(0);
     const yAxis = d3.axisLeft(yScale).ticks(height / 40, yFormat);
 
+    // Get and format tooltip for hover
     var tooltip = d3.select(".refugees_tooltip")
         .style("opacity", 0)
         .style("background-color", "white")
@@ -106,6 +107,7 @@ function BarChart(data, {
         .style("width", "fit-content")
         .style("z-index", "10");
 
+    // Declare hovering enter behavior
     const mouseover = function(event, d) {
         tooltip
             .style("opacity", 1);
@@ -113,11 +115,13 @@ function BarChart(data, {
             .style("stroke", "black")
             .style("opacity", 1);
     }
+    // Declare hovering on movement behavior
     const mousemove = function(event, d) {
         tooltip.html("<strong>" + X[d].toDateString() + "</strong> <br>" + "Total number of refugees: " + Y[d])
             .style("left", (d3.pointer(event)[0] +10) + "px")
             .style("top", (d3.pointer(event)[1]-20) + "px");
     }
+    // Declare hovering out behavior
     const mouseout = function() {
         tooltip
             .style("opacity", 0);
@@ -126,6 +130,7 @@ function BarChart(data, {
             .style("opacity", 0.7);
     }
 
+    // Create plot space
     const svg = d3.select("#refugees_data").append("svg")
         .attr("width", width)
         .attr("height", height)
@@ -146,6 +151,7 @@ function BarChart(data, {
             .attr("text-anchor", "start")
             .text(yLabel));
 
+    // Create the bars
     const bar = svg.append("g")
         .attr("fill", color)
         .selectAll("rect")
@@ -164,41 +170,34 @@ function BarChart(data, {
     svg.append("g")
         .attr("transform", `translate(0,${height - marginBottom})`)
         .call(xAxis);
-
-
-
-    
-
-    var data = [4, 8, 15, 16, 23, 42];
-
-    var x = d3.scaleLinear([0, d3.max(data)], [0, 420]);
 }
 
 // --------------------------------------------------------------------------------
 
 function StackedBarChart(data, {
-    x = (d, i) => i, // given d in data, returns the (ordinal) x-value
-    y = d => d, // given d in data, returns the (quantitative) y-value
-    z = () => 1, // given d in data, returns the (categorical) z-value
-    marginTop = 30, // top margin, in pixels
-    marginRight = 0, // right margin, in pixels
-    marginBottom = 30, // bottom margin, in pixels
-    marginLeft = 40, // left margin, in pixels
-    width = 640, // outer width, in pixels
-    height = 400, // outer height, in pixels
-    xDomain, // array of x-values
-    xRange = [marginLeft, width - marginRight], // [left, right]
-    xPadding = 0.1, // amount of x-range to reserve to separate bars
-    yType = d3.scaleLinear, // type of y-scale
+    x = (d, i) => i, 
+    y = d => d, 
+    z = () => 1, 
+    marginTop = 30, 
+    marginRight = 0, 
+    marginBottom = 30,
+    marginLeft = 40,
+    width = 640, 
+    height = 400, 
+    xDomain, 
+    xRange = [marginLeft, width - marginRight], 
+    xPadding = 0.1, 
+    yType = d3.scaleLinear,
     yDomain, // [ymin, ymax]
     yRange = [height - marginBottom, marginTop], // [bottom, top]
-    zDomain, // array of z-values
-    offset = d3.stackOffsetDiverging, // stack offset method
-    order = d3.stackOrderNone, // stack order method
-    yFormat, // a format specifier string for the y-axis
-    yLabel, // a label for the y-axis
-    colors = d3.schemeTableau10, // array of colors
+    zDomain, 
+    offset = d3.stackOffsetDiverging, 
+    order = d3.stackOrderNone,
+    yFormat,
+    yLabel,
+    colors = d3.schemeTableau10,
 } = {}) {
+
     // Compute values.
     const X = d3.map(data, x);
     const Y = d3.map(data, y);
@@ -213,11 +212,7 @@ function StackedBarChart(data, {
     // Omit any data not present in the x- and z-domains.
     const I = d3.range(X.length).filter(i => xDomain.has(X[i]) && zDomain.has(Z[i]));
 
-    // Compute a nested array of series where each series is [[y1, y2], [y1, y2],
-    // [y1, y2], …] representing the y-extent of each stacked rect. In addition,
-    // each tuple has an i (index) property so that we can refer back to the
-    // original data point (data[i]). This code assumes that there is only one
-    // data point for a given unique x- and z-value.
+    // Compute a nested array of for each stacked bar
     const series = d3.stack()
         .keys(zDomain)
         .value(([x, I], z) => Y[I.get(z)])
@@ -226,7 +221,7 @@ function StackedBarChart(data, {
     (d3.rollup(I, ([i]) => i, i => X[i], i => Z[i]))
     .map(s => s.map(d => Object.assign(d, {i: d.data[1].get(s.key)})));
 
-    // Compute the default y-domain. Note: diverging stacks can be negative.
+    // Compute the default y-domain.
     if (yDomain === undefined) yDomain = d3.extent(series.flat(2));
 
     // Construct scales, axes, and formats.
@@ -238,7 +233,7 @@ function StackedBarChart(data, {
     const xAxis = d3.axisBottom(d3.scaleTime(xDomain, xRange)).tickSizeOuter(0);
     const yAxis = d3.axisLeft(yScale).ticks(height / 60, yFormat);
 
-
+    // Format the tooltip
     var tooltip = d3.select(".sanctions_tooltip")
         .style("opacity", 0)
         .style("background-color", "white")
@@ -250,7 +245,7 @@ function StackedBarChart(data, {
         .style("width", "fit-content")
         .style("z-index", "10");
 
-
+    // Declare tooltip enter behavior
     const mouseover = function(event, d) {
         tooltip
             .style("opacity", 1)
@@ -259,6 +254,7 @@ function StackedBarChart(data, {
             .style("stroke", "black")
             .style("opacity", 1)
     }
+    // Declare tooltip movement behavior
     const mousemove = function(event, d) {
         tooltip.html(
             "<strong>" + d.data[0].toDateString() + "</strong> <br>" +
@@ -267,6 +263,7 @@ function StackedBarChart(data, {
         .style("left", (d3.pointer(event)[0] +10) + "px")
         .style("top", (d3.pointer(event)[1]-20) + "px")
     }
+    // Declare tooltip on exit behavior
     const mouseout = function() {
         tooltip
             .style("opacity", 0)
@@ -275,6 +272,7 @@ function StackedBarChart(data, {
             .style("opacity", 0.7);
     }
 
+    // Create plot space
     const svg = d3.select("#sanctions_data")
         .append('svg')
         .attr("width", width)
@@ -316,8 +314,6 @@ function StackedBarChart(data, {
     svg.append("g")
         .attr("transform", `translate(0,${yScale(0)})`)
         .call(xAxis);
-
-    return Object.assign(svg.node(), {scales: {color}});
 }
 
 // --------------------------------------------------------------------------------
@@ -331,9 +327,11 @@ function SentimentComponent({
     next_button_id
 } = {}) {
 
-    function draw() {
-        const data = get_data();
+    // Declare draw function for container
+    function draw(id_to_draw) {
+        const data = get_data(id_to_draw);
 
+        // Declare appearing transition
         const appear = function(d, i) {
             d3.select(this)
                 .style("opacity", 0)
@@ -342,35 +340,29 @@ function SentimentComponent({
                 .style("opacity", 1)
         }
 
+        // Format sentiment container
         const div = d3.select("#sentiment_data")
-            .style("background-color", "lightslategrey")
+            .style("background-color", "#e9e9e9")
             .attr("class", "box column_aligned")
-            // .style("margin-right", "20%")
-            // .style("margin-left", "20%")
-            // .style("border-radius", "20px")
             .data(data);
 
+        // Remove old data
         div.selectAll("div")
             .remove();
 
+        // Create date info
         const date = div.append("div")
             .each(appear)
-            // .style("opacity", 1)
-            // .style("width", "100%")
-            // .style("height", "20%")
             .attr("class", "simple_centered")
             .append("p")
             .text(d => d.date.toDateString());
 
         const info = div.append("div")
-            // .style("width", "100%")
-            // .style("height", "80%")
             .attr("class", "row_aligned");
 
+        // Create sentiment behavior 
         const sentiment = info.append("div")
             .attr("class", "column_aligned simple_centered")
-            // .style("width", "70%")
-            // .style("height", "50%")
             .style("padding", "1%")
         sentiment.append("h3")
             .each(appear)
@@ -385,10 +377,9 @@ function SentimentComponent({
             .each(appear)
             .text(d => d.sentiment);
 
+        // Create emotion data
         const emotion = info.append("div")
             .attr("class", "column_aligned simple_centered")
-            // .style("width", "70%")
-            // .style("height", "50%")
             .style("padding", "1%")
         emotion.append("h3")
             .each(appear)
@@ -404,9 +395,12 @@ function SentimentComponent({
             .text(d => d.emotion);
     }
 
-    draw();
+    draw(0);
 
-    d3.select("#"+next_button_id).on("click", draw)
+    // Link buttons to navigating behavior
+    d3.select("#"+next_button_id).on("click", () => draw(1))
+    d3.select("#"+previous_button_id).on("click", () => draw(-1))
+
 
 
     

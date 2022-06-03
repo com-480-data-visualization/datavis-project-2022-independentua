@@ -38,8 +38,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
     <!-- Worlwide Reactions Utils -->
-    <link href="/website/css/world_reactions.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="/website/js/worldwide/world_reactions_utils.js"></script>
+    <link href="/css/world_reactions.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="/js/worldwide/world_reactions_utils.js"></script>
 
     <!-- Metro 4 -->
     <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
@@ -547,8 +547,8 @@
                         types of issued international
                         filings and has a scope that is larger than the invasion only.
                     </li>
-                    <li><span class="tag is-danger is-medium">Tweets Sentiments</span> 
-                        and <span class="tag is-link is-medium">Tweets Emotions</span> <br> An important consequence of the invasion of Ukraine is the
+                    <li><span class="tag is-danger is-medium">Tweets Emotions</span> 
+                        and <span class="tag is-link is-medium">Tweets Sentiment</span> <br> An important consequence of the invasion of Ukraine is the
                         individuals reactions across
                         the world. A very good indicator of it is social networks, and especially Twitter 🕊. Using
                         <a href="https://www.kaggle.com/datasets/bwandowando/ukraine-russian-crisis-twitter-dataset-1-2-m-rows">a
@@ -699,47 +699,38 @@
 
                     <div class="columns is-vcentered is-flex">
                         <div class="column is-half content">
-
-                            <div class="row_aligned">
-                                <button id="sentiment_previous_day_button" class="button">Previous Day</button>
-                                <button id="sentiment_next_day_button" class="button">Next Day</button>
-                            </div>
-
+                            <p>
+                            <span class="tag is-warning">Twitter</span> is a very powerful source of data in order to capture the thoughts of a wide range of people across
+                            the globe. The analyzed data is composed of over <span class="tag is-success">35 million</span> tweets.
+                            <br>
+                            You can progressively explore the majority sentiment and emotion of the world's population regarding the 
+                            conflict in Ukraine by navigating throught the days. Understandably enough, we can observe a lack of positive sentiment...
+                            </p>
                         </div>
                         <div class="column is-half content">
 
+                            <div class="row_aligned" style="padding-bottom:2%">
+                                <button id="sentiment_previous_day_button" class="button" style="padding:1%">Previous Day</button>
+                                <button id="sentiment_next_day_button" class="button" style="padding:1%">Next Day</button>
+                            </div>
+
                             <div id="sentiment_data">
-                                <!-- style="background-color: lightslategrey;" class="box column_aligned">
-                                <div class="simple_centered">
-                                    <p>Date 1</p>
-                                </div>
-                                <div class="row_aligned">
-                                    <div class="column_aligned simple_centered">
-                                        <h3>Sentiment</h3>
-                                        <img src="/../pictures/world_reactions/sentiment_neutral.png"
-                                            style="height: 60px; width: 60px;">
-                                        <p>Neutral</p>
-                                    </div>
-                                    <div class="column_aligned simple_centered">
-                                        <h3>Emotion</h3>
-                                        <img src="/../pictures/world_reactions/emotion_sadness.png"
-                                            style="height: 60px; width: 60px;">
-                                        <p>Sadness</p>
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
 
                         <script>
-                            var counter = -1;
+                            var counter = 0;
 
                             let pathSentiment = 'https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/NDA_twitter_sentiment_emotion_agg.csv';
                             let loaderSentiment = new SentimentLoader(pathSentiment);
                             let promiseSentiment = loaderSentiment.load_data().then((data) => {
 
-                                function get_data() {
-                                    counter = (counter + 1) % data.length
-                                    return data[counter]
+                                function get_data(i) {
+                                    // ((n % m) + m) % m
+                                    const n = counter + i
+                                    const m = data.length
+                                    counter = ((n % m) + m) % m
+                                    return data[counter];
                                 }
 
                                 SentimentComponent({
