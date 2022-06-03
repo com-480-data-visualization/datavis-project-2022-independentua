@@ -275,15 +275,17 @@ function StackedBarChart(data, {
         tooltip.style("visibility", "visible");
     }
     const mousemove = function(event, d) {
-        // const [x, y] = d3.pointer(this);
-        // console.log(this)
-        // console.log(event.pageY, event.pageX)
+        const [x, y] = d3.pointer(event);
+        console.log(x, y, height)
 
         // tooltip
-        //   .attr('transform', `translate(${x}, ${y})`);
+        //   .attr('transform', `translate(${x}, ${y+height})`);
 
-        tooltip.style("top", (event.pageY-100)+"px")
-            .style("left",(event.pageX-100)+"px");
+        tooltip.style("top", (event.pageY-140)+"px")
+            .style("left",(event.pageX-screen.width/2+10)+"px");
+
+        // tooltip.style("top", (x-100)+"px")
+        //     .style("left",(y-100)+"px");
     }
     const mouseout = function() {
         d3.select(this)
@@ -360,8 +362,6 @@ function SentimentComponent({
         }
 
         const div = d3.select("#sentiment_data")
-            .style("width", "100%")
-            .style("height", "200px")
             .style("background-color", "rgb(132, 128, 128)")
             .style("margin-right", "20%")
             .style("margin-left", "20%")
@@ -389,6 +389,8 @@ function SentimentComponent({
 
         const sentiment = info.append("div")
             .attr("class", "centered")
+            .style("width", "70%")
+            .style("height", "50%")
             .style("padding", "1%")
         sentiment.append("h3")
             .each(appear)
@@ -404,6 +406,8 @@ function SentimentComponent({
 
         const emotion = info.append("div")
             .attr("class", "centered")
+            .style("width", "70%")
+            .style("height", "50%")
             .style("padding", "1%")
         emotion.append("h3")
             .each(appear)
