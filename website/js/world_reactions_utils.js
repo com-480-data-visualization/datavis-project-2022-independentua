@@ -36,6 +36,24 @@ class SanctionsLoader {
     }
 }
 
+class SentimentLoader {
+    sentiment;
+
+    constructor(path) {
+        this.path = path;
+    }
+
+    async load_data() {
+        this.sentiment = await d3.dsv(",", this.path);
+        const parseTime = d3.timeParse("%Y-%m-%d");
+        return this.sentiment.map(csv => [{
+            'date':parseTime(csv['date']), 
+            'sentiment':csv['sentiment'],
+            'emotion': csv['emotion']
+        }])
+    }
+}
+
 // --------------------------------------------------------------------------------
 
 
@@ -87,8 +105,6 @@ function BarChart(data, {
         const T = title;
         title = i => T(O[i], i, data);
     }
-
-    console.log(title)
 
     var tooltip = d3.select(".refugees_tooltip")
         .style("position", "absolute")
@@ -259,15 +275,17 @@ function StackedBarChart(data, {
         tooltip.style("visibility", "visible");
     }
     const mousemove = function(event, d) {
-        // const [x, y] = d3.pointer(this);
-        // console.log(this)
-        // console.log(event.pageY, event.pageX)
+        const [x, y] = d3.pointer(event);
+        console.log(x, y, height)
 
         // tooltip
-        //   .attr('transform', `translate(${x}, ${y})`);
+        //   .attr('transform', `translate(${x}, ${y+height})`);
 
-        tooltip.style("top", (event.pageY-100)+"px")
-            .style("left",(event.pageX-100)+"px");
+        tooltip.style("top", (event.pageY-140)+"px")
+            .style("left",(event.pageX-screen.width/2+10)+"px");
+
+        // tooltip.style("top", (x-100)+"px")
+        //     .style("left",(y-100)+"px");
     }
     const mouseout = function() {
         d3.select(this)
@@ -321,4 +339,93 @@ function StackedBarChart(data, {
         .call(xAxis);
 
     return Object.assign(svg.node(), {scales: {color}});
+}
+
+// --------------------------------------------------------------------------------
+
+
+function SentimentComponent({
+    width = 640, // outer width, in pixels
+    height = 400, // outer height, in pixels
+    get_data = () => {}
+} = {}) {
+
+    function draw() {
+        const data = get_data();
+
+        const appear = function(d, i) {
+            d3.select(this)
+                .style("opacity", 0)
+                .transition()
+                .duration(1000)
+                .style("opacity", 1)
+        }
+
+        const div = d3.select("#sentiment_data")
+            .style("background-color", "rgb(132, 128, 128)")
+            .style("margin-right", "20%")
+            .style("margin-left", "20%")
+            .style("border-radius", "20px")
+            .data(data);
+
+        div.selectAll("div")
+            .transition()
+            .duration(300)
+            .style("opacity", 0)
+            .remove();
+
+        const date = div.append("div")
+            .each(appear)
+            .style("opacity", 1)
+            .style("width", "100%")
+            .style("height", "20%")
+            .attr("class", "centered")
+            .text(d => d.date);
+
+        const info = div.append("div")
+            .style("width", "100%")
+            .style("height", "80%")
+            .attr("class", "row_aligned");
+
+        const sentiment = info.append("div")
+            .attr("class", "centered")
+            .style("width", "70%")
+            .style("height", "50%")
+            .style("padding", "1%")
+        sentiment.append("h3")
+            .each(appear)
+            .text("Sentiment")
+        sentiment.append("img")
+            .each(appear)
+            .attr("src", d=>`/../pictures/world_reactions/sentiment_${d.sentiment}.png`)
+            .attr("width", "60px")
+            .style("margin", "10px");
+        sentiment.append("p")
+            .each(appear)
+            .text(d => d.sentiment);
+
+        const emotion = info.append("div")
+            .attr("class", "centered")
+            .style("width", "70%")
+            .style("height", "50%")
+            .style("padding", "1%")
+        emotion.append("h3")
+            .each(appear)
+            .text("Emotion")
+        emotion.append("img")
+            .each(appear)
+            .attr("src", d=>`/../pictures/world_reactions/emotion_${d.emotion}.png`)
+            .attr("width", "60px")
+            .style("margin", "10px");
+        emotion.append("p")
+            .each(appear)
+            .text(d => d.emotion);
+    }
+
+    draw();
+
+    d3.select("#date_button").on("click", draw)
+
+
+    
 }
