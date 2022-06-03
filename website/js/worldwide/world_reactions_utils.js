@@ -60,7 +60,6 @@ class SentimentLoader {
 function BarChart(data, {
     x = (d, i) => i, // given d in data, returns the (ordinal) x-value
     y = d => d, // given d in data, returns the (quantitative) y-value
-    title, // given d in data, returns the title text
     marginTop = 20, // the top margin, in pixels
     marginRight = 20, // the right margin, in pixels
     marginBottom = 150, // the bottom margin, in pixels
@@ -96,16 +95,6 @@ function BarChart(data, {
     const xAxis = d3.axisBottom(d3.scaleTime(xDomain, xRange)).tickSizeOuter(0);
     const yAxis = d3.axisLeft(yScale).ticks(height / 40, yFormat);
 
-    // Compute titles.
-    if (title === undefined) {
-        const formatValue = yScale.tickFormat(100, yFormat);
-        title = i => `${X[i]}\n${formatValue(Y[i])}`;
-    } else {
-        const O = d3.map(data, d => d);
-        const T = title;
-        title = i => T(O[i], i, data);
-    }
-
     var tooltip = d3.select(".refugees_tooltip")
         .style("opacity", 0)
         .style("background-color", "white")
@@ -125,7 +114,7 @@ function BarChart(data, {
             .style("opacity", 1);
     }
     const mousemove = function(event, d) {
-        tooltip.html(X[d].toDateString() + "<br>" + "total: " + Y[d])
+        tooltip.html("<strong>" + X[d].toDateString() + "</strong> <br>" + "Total number of refugees: " + Y[d])
             .style("left", (d3.pointer(event)[0] +10) + "px")
             .style("top", (d3.pointer(event)[1]-20) + "px");
     }
@@ -171,9 +160,6 @@ function BarChart(data, {
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
         .on("mouseout", mouseout);
-
-    if (title) bar.append("title")
-        .text(title);
     
     svg.append("g")
         .attr("transform", `translate(0,${height - marginBottom})`)
@@ -391,7 +377,7 @@ function SentimentComponent({
             .text("Sentiment")
         sentiment.append("img")
             .each(appear)
-            .attr("src", d=>`/../pictures/world_reactions/sentiment_${d.sentiment}.png`)
+            .attr("src", d=>`/../../pictures/world_reactions/sentiment_${d.sentiment}.png`)
             .style("width", "60px")
             .style("height", "60px")
             .style("margin", "10px");
@@ -409,7 +395,7 @@ function SentimentComponent({
             .text("Emotion")
         emotion.append("img")
             .each(appear)
-            .attr("src", d=>`/../pictures/world_reactions/emotion_${d.emotion}.png`)
+            .attr("src", d=>`/../../pictures/world_reactions/emotion_${d.emotion}.png`)
             .attr("width", "60px")
             .style("height", "60px")
             .style("margin", "10px");
