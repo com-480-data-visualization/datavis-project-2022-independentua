@@ -2,10 +2,13 @@ function plot_casualties(casualtiesLoader) {
     const margin = {top: 10, right: 30, bottom: 30, left: 60},
         width = 1200 - margin.left - margin.right,
         height = 600 - margin.top - margin.bottom;
-    const r = 6;
+    let viewBoxWidth = width * 1.1;
+    let viewBoxHeight = height * 1.1;
+    const r = 5;
     const svg = d3.select("#casualties_plot")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
+        .attr("viewBox", "0 0 " + viewBoxWidth + " " + viewBoxHeight)
         .attr("height", height + margin.top + margin.bottom)
         .call(d3.zoom().on("zoom", function () {
             svg.attr("transform", d3.zoomTransform(this))
@@ -20,7 +23,7 @@ function plot_casualties(casualtiesLoader) {
         .range([0, width]);
     // Add Y axis
     const valuesScale = d3.scaleLinear()
-        .domain([0, 4000])
+        .domain([0, 5000])
         .range([height, 0]);
 
     svg.append("g")
