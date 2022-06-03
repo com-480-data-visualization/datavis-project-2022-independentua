@@ -1,3 +1,4 @@
+var index = 0;
 
 if (!Date.now) {
      Date.now = function() {
@@ -8,21 +9,36 @@ if (!Date.now) {
    //var theDate = Date.now();
   document.getElementById('date').innerText = getTheDate(theDate)
   document.getElementById('prev').addEventListener("click", function() {
+    index = index-1
+    if (index>-1){
    theDate -= 86400000;
   document.getElementById('date').innerText = getTheDate(theDate)
+;}
+ else{index = index+1}
 })
   document.getElementById('next').addEventListener("click", function() {
+       index = index+1;
+       if (index <146){
  theDate += 86400000;
-   document.getElementById('date').innerText = getTheDate(theDate)
+   document.getElementById('date').innerText = getTheDate(theDate)}
+ else{index = index -1}
 })
 
 document.getElementById('superprev').addEventListener("click", function() {
+  index = index -7;
+      if (index>-1){
  theDate -= 604800000;
-document.getElementById('date').innerText = getTheDate(theDate)
+document.getElementById('date').innerText = getTheDate(theDate)}
+ else{index = index +7}
+
 })
 document.getElementById('supernext').addEventListener("click", function() {
+   index = index +7
+   if (index<146){
 theDate += 604800000;
- document.getElementById('date').innerText = getTheDate(theDate)
+ document.getElementById('date').innerText = getTheDate(theDate)}
+ else{index = index -7}
+
 })
 
   function getTheDate(getDate) {
@@ -37,7 +53,13 @@ theDate += 604800000;
        return days[theCDate.getDay()] + ', ' + theCDate.getDate() + '-' +
       months[theCDate.getMonth()] + '-' + theCDate.getFullYear();}
 
-      visualizemydata(myday0101,"container0101")
+
+
+    /*  console.log(mydayarray[0])
+      visualizemydata(mydayarray[0],array[0])
+      visualizemydata(mydayarray[1],array[1])
+*/
+    /*  visualizemydata(myday0101,"container0101")
       visualizemydata(myday0102,"container0102")
       visualizemydata(myday0103,"container0103")
       visualizemydata(myday0104,"container0104")
@@ -131,7 +153,7 @@ theDate += 604800000;
       visualizemydata(myday0330,"container0330")
       visualizemydata(myday0331,"container0331")
 
-      visualizemydata(myday0401,"container0401")
+      /*visualizemydata(myday0401,"container0401")
       visualizemydata(myday0402,"container0402")
       visualizemydata(myday0403,"container0403")
       visualizemydata(myday0404,"container0404")
@@ -160,9 +182,9 @@ theDate += 604800000;
       visualizemydata(myday0427,"container0427")
       visualizemydata(myday0428,"container0428")
       visualizemydata(myday0429,"container0429")
-      visualizemydata(myday0430,"container0430")
+      visualizemydata(myday0430,"container0430")*/
 
-      visualizemydata(myday0501,"container0501")
+  /*    visualizemydata(myday0501,"container0501")
       visualizemydata(myday0502,"container0502")
       visualizemydata(myday0503,"container0503")
       visualizemydata(myday0504,"container0504")
@@ -187,4 +209,4 @@ theDate += 604800000;
       visualizemydata(myday0523,"container0523")
       visualizemydata(myday0524,"container0524")
       visualizemydata(myday0525,"container0525")
-      visualizemydata(myday0526,"container0526")
+      visualizemydata(myday0526,"container0526")*/

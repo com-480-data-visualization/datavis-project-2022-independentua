@@ -7,7 +7,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="author" content="Adam Narozniak, Alessandro Tavazzi, Nicolas d’Argenlieu"/>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="./main.js" type="module"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
@@ -24,6 +24,7 @@
     <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="lib/fullpage.min.css"/>
+    <link href="lib/countDownStyle.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/stylesheeteconomics.css"/>
     <script type="text/javascript" src="lib/fullpage.min.js"></script>
     <script type="text/javascript" src="mydatasets.js"></script>
@@ -51,11 +52,36 @@
 
 <body>
 
-<div id="fullpage">
+<div id="hidingtheloading" style="display:none">hello
+</div>
+<div id="fullpage" style="display:block">
     <div class="section">
         <h1>Russian invasion of Ukraine</h1>
     </div>
+    <div class="section">
+        <div class="container">
+            <div class="columns">
 
+            </div>
+            <div class="box">
+                <p class="is-size-3">
+                    The Russian 🇷🇺 invasion of Ukraine 🇺🇦 started on <span class="tag is-warning is-size-3">24.02.2022 </span>.
+                    It's already<br> <br>
+                </p>
+                <div class="timePassed "></div>
+
+                <p class="is-size-3">
+                    <br> <br>
+                    and the aggression has not ended yet 😢.
+                    <br>
+                    Let us show you a few important facts.
+                </p>
+
+            </div>
+
+
+        </div>
+    </div>
     <div class="section">
         <div class="slide">
             <div class="container">
@@ -64,6 +90,7 @@
                     <div class="column is-half content">
                         <h2>Casualties</h2>
                         <p id="description-casualties-intro">
+                            The Russian invasion started on 24.02.2022. It's
                             Since the beginning of the war, Russian soldiers:
                         <ul>
                             <li>have murdered <span class="tag is-danger"> X </span> innocent civilians</li>
@@ -73,7 +100,7 @@
                         </p>
                         <br><br>
                         <div class="columns is-align-items-center">
-                            <img class="is-v2" src="./../data/person_icon.svg" alt="civilian" height="40"
+                            <img class="is-v2" src="./../pictures/casualties/person_icon.svg" alt="civilian" height="40"
                                  style="max-height: 80px"/>
                             <p class="column"> = 100 civilians</p>
                         </div>
@@ -86,65 +113,51 @@
         </div>
 
         <div class="slide">
-            hello word
+            <div id="casualties_plot">
+                <div id="tooltip-casualties">
+                    <br><br>
+                </div>
+            </div>
         </div>
     </div>
+
     <div class="section">
-        <div class="column">
 
+
+        <div class="datebutton">
+            <button id="superprev" onclick="superprevshowOrHideDiv()"><<</button>
+            <button id="prev" onclick="prevshowOrHideDiv()"><</button>
+            <span id="date"></span>
+            <button id="next" onclick="nextshowOrHideDiv()">></button>
+            <button id="supernext" onclick="supernextshowOrHideDiv()">>></button>
         </div>
-        <div>
-
-
-        </div>
-        <ul>
-            <li><a href="html/casualties.html">Casualties</a></li>
-            <li><a href="html/casualties_pictogram.html"> Pictogram </a></li>
-            <li><a href="html/many_svg_elements.html"> Many svgs</a></li>
-            <li><a href="html/learn.html"> Learn </a></li>
-        </ul>
-    </div>
-
-
-<div class="section">
-
-
-
-    <div class="datebutton">
-        <button id="superprev" onclick="superprevshowOrHideDiv()"><<</button>
-        <button id="prev" onclick="prevshowOrHideDiv()"><</button>
-        <span id="date"></span>
-        <button id="next" onclick="nextshowOrHideDiv()">></button>
-        <button id="supernext" onclick="supernextshowOrHideDiv()">>></button>
-    </div>
 
 
         <div class="slide">
 
             <p class="slidetitle">Analysis and vizualisation of the economic impact of the war
             <p>
-            <p class="myparagraph">Analysis of the inflation of the dollar
-                The graph above shows the annual inflation rates in the US for the previous 10 calendar years, from
-                2012. For additional years, see the historical inflation rates. To calculate cumulative rates between
-                two different periods, you can use the United States Inflation Calculator.
+            <p class="myparagraph1">
+We believe, this war has and will have terrible consequences for the world’s economy. Our goal is to suggest
+those consequences by visualizing three economic indicators, that we believed to be important for the world’s
+economy and that we believed to be connected to the ongoing war between Ukraine and Russia. We chose to
+visualize the Europe Brent Spot Price FOB (in US-Dollars per Barrel),
+the Henry Hub Natural Gas Spot Price (in US-dollars per Million British thermal unit, a unit that measures
+the energy and therefore the volume of natural gas), and the exchange rate
+in US-dollars of the main currencies of the world.
+<br><br>
+                The graph below shows the annual inflation rates in the US for the previous 10 calendar years, from
+                2012. This shows that the US-dollar is loosing value and this is important to keep in mind, considering the
+                data visualization of next slide. The average inflation rate per month in the last 5 months was of
+                0.92%. </p>
 
-                The current inflation rate in the US is 8.26%, which is calculated based on CPI (Consumer Price Index)
-                values for the last 12 months ending in April 2022.
-                In April 2022, the monthly inflation rate was 0.56.
-
-                The following table contains recent YoY (Year-over-Year) and MoM (Month-over-Month) values.
-
-                Year Measure Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
-                2022 YoY 7.48 7.87 8.54 8.26
-                MoM 0.84 0.91 1.34 0.56 </p>
-
-            <div class="container">
-                <div id="titleinflation"><h1>USA yearly inflation rate</h1></div>
+            <div id="divimageinflation">
+                <div  id="titleinflation"><p class=""slidesubtitle"">USA yearly inflation rate</p></div>
                 <img id="imageinflation"
-                     src="https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/datafiles_currencies/yearlyinflationusa.png"
+                     src="https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/pictures/economic/yearlyinflationusa.png"
                      alt="Yearly inflation rate of the US-dollar">
             </div>
-            <div class="numbertext">4/4</div>
+            <div class="numbertext">1/4</div>
         </div>
 
         <div class="slide">
@@ -162,7 +175,6 @@
             <div id="container0109" class="containermap" style="display:none"></div>
             <div id="container0110" class="containermap" style="display:none"></div>
             <div id="container0111" class="containermap" style="display:none"></div>
-            <div id="container0111?" class="containermap" style="display:none"></div>
             <div id="container0112" class="containermap" style="display:none"></div>
             <div id="container0113" class="containermap" style="display:none"></div>
             <div id="container0114" class="containermap" style="display:none"></div>
@@ -310,25 +322,26 @@
         </div>
 
         <div class="slide">
-            <p class="slidetitle">Currency analysis and importance of oil
-            <p>
-            <div style="display: flex">
-                <div id="oilviz"></div>
-                <p class="myparagraph">Cette guerre a impliqué l'ensemble des puissances européennes selon qu'elles
-                    étaient pour ou contre le parti de l'empereur,
-                    à l'exception de l'Angleterre et de la Russie — qui ont néanmoins indirectement œuvré contre le
-                    parti des Habsbourg. L'emploi
-                    de mercenaires était la règle. Les combats se déroulèrent surtout dans les territoires d’Europe
-                    centrale dépendant du Saint-Empire
-                    , puis se portèrent sur la plaine de Flandre, le nord de la péninsule italienne ou encore dans la
-                    péninsule ibérique.
-                    Les batailles, les famines, les massacres et les maladies ont provoqué plusieurs millions de morts,
-                    tant civils que militaires.
-                    Cette « guerre civile européenne » a lourdement pesé sur la démographie et l'économie des États
-                    allemands et du royaume d'Espagne,
-                    et assis l'hégémonie de la France, qui s'épanouit davantage encore sous Louis XIV.</p>
+
+          <div id="titleslideoil">
+            <p class="slidetitle">Currency analysis and variation of the brent oil spot price
+            <p></div>
+            <div id="oilinfo" style="display: flex">
+
+                <p class="myparagraph2">
+                  Considering the visualization of the choropleth map on the previous slide,
+                  one easily sees, that the value of the european currencies decreases significantly with time.
+                  Since Europe is directly touched by the war, it is no wonder, that the war has such a big
+                  economic impact on Europe. In addition to that, it seems that currencies loose value in the world since
+                  because of the inflation of the dollar
+                   only the currencies whose exchange rate grows a bit are stable in value, which is not the case of many currencies.
+                    <br ><br >
+                  On the right, we see clearly how huge is the increase of the the brent oil spot price in Europe
+                  just at the beginning of the war. It then became more stable, but the spot price of the brent oil remains very high
+                  compared to the beginning of the year. This will have devastating consequences for the economy of Europe and of the world.</p>
+                              <div id="oilviz"></div>
             </div>
-            <div class="numbertext">4/4</div>
+            <div class="numbertext">3/4</div>
         </div>
 
         <div class="slide">
@@ -355,23 +368,22 @@
 
                 <div class="container">
                     <img id="imagegaz"
-                         src="https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/datafiles_currencies/map-of-gas-exports-1090x1147.png"
+                         src="https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/pictures/economic/map-of-gas-exports-1090x1147.png"
                          alt="Russian gas exportation">
                 </div>
             </div>
-            <div class="numbertext">3/4</div>
+            <div class="numbertext">4/4</div>
         </div>
 
 
-
-  </div>
-  <div class="section">
-      <div class="section">
-          <ul>
-              <li><a href="html/economics.html">Economics</a></li>
-          </ul>
-      </div>
-  </div>
+    </div>
+    <div class="section">
+        <div class="section">
+            <ul>
+                <li><a href="html/economics.html">Economics</a></li>
+            </ul>
+        </div>
+    </div>
 
     <div class="section">
         <ul>
@@ -386,42 +398,51 @@
 
             <div class="container">
                 <p>
-                    In order to understand the conflict in Ukraine, it is also very important to get an overview of the situation abroad. 
-                    Indeed, Ukraine is defended by its population, but influential factors come in a wide range of flavors and from a larger area than Ukraine only.
+                    In order to understand the conflict in Ukraine, it is also very important to get an overview of the
+                    situation abroad.
+                    Indeed, Ukraine is defended by its population, but influential factors come in a wide range of
+                    flavors and from a larger area than Ukraine only.
                     <br><br>
-                    This page details 4 different information covering the following aspects of Ukraine's invasion international impact:
+                    This page details 4 different information covering the following aspects of Ukraine's invasion
+                    international impact:
                 </p>
-            
+
                 <div class="row_aligned">
                     <div data-role="tile" data-effect="hover-zoom-down" style="margin:2%; background-color: cadetblue;">
                         <div class="slide-front">
-                            <img src="https://cdn4.iconfinder.com/data/icons/refugees-evacuee-war/280/refugees-005-512.png" class="icon">
+                            <img src="https://cdn4.iconfinder.com/data/icons/refugees-evacuee-war/280/refugees-005-512.png"
+                                 class="icon">
                         </div>
                         <a href="#refugees_data" class="nostyleanchor">
-                        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
-                            <p class="text-center">
-                                Refugees
-                            </p>
-                        </div>
+                            <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+                                <p class="text-center">
+                                    Refugees
+                                </p>
+                            </div>
                         </a>
                     </div>
-            
-                    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: darkkhaki;">
+
+                    <div data-role="tile" data-effect="hover-zoom-down"
+                         style="margin-right:2%; background-color: darkkhaki;">
                         <div class="slide-front">
-                            <img src="https://cdn0.iconfinder.com/data/icons/o022-economic-sanctions-outline/64/map_country_lockdown_lock-512.png" class="icon">
+                            <img src="https://cdn0.iconfinder.com/data/icons/o022-economic-sanctions-outline/64/map_country_lockdown_lock-512.png"
+                                 class="icon">
                         </div>
                         <a href="#sanctions_data" class="nostyleanchor">
-                        <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
-                            <p class="text-center">
-                                Sanctions
-                            </p>
-                        </div>
+                            <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
+                                <p class="text-center">
+                                    Sanctions
+                                </p>
+                            </div>
                         </a>
                     </div>
-            
-                    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: firebrick;">
+
+
+                    <div data-role="tile" data-effect="hover-zoom-down"
+                         style="margin-right:2%; background-color: firebrick;">
                         <div class="slide-front">
-                            <img src="https://cdn4.iconfinder.com/data/icons/aami-web-internet/64/aami13-13-512.png" class="icon">
+                            <img src="https://cdn4.iconfinder.com/data/icons/aami-web-internet/64/aami13-13-512.png"
+                                 class="icon">
                         </div>
                         <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
                             <p class="text-center">
@@ -429,10 +450,13 @@
                             </p>
                         </div>
                     </div>
-            
-                    <div data-role="tile" data-effect="hover-zoom-down" style="margin-right:2%; background-color: teal;">
+
+
+                    <div data-role="tile" data-effect="hover-zoom-down"
+                         style="margin-right:2%; background-color: teal;">
                         <div class="slide-front">
-                            <img src="https://cdn0.iconfinder.com/data/icons/lagotline-survey-and-rating/64/Survey_and_Rating-05-512.png" class="icon">
+                            <img src="https://cdn0.iconfinder.com/data/icons/lagotline-survey-and-rating/64/Survey_and_Rating-05-512.png"
+                                 class="icon">
                         </div>
                         <div class="slide-back d-flex flex-justify-center flex-align-center p-4 op-mauve">
                             <p class="text-center">
@@ -446,39 +470,57 @@
         </div>
 
         <div class="slide">
-            
+
             <div class="container">
-                Each one of these themas relate to an aspect of the war as perceived or enforced by non-Ukrainian individuals and entities. 
+                Each one of these themas relate to an aspect of the war as perceived or enforced by non-Ukrainian
+                individuals and entities.
                 We detail them below:
                 <ul>
-                    <li>Refugees <br> The military attacks, bombings and blocus on the invaded part of Ukraine forced a large amount of civilians to 
-                        flee their place of living. As a consequence, the neighboring countries, namely Moldavia, Romania, Slovakia, Hungary, 
-                        Poland and Belarus, have welcomed millions of distressed people, having left everything behind to get to safety. 
-                        The refugees data was fetched from the <a href="https://www.unhcr.org/fr/urgence-ukraine.html">United Nations High 
-                        Commissioner for Refugees website</a> dedicated to the tracking and information of the refugee crisis.</li>
-                    <li>Sanctions <br> A large wave of economic, social and geopolitical sanctions was taken from multiple countries against Russia 
-                        for starting this war. We focus on some of the most important with the visualization of sanctions issued by Australia,
-                        Canada, the EU, France, Switzerland, the UK and the US. The data is gracefully provided by the international sanctions
-                        tracking firm <a href="https://www.castellum.ai/">Castellum</a>. Castellum tracks different types of issued international 
+                    <li>Refugees <br> The military attacks, bombings and blocus on the invaded part of Ukraine forced a
+                        large amount of civilians to
+                        flee their place of living. As a consequence, the neighboring countries, namely Moldavia,
+                        Romania, Slovakia, Hungary,
+                        Poland and Belarus, have welcomed millions of distressed people, having left everything behind
+                        to get to safety.
+                        The refugees data was fetched from the <a href="https://www.unhcr.org/fr/urgence-ukraine.html">United
+                            Nations High
+                            Commissioner for Refugees website</a> dedicated to the tracking and information of the
+                        refugee crisis.
+                    </li>
+                    <li>Sanctions <br> A large wave of economic, social and geopolitical sanctions was taken from
+                        multiple countries against Russia
+                        for starting this war. We focus on some of the most important with the visualization of
+                        sanctions issued by Australia,
+                        Canada, the EU, France, Switzerland, the UK and the US. The data is gracefully provided by the
+                        international sanctions
+                        tracking firm <a href="https://www.castellum.ai/">Castellum</a>. Castellum tracks different
+                        types of issued international
                         filings and has a scope that is larger than the invasion only.
                     </li>
-                    <li>Tweets Sentiments and Emotions <br> An important consequence of the invasion of Ukraine is the individuals reactions across 
-                        the world. A very good indicator of it is social networks, and especially Twitter. Using 
-                        <a href="https://www.kaggle.com/datasets/bwandowando/ukraine-russian-crisis-twitter-dataset-1-2-m-rows">a dataset of 35.58M tweets</a>  
-                        selected as linked to the war in Ukraine, we run Machine Learning models on the extracted texts and compute the sentiment and 
-                        emotion of a random subsample of the dataset. The sentiment is computed using a <a href="https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment?text=Urgent%0A500+Russian+tanks+approaching+the+capital%2C+Kyiv%2C+from+all+sides.%0A+%23Russia+%23Ukraine+%23Russia+%23Ukraine%0A%23Kyiv">
-                        natural language processing model</a>. It indicates wether the tweet demonstrates a positive, neutral or negative sentiment.
-                        The emotion is one of anger, disgust, fear, joy, neutral, sadness or suprise. It is detected in each tweet using 
-                        <a href="https://huggingface.co/j-hartmann/emotion-english-distilroberta-base">anoter NLP model</a>.
+                    <li>Tweets Sentiments and Emotions <br> An important consequence of the invasion of Ukraine is the
+                        individuals reactions across
+                        the world. A very good indicator of it is social networks, and especially Twitter. Using
+                        <a href="https://www.kaggle.com/datasets/bwandowando/ukraine-russian-crisis-twitter-dataset-1-2-m-rows">a
+                            dataset of 35.58M tweets</a>
+                        selected as linked to the war in Ukraine, we run Machine Learning models on the extracted texts
+                        and compute the sentiment and
+                        emotion of a random subsample of the dataset. The sentiment is computed using a <a
+                                href="https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment?text=Urgent%0A500+Russian+tanks+approaching+the+capital%2C+Kyiv%2C+from+all+sides.%0A+%23Russia+%23Ukraine+%23Russia+%23Ukraine%0A%23Kyiv">
+                            natural language processing model</a>. It indicates wether the tweet demonstrates a
+                        positive, neutral or negative sentiment.
+                        The emotion is one of anger, disgust, fear, joy, neutral, sadness or suprise. It is detected in
+                        each tweet using
+                        <a href="https://huggingface.co/j-hartmann/emotion-english-distilroberta-base">anoter NLP
+                            model</a>.
                     </li>
-                </ul>  
+                </ul>
             </div>
-            
+
 
         </div>
 
         <div class="slide">
-            
+
             <div class="container">
 
                 <div class="refugees_tooltip"></div>
@@ -494,10 +536,10 @@
                             x: d => d[0],
                             y: d => d[1],
                             xDomain: d3.map(data, d => d[0]), // sort by descending frequency
-                            xType:d3.scaleTime,
+                            xType: d3.scaleTime,
                             yFormat: "d",
                             yLabel: "Date",
-                            width:500,
+                            width: 500,
                             height: 500,
                             color: "steelblue",
                             title: d => d[1]
@@ -530,6 +572,7 @@
                         });
 
                     });  
+
                 </script>
 
             </div>
@@ -569,8 +612,9 @@
 
 </div>
 
-<script type="text/javascript" src="js/d3stats.js"></script>
+
 <script type="text/javascript" src="js/vizdata.js"></script>
+<script type="text/javascript" src="js/d3stats.js"></script>
 <script type="text/javascript" src="js/vizcontainer.js"></script>
 
 <!--<link href="stylesheeteconomics.css" type="text/css" rel="stylesheet">-->
@@ -620,11 +664,11 @@
         recordHistory: true,
 
         // Design
-        controlArrows: true,
-        controlArrowsHTML: [
-            '<div class="fp-arrow"></div>',
-            '<div class="fp-arrow"></div>'
-        ],
+        //controlArrows: true,
+        //controlArrowsHTML: [
+        //    '<div class="fp-arrow"></div>',
+        //  '<div class="fp-arrow"></div>'
+        //],
         verticalCentered: true,
         sectionsColor: ['#ccc', '#fff'],
         paddingTop: '3em',
@@ -674,7 +718,7 @@
     });
 </script>
 </body>
-<script src="js/casualties_pictogram.js"></script>
+<script src="js/casualtiesPictogram.js"></script>
 <script>
     let scale = 0.8;
     let pictogram_width = 800 * scale;
@@ -697,5 +741,20 @@
         n_columns,
         total_casualties,
         total_casualties_name)
+</script>
+<script src="lib/countDown.min.js"></script>
+<script src="js/timePassed.js"></script>
+<script src="js/casualtiesPlot.js"></script>
+<script>
+    cd.start()
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+
+        let casualtiesPath = "https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/casualties/CasualtiesUNHumanRightsUATweets.csv";
+        let casualtiesLoader = new CasualtiesLoader(casualtiesPath);
+        let promise = casualtiesLoader.load_data().then(
+            () => plot_casualties(casualtiesLoader)
+        );
+    });
 </script>
 </html>
