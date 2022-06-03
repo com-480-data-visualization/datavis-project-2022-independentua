@@ -616,7 +616,7 @@
                         </div>
                         <script>
                             // Refugee bar plot
-                            let path = './../../data/NDA_UNHCR_refugees_cleaned.csv';
+                            let path = 'https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/NDA_UNHCR_refugees_cleaned.csv';
                             let loader = new RefugeesLoader(path);
                             let promise = loader.load_data().then((data) => {
 
@@ -674,7 +674,7 @@
                     <script>
                         // sanctions stacked bar plot
 
-                        let pathSanctions = './../../data/NDA_Castellum_bycountry_bydate_cleaned.csv';
+                        let pathSanctions = 'https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/NDA_Castellum_bycountry_bydate_cleaned.csv';
                         let loaderSanctions = new SanctionsLoader(pathSanctions);
                         let promiseSanctions = loaderSanctions.load_data().then((data) => {
 
@@ -733,7 +733,7 @@
                         <script>
                             var counter = -1;
 
-                            let pathSentiment = './../../data/NDA_twitter_sentiment_emotion_agg.csv';
+                            let pathSentiment = 'https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/NDA_twitter_sentiment_emotion_agg.csv';
                             let loaderSentiment = new SentimentLoader(pathSentiment);
                             let promiseSentiment = loaderSentiment.load_data().then((data) => {
 
