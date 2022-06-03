@@ -48,11 +48,14 @@ function plot_casualties(casualtiesLoader) {
     const margin = {top: 10, right: 30, bottom: 30, left: 60},
         width = 1200 - margin.left - margin.right,
         height = 600 - margin.top - margin.bottom;
-    const r = 5;
+    const r = 6;
     const svg = d3.select("#casualties_plot")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
+        .call(d3.zoom().on("zoom", function () {
+            svg.attr("transform", d3.zoomTransform(this))
+        }))
         .append("g")
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
@@ -84,15 +87,15 @@ function plot(casualtiesLoader, data, svg, r, dateScale, valuesScale) {
         .y(function (d) {
             return valuesScale(+d[1])
         })
-  var Tooltip = d3.select("#tooltip-casualties")
-    .style("opacity", 0)
-    .style("background-color", "white")
-    .style("border", "solid")
-    .style("border-width", "2px")
-    .style("border-radius", "5px")
-    .style("padding", "5px")
-      .style("text-align", "center")
-      .style("width", "fit-content")
+    let Tooltip = d3.select("#tooltip-casualties")
+        .style("opacity", 0)
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px")
+        .style("text-align", "center")
+        .style("width", "fit-content")
     let mouseover = function (d) {
         Tooltip
             .style("opacity", 1)
@@ -101,10 +104,10 @@ function plot(casualtiesLoader, data, svg, r, dateScale, valuesScale) {
             .style("opacity", 1)
     }
     let mousemove = (event, d) => {
-        console.log(d3.pointer(event)[0])
-        console.log(d3.pointer(event)[1])
+        // console.log(event);
+        // console.log(d);
         Tooltip
-            .html(d[1] + " in total died")
+            .html(d[0].toDateString() + "<br>" + "total: " + d[1])
             .style("left", (d3.pointer(event)[0] + 70) + "px")
             .style("top", (d3.pointer(event)[1]) + "px")
     }
