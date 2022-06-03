@@ -589,7 +589,7 @@
                     </div>
                     <div class="column is-half content">
 
-                        <div class="centered" style="padding-bottom: 2%;">
+                        <div class="simple_centered" style="padding-bottom: 2%;">
                             <img src="https://www.unhcr.org/tr/wp-content/uploads/sites/14/2018/08/UNHCR_logo_vertical_ENG.png"
                                  style="height:60px">
                         </div>
@@ -650,7 +650,7 @@
 
                     <div class="column is-half-content" style="padding: 2%">
 
-                        <div class="centered" style="padding-bottom: 2%;">
+                        <div class="simple_centered" style="padding-bottom: 2%;">
                             <img src="https://images.squarespace-cdn.com/content/v1/5ea598ee75871632a4bd427f/34c5c5c0-1015-4308-97bf-ac7a93333e2b/logo+test+3.png?format=1500w"
                                  style="height:60px">
                         </div>
@@ -696,31 +696,64 @@
 
         <div class="slide">
 
-            <!-- <div class="box"> -->
+            <div class="container">
+                <div class="box">
 
+                    <div class="columns is-vcentered is-flex">
+                        <div class="column is-half content">
 
-            <button id="date_button">Next Data</button>
-            <div id="sentiment_data" class="box"></div>
+                            <div class="row_aligned">
+                                <button id="sentiment_previous_day_button" class="button">Previous Day</button>                        
+                                <button id="sentiment_next_day_button" class="button">Next Day</button>
+                            </div>
 
-            <script>
-                var counter = -1;
+                        </div>
+                        <div class="column is-half content">
+                        
+                            <div id="sentiment_data">
+                                <!-- style="background-color: lightslategrey;" class="box column_aligned">
+                                <div class="simple_centered">
+                                    <p>Date 1</p>
+                                </div>
+                                <div class="row_aligned">
+                                    <div class="column_aligned simple_centered">
+                                        <h3>Sentiment</h3>
+                                        <img src="/../pictures/world_reactions/sentiment_neutral.png"
+                                            style="height: 60px; width: 60px;">
+                                        <p>Neutral</p>
+                                    </div>
+                                    <div class="column_aligned simple_centered">
+                                        <h3>Emotion</h3>
+                                        <img src="/../pictures/world_reactions/emotion_sadness.png"
+                                            style="height: 60px; width: 60px;">
+                                        <p>Sadness</p>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
 
-                let pathSentiment = './../../data/NDA_twitter_sentiment_emotion_agg.csv';
-                let loaderSentiment = new SentimentLoader(pathSentiment);
-                let promiseSentiment = loaderSentiment.load_data().then((data) => {
+                    <script>
+                        var counter = -1;
 
-                    function get_data() {
-                        counter = (counter + 1) % data.length
-                        return data[counter]
-                    }
+                        let pathSentiment = './../../data/NDA_twitter_sentiment_emotion_agg.csv';
+                        let loaderSentiment = new SentimentLoader(pathSentiment);
+                        let promiseSentiment = loaderSentiment.load_data().then((data) => {
 
-                    SentimentComponent({
-                        get_data: get_data,
-                    });
-                });
-            </script>
+                            function get_data() {
+                                counter = (counter + 1) % data.length
+                                return data[counter]
+                            }
 
-            <!-- </div> -->
+                            SentimentComponent({
+                                get_data: get_data,
+                                previous_button_id: "sentiment_previous_day_button",
+                                next_button_id: "sentiment_next_day_button"
+                            });
+                        });
+                    </script>
+
+                </div>
+            </div>
 
         </div>
     </div>

@@ -5,9 +5,19 @@ h1.worldwide-reactions-h1 {
     align-items: center
 }
 
-.centered {
+.simple_centered {
     display:flex;
     flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+.column_aligned {
+    display:flex;
+    flex-direction: column;
+}
+
+.content_centered {
     justify-content: center; 
     align-items: center;
 }
