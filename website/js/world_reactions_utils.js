@@ -107,27 +107,34 @@ function BarChart(data, {
     }
 
     var tooltip = d3.select(".refugees_tooltip")
-        .style("position", "absolute")
-        .style("z-index", "10")
-        .style("visibility", "hidden")
-        .style("background", "#808080")
-        .text("Info box");
+        .style("opacity", 0)
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px")
+        .style("text-align", "center")
+        .style("width", "fit-content")
+        .style("z-index", "10");
 
     const mouseover = function(event, d) {
+        tooltip
+            .style("opacity", 1);
         d3.select(this)
-            .attr("fill", "#000080")
-        tooltip.text(`${Y[d]} ${X[d]}`);
-        tooltip.style("visibility", "visible");
+            .style("stroke", "black")
+            .style("opacity", 1);
     }
     const mousemove = function(event, d) {
-        tooltip.style("top", (event.pageY-10)+"px")
-            .style("left",(event.pageX+10)+"px");
+        tooltip.html(X[d].toDateString() + "<br>" + "total: " + Y[d])
+            .style("left", (d3.pointer(event)[0] +10) + "px")
+            .style("top", (d3.pointer(event)[1]-20) + "px");
     }
     const mouseout = function() {
+        tooltip
+            .style("opacity", 0);
         d3.select(this)
-            .attr("fill", color);
-        tooltip.style("visibility", "hidden")
-        tooltip.selectAll('tspan').remove();
+            .style("stroke", "none")
+            .style("opacity", 0.7);
     }
 
     const svg = d3.select("#refugees_data").append("svg")
@@ -160,6 +167,7 @@ function BarChart(data, {
         .attr("height", i => yScale(0) - yScale(Y[i]))
         .attr("width", xScale.bandwidth())
         .attr("fill", color)
+        .style("opacity", 0.7)
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
         .on("mouseout", mouseout);
@@ -186,7 +194,6 @@ function StackedBarChart(data, {
     x = (d, i) => i, // given d in data, returns the (ordinal) x-value
     y = d => d, // given d in data, returns the (quantitative) y-value
     z = () => 1, // given d in data, returns the (categorical) z-value
-    title, // given d in data, returns the title text
     marginTop = 30, // top margin, in pixels
     marginRight = 0, // right margin, in pixels
     marginBottom = 30, // bottom margin, in pixels
@@ -245,53 +252,41 @@ function StackedBarChart(data, {
     const xAxis = d3.axisBottom(d3.scaleTime(xDomain, xRange)).tickSizeOuter(0);
     const yAxis = d3.axisLeft(yScale).ticks(height / 60, yFormat);
 
-    // Compute titles.
-    if (title === undefined) {
-    const formatValue = yScale.tickFormat(100, yFormat);
-    title = i => `${X[i]}\n${Z[i]}\n${formatValue(Y[i])}`;
-    } else {
-    const O = d3.map(data, d => d);
-    const T = title;
-    title = i => T(O[i], i, data);
-    }
 
     var tooltip = d3.select(".sanctions_tooltip")
-        .style("position", "absolute")
-        .style("z-index", "10")
-        .style("visibility", "hidden")
-        .style("background", "#808080")
-        .text("Info box");
+        .style("opacity", 0)
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px")
+        .style("text-align", "center")
+        .style("width", "fit-content")
+        .style("z-index", "10");
+
 
     const mouseover = function(event, d) {
-        d3.select(this)
-            .attr("fill", "#000080")
-        const displayText = `
-            ${d[1]}
-            ${d.data[0]}
-            ${[...d.data[1].entries()].filter(([k, v])=> v===d.i)[0][0]}
-        `
+        tooltip
+            .style("opacity", 1)
 
-        tooltip.text(displayText);
-        tooltip.style("visibility", "visible");
+        d3.select(this)
+            .style("stroke", "black")
+            .style("opacity", 1)
     }
     const mousemove = function(event, d) {
-        const [x, y] = d3.pointer(event);
-        console.log(x, y, height)
-
-        // tooltip
-        //   .attr('transform', `translate(${x}, ${y+height})`);
-
-        tooltip.style("top", (event.pageY-140)+"px")
-            .style("left",(event.pageX-screen.width/2+10)+"px");
-
-        // tooltip.style("top", (x-100)+"px")
-        //     .style("left",(y-100)+"px");
+        tooltip.html(
+            d.data[0].toDateString() + "<br>" +
+            "Number of Sanctions: " + d[1] + "<br>" +
+            "Issuing Country: " + [...d.data[1].entries()].filter(([k, v])=> v===d.i)[0][0])
+        .style("left", (d3.pointer(event)[0] +10) + "px")
+        .style("top", (d3.pointer(event)[1]-20) + "px")
     }
     const mouseout = function() {
+        tooltip
+            .style("opacity", 0)
         d3.select(this)
-            .attr("fill", color);
-        tooltip.style("visibility", "hidden")
-        tooltip.selectAll('tspan').remove();
+            .style("stroke", "none")
+            .style("opacity", 0.7);
     }
 
     const svg = d3.select("#sanctions_data")
@@ -323,6 +318,7 @@ function StackedBarChart(data, {
     .selectAll("rect")
     .data(d => d)
     .join("rect")
+        .style("opacity", 0.7)
         .attr("x", ({i}) => xScale(X[i]))
         .attr("y", ([y1, y2]) => Math.min(yScale(y1), yScale(y2)))
         .attr("height", ([y1, y2]) => Math.abs(yScale(y1) - yScale(y2)))
@@ -330,9 +326,6 @@ function StackedBarChart(data, {
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
         .on("mouseout", mouseout);
-
-    if (title) bar.append("title")
-        .text(({i}) => title(i));
 
     svg.append("g")
         .attr("transform", `translate(0,${yScale(0)})`)
@@ -347,7 +340,9 @@ function StackedBarChart(data, {
 function SentimentComponent({
     width = 640, // outer width, in pixels
     height = 400, // outer height, in pixels
-    get_data = () => {}
+    get_data = () => {},
+    previous_button_id,
+    next_button_id
 } = {}) {
 
     function draw() {
@@ -362,35 +357,34 @@ function SentimentComponent({
         }
 
         const div = d3.select("#sentiment_data")
-            .style("background-color", "rgb(132, 128, 128)")
-            .style("margin-right", "20%")
-            .style("margin-left", "20%")
-            .style("border-radius", "20px")
+            .style("background-color", "lightslategrey")
+            .attr("class", "box column_aligned")
+            // .style("margin-right", "20%")
+            // .style("margin-left", "20%")
+            // .style("border-radius", "20px")
             .data(data);
 
         div.selectAll("div")
-            .transition()
-            .duration(300)
-            .style("opacity", 0)
             .remove();
 
         const date = div.append("div")
             .each(appear)
-            .style("opacity", 1)
-            .style("width", "100%")
-            .style("height", "20%")
-            .attr("class", "centered")
-            .text(d => d.date);
+            // .style("opacity", 1)
+            // .style("width", "100%")
+            // .style("height", "20%")
+            .attr("class", "simple_centered")
+            .append("p")
+            .text(d => d.date.toDateString());
 
         const info = div.append("div")
-            .style("width", "100%")
-            .style("height", "80%")
+            // .style("width", "100%")
+            // .style("height", "80%")
             .attr("class", "row_aligned");
 
         const sentiment = info.append("div")
-            .attr("class", "centered")
-            .style("width", "70%")
-            .style("height", "50%")
+            .attr("class", "column_aligned simple_centered")
+            // .style("width", "70%")
+            // .style("height", "50%")
             .style("padding", "1%")
         sentiment.append("h3")
             .each(appear)
@@ -398,16 +392,17 @@ function SentimentComponent({
         sentiment.append("img")
             .each(appear)
             .attr("src", d=>`/../pictures/world_reactions/sentiment_${d.sentiment}.png`)
-            .attr("width", "60px")
+            .style("width", "60px")
+            .style("height", "60px")
             .style("margin", "10px");
         sentiment.append("p")
             .each(appear)
             .text(d => d.sentiment);
 
         const emotion = info.append("div")
-            .attr("class", "centered")
-            .style("width", "70%")
-            .style("height", "50%")
+            .attr("class", "column_aligned simple_centered")
+            // .style("width", "70%")
+            // .style("height", "50%")
             .style("padding", "1%")
         emotion.append("h3")
             .each(appear)
@@ -416,6 +411,7 @@ function SentimentComponent({
             .each(appear)
             .attr("src", d=>`/../pictures/world_reactions/emotion_${d.emotion}.png`)
             .attr("width", "60px")
+            .style("height", "60px")
             .style("margin", "10px");
         emotion.append("p")
             .each(appear)
@@ -424,7 +420,7 @@ function SentimentComponent({
 
     draw();
 
-    d3.select("#date_button").on("click", draw)
+    d3.select("#"+next_button_id).on("click", draw)
 
 
     
