@@ -718,15 +718,15 @@ in US-dollars of the main currencies of the world.
 </script>
 <script src="lib/countDown.min.js"></script>
 <script src="js/timePassed.js"></script>
-<script src="js/casualtiesPlot.js"></script>
+<script src="js/casualties/CasualtiesLoader.js"></script>
+<script src="js/casualties/CasualtiesPlot.js"></script>
 <script>
     cd.start()
-
     document.addEventListener("DOMContentLoaded", function (event) {
-
         let casualtiesPath = "https://raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/data/casualties/CasualtiesUNHumanRightsUATweets.csv";
         let casualtiesLoader = new CasualtiesLoader(casualtiesPath);
-        let promise = casualtiesLoader.load_data().then(
+        let promise = casualtiesLoader.load_data().
+        then(
             () => plot_casualties(casualtiesLoader)
         );
     });
