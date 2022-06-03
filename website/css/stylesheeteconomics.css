@@ -33,10 +33,19 @@
   display: inline-block;
 }
 
-.myparagraph{
+.myparagraph1{
   width: 80%;
   height: auto;
-  margin: 0px 70px 15px 70px;
+  margin: 15px 10px 15px 40px;
+  position: relative;
+  text-align: left;
+  color: black;
+}
+
+.myparagraph2{
+  width: 50%;
+  height: auto;
+  margin: 15px 10px 15px 40px;
   position: relative;
   text-align: left;
   color: black;
@@ -77,15 +86,32 @@ left: 50%;
 transform: translate(-50%, -50%);
 }
 
-#imageinflation {
-  width: 70%;
+#divimageinflation {
+  width: 100%;
   height: auto;
+  text-align: center;
+}
+
+#imageinflation {
+  width: 65%;
+  height: auto;
+  text-align: center;
+}
+
+#titleslideoil{
+  position: relative;
+  text-align: center;
+  margin-top:20px;
+  margin-bottom: 50px;
+  width:100%;
 }
 
 #imagegaz {
+    position:relative;
   width: 50%;
   height: auto;
   display: inline-block;
+  float : right;
 }
 
 * {box-sizing:border-box}
@@ -106,12 +132,31 @@ transform: translate(-50%, -50%);
   position: relative;
   text-align: center;
   margin-top:20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: black;
-  font-size: 25px}
+  font-size: 28px}
+
+  .slidesubtitle{
+    position: relative;
+    text-align: center;
+    margin-top:20px;
+    margin-bottom: 20px;
+    color: black;
+    font-size: 22px}
+
+#oilinfo{
+  margin-top:20px;
+  margin-left: 80px;
+  margin-bottom: 200px;
+  position: relative;
+  text-align: center;
+  width: 80%;
+
+}
 
 #titleinflation{
-  margin: 0px 70px 15px 70px;
+  margin-top:20px;
+  margin-bottom: 0px;
   position: relative;
   text-align: center;
   color: black;
@@ -160,16 +205,16 @@ fp-arrow.{
   text-align: center;
 }
 #imageinflation{
-  margin-bottom: 20px
+
 }
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #f2f2f2;
+  color: black;
   font-size: 14px;
   text-align: center;
   position: relative;
-  margin: 20px 70px 20px 70px;
+  margin: 10px 70px 20px 70px;
 
 }
 
