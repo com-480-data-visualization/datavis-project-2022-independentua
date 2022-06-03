@@ -204,7 +204,7 @@ mapprevshowOrHideDiv(i-7)
     i = i-7
   }
 }
-
+console.log(i)
 //d3.select("body").append("p").text("New paragraph!");
 const margin = {top: 40, right: 30, bottom: 40, left: 60},
     width = 460 - margin.left - margin.right,
@@ -905,16 +905,18 @@ var mydays = [0,
 ]
 
 
-
 visualizemydata(mydayarray[0],array[0])
-console.log(i)
+
+if (mydays[1]==0){
+for (let i = 0; i < 146; i++) {
+     visualizemydata(mydayarray[i],array[i])
+
+}}
+
+
 
  function mapprevshowOrHideDiv(j) {
-   if (mydays[i]!==0){
-     visualizemydata(mydayarray[i],array[i])
-     mydays[i] =0
-   console.log(mydays)}
-console.log(j)
+if (i==1){mydays[1]=0}
 
    var v = document.getElementById(array[i]);
 
@@ -926,10 +928,7 @@ console.log(j)
 
  }
  function mapnextshowOrHideDiv(j) {
-   if (mydays[i]!==0){
-     visualizemydata(mydayarray[i],array[i])
-     mydays[i] =0
-   console.log(mydays)}
+
 
     var v = document.getElementById(array[i]);
 
@@ -939,4 +938,4 @@ console.log(j)
 
        w.style.display = "none";
 
- }
+ };
