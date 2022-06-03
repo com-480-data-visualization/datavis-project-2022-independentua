@@ -129,12 +129,12 @@ series
   });
 
 var scale = anychart.scales.ordinalColor([
-  { less:98 },
-  { from: 98, to: 99 },
+  { less:97 },
+  { from: 97, to: 99 },
   { from: 99, to: 100 },
   { from: 100, to: 101 },
-  { from: 101, to: 102 },
-  { greater: 102 }
+  { from: 101, to: 103 },
+  { greater: 103 }
 ]);
 scale.colors([
     '#000000',
