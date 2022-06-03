@@ -369,7 +369,7 @@ function SentimentComponent({
             .text("Sentiment")
         sentiment.append("img")
             .each(appear)
-            .attr("src", d=>`raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/pictures/world_reactions/sentiment_${d.sentiment}.png`)
+            .attr("src", d=>`../pictures/world_reactions/sentiment_${d.sentiment}.png`)
             .style("width", "60px")
             .style("height", "60px")
             .style("margin", "10px");
@@ -386,7 +386,7 @@ function SentimentComponent({
             .text("Emotion")
         emotion.append("img")
             .each(appear)
-            .attr("src", d=>`raw.githubusercontent.com/com-480-data-visualization/datavis-project-2022-independentua/main/pictures/world_reactions/emotion_${d.emotion}.png`)
+            .attr("src", d=>`../pictures/world_reactions/emotion_${d.emotion}.png`)
             .attr("width", "60px")
             .style("height", "60px")
             .style("margin", "10px");
