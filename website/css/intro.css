@@ -1,0 +1,7 @@
+.overlay-custom {
+  align-items: center;
+  justify-content: center;
+  color: black;
+  display: flex;
+  text-align: center;
+}
